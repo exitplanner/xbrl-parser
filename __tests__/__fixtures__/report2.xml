@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Årsafslutning fra Wolters Kluwer 2021.2-->
+<xbrli:xbrl xmlns:arr="http://xbrl.dcca.dk/arr" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:dst="http://xbrl.dcca.dk/dst" xmlns:entry="http://xbrl.dcca.dk/entryBalanceSheetAccountFormIncomeStatementByNature" xmlns:esg="http://xbrl.dcca.dk/esg" xmlns:fsa="http://xbrl.dcca.dk/fsa" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:ix="http://www.xbrl.org/2008/inlineXBRL" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:mrv="http://xbrl.dcca.dk/mrv" xmlns:sob="http://xbrl.dcca.dk/sob" xmlns:tax="http://xbrl.dcca.dk/tax" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:schemaRef xlink:type="simple" xlink:href="http://archprod.service.eogs.dk/taxonomy/20201001/entryDanishGAAPBalanceSheetAccountFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20201001.xsd"/>
+  <xbrli:context id="ID_0">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="ID_3">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="cmn:IdentificationOfMemberOfSupervisoryBoardDimension">
+        <cmn:memberOfBoardIdentifier>1</cmn:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_4">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="cmn:IdentificationOfMemberOfSupervisoryBoardDimension">
+        <cmn:memberOfBoardIdentifier>2</cmn:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_5">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="cmn:IdentificationOfMemberOfSupervisoryBoardDimension">
+        <cmn:memberOfBoardIdentifier>3</cmn:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_6">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="cmn:IdentificationOfMemberOfSupervisoryBoardDimension">
+        <cmn:memberOfBoardIdentifier>4</cmn:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_7">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="cmn:IdentificationOfMemberOfSupervisoryBoardDimension">
+        <cmn:memberOfBoardIdentifier>5</cmn:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_8">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="cmn:IdentificationOfMemberOfSupervisoryBoardDimension">
+        <cmn:memberOfBoardIdentifier>6</cmn:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_2">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="cmn:IdentificationOfMemberOfExecutiveBoardDimension">
+        <cmn:memberOfBoardIdentifier>4</cmn:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_1">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="cmn:IdentificationOfAuditorDimension">
+        <cmn:auditorIdentifier>RevPers7</cmn:auditorIdentifier>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_14">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ClassesOfEquityDimension">fsa:ContributedCapitalMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_17">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ClassesOfEquityDimension">fsa:ProposedDividendRecognisedInEquityMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_15">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ClassesOfEquityDimension">fsa:ReserveForDevelopmentExpenditureMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_16">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ClassesOfEquityDimension">fsa:RetainedEarningsMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_12">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="ID_22">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:ProposedDividendRecognisedInEquityMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_24">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:RestOfOtherReservesMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_26">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2020-08-01</xbrli:startDate>
+      <xbrli:endDate>2021-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:RetainedEarningsMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_13">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2019-08-01</xbrli:startDate>
+      <xbrli:endDate>2020-07-31</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="ID_11">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2019-08-01</xbrli:startDate>
+      <xbrli:endDate>2020-07-31</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="ID_23">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2019-08-01</xbrli:startDate>
+      <xbrli:endDate>2020-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:ProposedDividendRecognisedInEquityMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_25">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2019-08-01</xbrli:startDate>
+      <xbrli:endDate>2020-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:RestOfOtherReservesMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_27">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2019-08-01</xbrli:startDate>
+      <xbrli:endDate>2020-07-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ResultDistributionDimension">fsa:RetainedEarningsMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_9">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2021-07-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="ID_18">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2020-08-01</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ClassesOfEquityDimension">fsa:ContributedCapitalMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_21">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2020-08-01</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ClassesOfEquityDimension">fsa:ProposedDividendRecognisedInEquityMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_19">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2020-08-01</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ClassesOfEquityDimension">fsa:ReserveForDevelopmentExpenditureMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_20">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2020-08-01</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="fsa:ClassesOfEquityDimension">fsa:RetainedEarningsMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ID_10">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">33070691</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2020-07-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:unit id="percent">
+    <xbrli:measure>xbrli:pure</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="decimal">
+    <xbrli:measure>xbrli:pure</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="DKK">
+    <xbrli:measure>iso4217:DKK</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="Share">
+    <xbrli:measure>xbrli:shares</xbrli:measure>
+  </xbrli:unit>
+  <arr:AddresseeOfAuditorsReportOnExtendedReviewOfFinancialStatements contextRef="ID_0" xml:lang="da">Til kapitalejerne i Officeguru A/S
+ </arr:AddresseeOfAuditorsReportOnExtendedReviewOfFinancialStatements>
+  <arr:DescriptionOfQualificationsOfFinancialStatementsExtendedReview contextRef="ID_0" xml:lang="da">Grundlag for konklusion
+ </arr:DescriptionOfQualificationsOfFinancialStatementsExtendedReview>
+  <arr:InformationOnSignatureOfAuditors contextRef="ID_0" xml:lang="da">
+</arr:InformationOnSignatureOfAuditors>
+  <arr:OpinionOnFinancialStatementsExtendedReview contextRef="ID_0" xml:lang="da">Konklusion
+</arr:OpinionOnFinancialStatementsExtendedReview>
+  <arr:SignatureOfAuditorsDate contextRef="ID_0" xml:lang="da">2021-12-10</arr:SignatureOfAuditorsDate>
+  <arr:SignatureOfAuditorsPlace contextRef="ID_0" xml:lang="da">København</arr:SignatureOfAuditorsPlace>
+  <arr:StatementOfAuditorsResponsibilityExtendedReview contextRef="ID_0" xml:lang="da">Revisors ansvar for den udvidede gennemgang af årsregnskabet
+ </arr:StatementOfAuditorsResponsibilityExtendedReview>
+  <arr:StatementOfExecutiveAndSupervisoryBoardsResponsibilityForFinancialStatementsExtendedReview contextRef="ID_0" xml:lang="da">Ledelsens ansvar for årsregnskabet
+ </arr:StatementOfExecutiveAndSupervisoryBoardsResponsibilityForFinancialStatementsExtendedReview>
+  <cmn:IdentificationNumberCvrOfAuditFirm contextRef="ID_1" xml:lang="da">39463113</cmn:IdentificationNumberCvrOfAuditFirm>
+  <cmn:IdentificationNumberOfAuditor contextRef="ID_1" xml:lang="da">mne35842</cmn:IdentificationNumberOfAuditor>
+  <cmn:NameAndSurnameOfAuditor contextRef="ID_1" xml:lang="da">Christian Dohn</cmn:NameAndSurnameOfAuditor>
+  <cmn:NameAndSurnameOfMemberOfExecutiveBoard contextRef="ID_2" xml:lang="da">Daniel Nordberg Wilk</cmn:NameAndSurnameOfMemberOfExecutiveBoard>
+  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ID_3" xml:lang="da">Anders Colding Friis</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
+  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ID_4" xml:lang="da">Jens Grønlund</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
+  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ID_5" xml:lang="da">Jannik Kruse Petersen</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
+  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ID_6" xml:lang="da">Daniel Nordberg Wilk</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
+  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ID_7" xml:lang="da">Christian Frørup</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
+  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ID_8" xml:lang="da">Jørgen Wilk</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
+  <cmn:NameOfAuditFirm contextRef="ID_1" xml:lang="da">KRESTON CM</cmn:NameOfAuditFirm>
+  <cmn:TitleOfMemberOfSupervisoryBoard contextRef="ID_3" xml:lang="da">Bestyrelsesformand</cmn:TitleOfMemberOfSupervisoryBoard>
+  <cmn:TypeOfAuditorAssistance contextRef="ID_0" xml:lang="da">Erklæring om udvidet gennemgang</cmn:TypeOfAuditorAssistance>
+  <fsa:AccountingPoliciesAreUnchangedFromPreviousPeriod contextRef="ID_0" xml:lang="da">false</fsa:AccountingPoliciesAreUnchangedFromPreviousPeriod>
+  <fsa:Assets contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">22755163</fsa:Assets>
+  <fsa:Assets contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">17530647</fsa:Assets>
+  <fsa:AverageNumberOfEmployees contextRef="ID_11" xml:lang="da" unitRef="decimal" decimals="0">99</fsa:AverageNumberOfEmployees>
+  <fsa:AverageNumberOfEmployees contextRef="ID_12" xml:lang="da" unitRef="decimal" decimals="0">112</fsa:AverageNumberOfEmployees>
+  <fsa:CashAndCashEquivalents contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">9361942</fsa:CashAndCashEquivalents>
+  <fsa:CashAndCashEquivalents contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">3659926</fsa:CashAndCashEquivalents>
+  <fsa:ClassOfReportingEntity contextRef="ID_0" xml:lang="da">Regnskabsklasse B</fsa:ClassOfReportingEntity>
+  <fsa:CompletedDevelopmentProjects contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">1968177</fsa:CompletedDevelopmentProjects>
+  <fsa:CompletedDevelopmentProjects contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">4951654</fsa:CompletedDevelopmentProjects>
+  <fsa:ContributedCapital contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">644231</fsa:ContributedCapital>
+  <fsa:ContributedCapital contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">644231</fsa:ContributedCapital>
+  <fsa:CurrentAssets contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">20356646</fsa:CurrentAssets>
+  <fsa:CurrentAssets contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">12101444</fsa:CurrentAssets>
+  <fsa:DepositsLongtermInvestmentsAndReceivables contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">310395</fsa:DepositsLongtermInvestmentsAndReceivables>
+  <fsa:DepositsLongtermInvestmentsAndReceivables contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">318088</fsa:DepositsLongtermInvestmentsAndReceivables>
+  <fsa:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">955970</fsa:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss>
+  <fsa:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">416949</fsa:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss>
+  <fsa:DisclosureOfAccountingPolicies contextRef="ID_0" xml:lang="da">Generelt
+ </fsa:DisclosureOfAccountingPolicies>
+  <fsa:DisclosureOfContingentLiabilities contextRef="ID_0" xml:lang="da">
+</fsa:DisclosureOfContingentLiabilities>
+  <fsa:DisclosureOfEmployeeBenefitsExpense contextRef="ID_0" xml:lang="da">1. Personaleomkostninger
+</fsa:DisclosureOfEmployeeBenefitsExpense>
+  <fsa:DisclosureOfEquity contextRef="ID_0" xml:lang="da">
+</fsa:DisclosureOfEquity>
+  <fsa:DisclosureOfMortgagesAndCollaterals contextRef="ID_0" xml:lang="da">
+</fsa:DisclosureOfMortgagesAndCollaterals>
+  <fsa:DisclosureOfPropertyPlantAndEquipment contextRef="ID_0" xml:lang="da">6. Deposita
+</fsa:DisclosureOfPropertyPlantAndEquipment>
+  <fsa:DisclosureOfTaxExpenseOnOrdinaryActivities contextRef="ID_0" xml:lang="da">2. Skat af årets resultat
+</fsa:DisclosureOfTaxExpenseOnOrdinaryActivities>
+  <fsa:DividendPaid contextRef="ID_14" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:DividendPaid>
+  <fsa:DividendPaid contextRef="ID_15" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:DividendPaid>
+  <fsa:DividendPaid contextRef="ID_16" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:DividendPaid>
+  <fsa:DividendPaid contextRef="ID_17" xml:lang="da" unitRef="DKK" decimals="0">-426321</fsa:DividendPaid>
+  <fsa:DividendsFromTreasuryShares contextRef="ID_14" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:DividendsFromTreasuryShares>
+  <fsa:DividendsFromTreasuryShares contextRef="ID_15" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:DividendsFromTreasuryShares>
+  <fsa:DividendsFromTreasuryShares contextRef="ID_16" xml:lang="da" unitRef="DKK" decimals="0">-5079</fsa:DividendsFromTreasuryShares>
+  <fsa:DividendsFromTreasuryShares contextRef="ID_17" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:DividendsFromTreasuryShares>
+  <fsa:EmployeeBenefitsExpense contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">36625898</fsa:EmployeeBenefitsExpense>
+  <fsa:EmployeeBenefitsExpense contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">33054814</fsa:EmployeeBenefitsExpense>
+  <fsa:Equity contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">7563146</fsa:Equity>
+  <fsa:Equity contextRef="ID_18" xml:lang="da" unitRef="DKK" decimals="0">-644231</fsa:Equity>
+  <fsa:Equity contextRef="ID_19" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:Equity>
+  <fsa:Equity contextRef="ID_20" xml:lang="da" unitRef="DKK" decimals="0">-4957416</fsa:Equity>
+  <fsa:Equity contextRef="ID_21" xml:lang="da" unitRef="DKK" decimals="0">-426321</fsa:Equity>
+  <fsa:Equity contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">8036888</fsa:Equity>
+  <fsa:FixturesFittingsToolsAndEquipment contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">92238</fsa:FixturesFittingsToolsAndEquipment>
+  <fsa:FixturesFittingsToolsAndEquipment contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">142629</fsa:FixturesFittingsToolsAndEquipment>
+  <fsa:GrossProfitLoss contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">40535965</fsa:GrossProfitLoss>
+  <fsa:GrossProfitLoss contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">38469341</fsa:GrossProfitLoss>
+  <fsa:IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies contextRef="ID_14" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies>
+  <fsa:IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies contextRef="ID_15" xml:lang="da" unitRef="DKK" decimals="0">-1535178</fsa:IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies>
+  <fsa:IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies contextRef="ID_16" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies>
+  <fsa:IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies contextRef="ID_17" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:IncreaseDecreaseOfEquityThroughChangesInAccountingPolicies>
+  <fsa:InformationOnChangesAndEffectsOfChangesOnRecognitionAndMeasurementBasisResultingFromChangesInAccountingEstimatesOrErrors contextRef="ID_0" xml:lang="da">Anvendte regnskabspraksis er ændret på følgende områder:
+ </fsa:InformationOnChangesAndEffectsOfChangesOnRecognitionAndMeasurementBasisResultingFromChangesInAccountingEstimatesOrErrors>
+  <fsa:IntangibleAssets contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">1968177</fsa:IntangibleAssets>
+  <fsa:IntangibleAssets contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">4951654</fsa:IntangibleAssets>
+  <fsa:LeaseholdImprovements contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">27707</fsa:LeaseholdImprovements>
+  <fsa:LeaseholdImprovements contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">16832</fsa:LeaseholdImprovements>
+  <fsa:LiabilitiesAndEquity contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">22755163</fsa:LiabilitiesAndEquity>
+  <fsa:LiabilitiesAndEquity contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">17530647</fsa:LiabilitiesAndEquity>
+  <fsa:LiabilitiesOtherThanProvisions contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">14764159</fsa:LiabilitiesOtherThanProvisions>
+  <fsa:LiabilitiesOtherThanProvisions contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">8420604</fsa:LiabilitiesOtherThanProvisions>
+  <fsa:LongtermInvestmentsAndReceivables contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">310395</fsa:LongtermInvestmentsAndReceivables>
+  <fsa:LongtermInvestmentsAndReceivables contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">318088</fsa:LongtermInvestmentsAndReceivables>
+  <fsa:LongtermLiabilitiesOtherThanProvisions contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">830603</fsa:LongtermLiabilitiesOtherThanProvisions>
+  <fsa:LongtermLiabilitiesOtherThanProvisions contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:LongtermLiabilitiesOtherThanProvisions>
+  <fsa:LongtermTaxPayables contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">830603</fsa:LongtermTaxPayables>
+  <fsa:LongtermTaxPayables contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:LongtermTaxPayables>
+  <fsa:NoncurrentAssets contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">2398517</fsa:NoncurrentAssets>
+  <fsa:NoncurrentAssets contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">5429203</fsa:NoncurrentAssets>
+  <fsa:OtherFinanceExpenses contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">84114</fsa:OtherFinanceExpenses>
+  <fsa:OtherFinanceExpenses contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">80245</fsa:OtherFinanceExpenses>
+  <fsa:OtherFinanceIncome contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">10338</fsa:OtherFinanceIncome>
+  <fsa:OtherFinanceIncome contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">15375</fsa:OtherFinanceIncome>
+  <fsa:OtherOperatingExpenses contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:OtherOperatingExpenses>
+  <fsa:OtherOperatingExpenses contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">33233</fsa:OtherOperatingExpenses>
+  <fsa:OtherShorttermPayables contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">9989735</fsa:OtherShorttermPayables>
+  <fsa:OtherShorttermPayables contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">5362743</fsa:OtherShorttermPayables>
+  <fsa:ProfitLoss contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">2235024</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">3813584</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_14" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_15" xml:lang="da" unitRef="DKK" decimals="0">-2327112</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_16" xml:lang="da" unitRef="DKK" decimals="0">-92088</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_17" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_22" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_23" xml:lang="da" unitRef="DKK" decimals="0">426321</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_24" xml:lang="da" unitRef="DKK" decimals="0">2327112</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_25" xml:lang="da" unitRef="DKK" decimals="0">939636</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_26" xml:lang="da" unitRef="DKK" decimals="0">-92088</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="ID_27" xml:lang="da" unitRef="DKK" decimals="0">2447627</fsa:ProfitLoss>
+  <fsa:ProfitLossFromOrdinaryActivitiesBeforeTax contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">2880321</fsa:ProfitLossFromOrdinaryActivitiesBeforeTax>
+  <fsa:ProfitLossFromOrdinaryActivitiesBeforeTax contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">4899475</fsa:ProfitLossFromOrdinaryActivitiesBeforeTax>
+  <fsa:ProfitLossFromOrdinaryOperatingActivities contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">2954097</fsa:ProfitLossFromOrdinaryOperatingActivities>
+  <fsa:ProfitLossFromOrdinaryOperatingActivities contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">4964345</fsa:ProfitLossFromOrdinaryOperatingActivities>
+  <fsa:PropertyPlantAndEquipment contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">119945</fsa:PropertyPlantAndEquipment>
+  <fsa:PropertyPlantAndEquipment contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">159461</fsa:PropertyPlantAndEquipment>
+  <fsa:ProposedDividendRecognisedInEquity contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">426321</fsa:ProposedDividendRecognisedInEquity>
+  <fsa:ProposedDividendRecognisedInEquity contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:ProposedDividendRecognisedInEquity>
+  <fsa:Provisions contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">427858</fsa:Provisions>
+  <fsa:Provisions contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">1073155</fsa:Provisions>
+  <fsa:ProvisionsForDeferredTax contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">427858</fsa:ProvisionsForDeferredTax>
+  <fsa:ProvisionsForDeferredTax contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">1073155</fsa:ProvisionsForDeferredTax>
+  <fsa:PurchaseOfTreasuryShares contextRef="ID_14" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:PurchaseOfTreasuryShares>
+  <fsa:PurchaseOfTreasuryShares contextRef="ID_15" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:PurchaseOfTreasuryShares>
+  <fsa:PurchaseOfTreasuryShares contextRef="ID_16" xml:lang="da" unitRef="DKK" decimals="0">-1340040</fsa:PurchaseOfTreasuryShares>
+  <fsa:PurchaseOfTreasuryShares contextRef="ID_17" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:PurchaseOfTreasuryShares>
+  <fsa:ReserveForDevelopmentExpenditure contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">1535178</fsa:ReserveForDevelopmentExpenditure>
+  <fsa:ReserveForDevelopmentExpenditure contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">3862290</fsa:ReserveForDevelopmentExpenditure>
+  <fsa:RetainedEarnings contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">4957416</fsa:RetainedEarnings>
+  <fsa:RetainedEarnings contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">3530367</fsa:RetainedEarnings>
+  <fsa:SelectedElementsFromReportingClassC contextRef="ID_0" xml:lang="da">false</fsa:SelectedElementsFromReportingClassC>
+  <fsa:ShorttermDebtToBanks contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">894249</fsa:ShorttermDebtToBanks>
+  <fsa:ShorttermDebtToBanks contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:ShorttermDebtToBanks>
+  <fsa:ShorttermDeferredIncome contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">68379</fsa:ShorttermDeferredIncome>
+  <fsa:ShorttermDeferredIncome contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:ShorttermDeferredIncome>
+  <fsa:ShorttermLiabilitiesOtherThanProvisions contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">13933556</fsa:ShorttermLiabilitiesOtherThanProvisions>
+  <fsa:ShorttermLiabilitiesOtherThanProvisions contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">8420604</fsa:ShorttermLiabilitiesOtherThanProvisions>
+  <fsa:ShorttermPrepaymentsReceivedFromCustomers contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">1042131</fsa:ShorttermPrepaymentsReceivedFromCustomers>
+  <fsa:ShorttermPrepaymentsReceivedFromCustomers contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">831913</fsa:ShorttermPrepaymentsReceivedFromCustomers>
+  <fsa:ShorttermReceivables contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">10994704</fsa:ShorttermReceivables>
+  <fsa:ShorttermReceivables contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">8441518</fsa:ShorttermReceivables>
+  <fsa:ShorttermTaxPayables contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">111881</fsa:ShorttermTaxPayables>
+  <fsa:ShorttermTaxPayables contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:ShorttermTaxPayables>
+  <fsa:ShorttermTaxReceivables contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">0</fsa:ShorttermTaxReceivables>
+  <fsa:ShorttermTaxReceivables contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">33412</fsa:ShorttermTaxReceivables>
+  <fsa:ShorttermTradePayables contextRef="ID_10" xml:lang="da" unitRef="DKK" decimals="0">1827181</fsa:ShorttermTradePayables>
+  <fsa:ShorttermTradePayables contextRef="ID_9" xml:lang="da" unitRef="DKK" decimals="0">2225948</fsa:ShorttermTradePayables>
+  <fsa:TaxExpenseOnOrdinaryActivities contextRef="ID_0" xml:lang="da" unitRef="DKK" decimals="0">645297</fsa:TaxExpenseOnOrdinaryActivities>
+  <fsa:TaxExpenseOnOrdinaryActivities contextRef="ID_13" xml:lang="da" unitRef="DKK" decimals="0">1085891</fsa:TaxExpenseOnOrdinaryActivities>
+  <gsd:AddressOfSubmittingEnterprisePostcodeAndTown contextRef="ID_0" xml:lang="da">1304, København K</gsd:AddressOfSubmittingEnterprisePostcodeAndTown>
+  <gsd:AddressOfSubmittingEnterpriseStreetAndNumber contextRef="ID_0" xml:lang="da">Adelgade 15</gsd:AddressOfSubmittingEnterpriseStreetAndNumber>
+  <gsd:DateOfFoundationOfReportingEntity contextRef="ID_0" xml:lang="da">2010-07-26</gsd:DateOfFoundationOfReportingEntity>
+  <gsd:DateOfGeneralMeeting contextRef="ID_0" xml:lang="da">2021-12-14</gsd:DateOfGeneralMeeting>
+  <gsd:IdentificationNumberCvrOfReportingEntity contextRef="ID_0" xml:lang="da">33070691</gsd:IdentificationNumberCvrOfReportingEntity>
+  <gsd:IdentificationNumberCvrOfSubmittingEnterprise contextRef="ID_0" xml:lang="da">39463113</gsd:IdentificationNumberCvrOfSubmittingEnterprise>
+  <gsd:InformationOnTypeOfSubmittedReport contextRef="ID_0" xml:lang="da">Årsrapport</gsd:InformationOnTypeOfSubmittedReport>
+  <gsd:NameAndSurnameOfChairmanOfGeneralMeeting contextRef="ID_0" xml:lang="da">Anders Colding Friis</gsd:NameAndSurnameOfChairmanOfGeneralMeeting>
+  <gsd:NameOfReportingEntity contextRef="ID_0" xml:lang="da">Officeguru A/S</gsd:NameOfReportingEntity>
+  <gsd:NameOfSubmittingEnterprise contextRef="ID_0" xml:lang="da">KRESTON CM, Statsautoriseret Revisionsinteressentskab</gsd:NameOfSubmittingEnterprise>
+  <gsd:PrecedingReportingPeriodStartDate contextRef="ID_0" xml:lang="da">2019-08-01</gsd:PrecedingReportingPeriodStartDate>
+  <gsd:PredingReportingPeriodEndDate contextRef="ID_0" xml:lang="da">2020-07-31</gsd:PredingReportingPeriodEndDate>
+  <gsd:ReportingPeriodEndDate contextRef="ID_0" xml:lang="da">2021-07-31</gsd:ReportingPeriodEndDate>
+  <gsd:ReportingPeriodStartDate contextRef="ID_0" xml:lang="da">2020-08-01</gsd:ReportingPeriodStartDate>
+  <mrv:DescriptionOfDevelopmentInActivitiesAndFinancialAffairs contextRef="ID_0" xml:lang="da">Selskabets resultatopgørelse for regnskabsåret 1. august 2020 - 31. juli 2021 udviser et resultat på kr. 2.235.024, og selskabets balance pr. 31. juli 2021 udviser en balancesum på kr. 17.530.647, og en egenkapital på kr. 8.036.888.
+ </mrv:DescriptionOfDevelopmentInActivitiesAndFinancialAffairs>
+  <mrv:DescriptionOfPrimaryActivitiesOfEntity contextRef="ID_0" xml:lang="da">Selskabets væsentligste aktiviteter
+ </mrv:DescriptionOfPrimaryActivitiesOfEntity>
+  <mrv:ManagementsReview contextRef="ID_0" xml:lang="da">Selskabets væsentligste aktiviteter
+</mrv:ManagementsReview>
+  <sob:ConfirmationThatAnnualReportIsPresentedInAccordanceWithRequirementsProvidedForByLegislationAnyStandardsAndRequirementsProvidedByArticlesOfAssociationOrByAgreement contextRef="ID_0" xml:lang="da">Årsrapporten aflægges i overensstemmelse med årsregnskabsloven.
+ </sob:ConfirmationThatAnnualReportIsPresentedInAccordanceWithRequirementsProvidedForByLegislationAnyStandardsAndRequirementsProvidedByArticlesOfAssociationOrByAgreement>
+  <sob:ConfirmationThatFinancialStatementGivesTrueAndFairViewOfAssetsLiabilitiesEquityFinancialPositionAndResults contextRef="ID_0" xml:lang="da">Det er vores opfattelse, at årsregnskabet giver et retvisende billede af selskabets aktiver, passiver og finansielle stilling pr. 31. juli 2021 samt af resultatet af selskabets aktiviteter for regnskabsåret 1. august 2020 - 31. juli 2021.
+ </sob:ConfirmationThatFinancialStatementGivesTrueAndFairViewOfAssetsLiabilitiesEquityFinancialPositionAndResults>
+  <sob:DateOfApprovalOfAnnualReport contextRef="ID_0" xml:lang="da">2021-12-10</sob:DateOfApprovalOfAnnualReport>
+  <sob:IdentificationOfApprovedAnnualReport contextRef="ID_0" xml:lang="da">Ledelsen har dags dato behandlet og godkendt årsrapporten for regnskabsåret 1. august 2020 - 31. juli 2021 for Officeguru A/S.
+ </sob:IdentificationOfApprovedAnnualReport>
+  <sob:ManagementsStatementAboutManagementsReview contextRef="ID_0" xml:lang="da">Ledelsesberetningen indeholder efter vores opfattelse en retvisende redegørelse for de forhold, beretningen omhandler.
+ </sob:ManagementsStatementAboutManagementsReview>
+  <sob:PlaceOfSignatureOfStatement contextRef="ID_0" xml:lang="da">København</sob:PlaceOfSignatureOfStatement>
+  <sob:RecommendationForApprovalOfAnnualReportByGeneralMeeting contextRef="ID_0" xml:lang="da">Årsrapporten indstilles til generalforsamlingens godkendelse.
+ </sob:RecommendationForApprovalOfAnnualReportByGeneralMeeting>
+  <sob:StatementByExecutiveAndSupervisoryBoards contextRef="ID_0" xml:lang="da">
+</sob:StatementByExecutiveAndSupervisoryBoards>
+</xbrli:xbrl>
