@@ -1,5 +1,5 @@
-export { parseXbrlFile } from './xbrl';
-export { default as CvrParser } from './parsers/cvr';
+import { parseXbrlFile } from './xbrl/index.js';
+import { default as CvrParser } from './parsers/cvr.js';
 import type { Parser } from './parsers/parser';
 
 /**
@@ -12,3 +12,5 @@ export function parseAnnualReport(xmlString: string, parser: Parser) {
   // now since it's only (half) working for Danish annual reports.
   return parser.parseAnnualReport(xmlString);
 }
+
+export { parseXbrlFile, CvrParser };

@@ -2,3 +2,7 @@ src/
 __tests__/
 coverage/
 .github/
+jest.config.js
+tsconfig*
+fixup
+.eslintrc.js

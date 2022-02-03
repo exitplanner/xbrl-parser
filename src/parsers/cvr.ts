@@ -1,4 +1,4 @@
-import { parseXbrlFile } from '..';
+import { parseXbrlFile } from '../xbrl/index.js';
 import type { AnnualReport, IncomeStatement, Period } from '../types';
 import type { NumberWithUnitRef, Xbrl, XbrliXbrl } from '../xbrl/types';
 import type { Parser } from './parser';
@@ -16,7 +16,7 @@ export default class CvrParser implements Parser {
     }
 
     const doc = xbrl['xbrli:xbrl'];
-    const { id, startDate, endDate, VAT } = findPrimaryPeriod(doc)
+    const { id, startDate, endDate, VAT } = findPrimaryPeriod(doc);
 
     return {
       VAT,
@@ -27,7 +27,7 @@ export default class CvrParser implements Parser {
         endDate
       },
       incomeStatement: createIncomeStatement(doc, id)
-    }
+    };
   }
 }
 
@@ -123,7 +123,7 @@ function extractTax(doc: XbrliXbrl, periodId: string): number {
   }
 
   // Otherwise sum the ordinary and extraordinary taxes.
-  let tax = extractNumber(doc['fsa:TaxExpenseOnOrdinaryActivities'], periodId) || 0;
+  const tax = extractNumber(doc['fsa:TaxExpenseOnOrdinaryActivities'], periodId) || 0;
   return tax + (extractNumber(doc['fsa:TaxExpenseOnExtraordinaryEvents'], periodId) || 0);
 }
 

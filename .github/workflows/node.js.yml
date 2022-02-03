@@ -28,4 +28,5 @@ jobs:
         cache: 'npm'
     # npm ci also builds the package
     - run: npm ci
+    - run: npm run lint
     - run: npm test
