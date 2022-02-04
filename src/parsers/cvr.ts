@@ -36,7 +36,7 @@ export default class CvrParser implements Parser {
 function findPrimaryCurrency(doc: XbrliXbrl): string {
   const units = Array.isArray(doc['xbrli:unit']) ? doc['xbrli:unit'] : [doc['xbrli:unit']];
   const unit = units
-    .filter(u => u['xbrli:measure'].toLowerCase().startsWith('iso4217:'))[0]
+    .filter(u => u['xbrli:measure'].toLowerCase().startsWith('iso4217:'))[0];
 
   if (!unit) {
     throw new Error('Cannot find currency');
@@ -193,7 +193,7 @@ function createBalanceSheet(doc: XbrliXbrl, instant: Instant): Balance {
         longtermLiabilities: extractNumber(doc['fsa:LongtermLiabilitiesOtherThanProvisions'], id)
       }
     }
-  }
+  };
 }
 
 function extractNumber(node: undefined | NumberWithUnitRef | NumberWithUnitRef[], contextRef: string): number | undefined {

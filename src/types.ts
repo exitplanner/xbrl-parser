@@ -1,5 +1,4 @@
-import { Period } from "./xbrl";
-import { DIdentificationNumberCvrOfAuditFirm } from "./xbrl/types";
+import type { Period } from './xbrl';
 
 /**
  * The income statement. Whether or not a number is required to be present is
