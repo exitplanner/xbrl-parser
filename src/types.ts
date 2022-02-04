@@ -1,3 +1,6 @@
+import { Period } from "./xbrl";
+import { DIdentificationNumberCvrOfAuditFirm } from "./xbrl/types";
+
 /**
  * The income statement. Whether or not a number is required to be present is
  * based on observation -- not taxonomy. For example, almost all reports include
@@ -7,6 +10,7 @@
  */
 export interface IncomeStatement {
   /**
+   * This number can both positive and negative!
    * Gross profit/loss for the year.
    * da: Bruttofortjeneste/Bruttotab
    */
@@ -17,6 +21,12 @@ export interface IncomeStatement {
    * da: Nettoomsætning
    */
   revenue?: number;
+
+  /**
+   * Gross result
+   * da: Bruttoresultat
+   */
+  grossResult?: number;
 
   /**
    * Profit or loss for the year, aka. result after taxes.
@@ -92,6 +102,132 @@ export interface IncomeStatement {
   profitLossFromOperatingActivities: number;
 }
 
+export interface Balance {
+  /**
+   * The date of the balance.
+   */
+  date: string;
+
+  /**
+   * da: Aktiver
+   */
+  assets: {
+    total: number;
+
+    /**
+     * da: Anlægsaktiver
+     */
+    noncurrentAssets: {
+      total?: number;
+
+      /**
+       * da: Immaterielle aktiver/immaterielle anlægsaktiver
+       */
+      intangibleAssets: {
+        total?: number;
+
+        /**
+         * da: Goodwill
+         */
+        goodwill?: number;
+
+        /**
+         * Projects that have been completed.
+         * da: Færdiggjorte udviklingsprojekter.
+         */
+        completedDevelopmentProjects?: number;
+      };
+
+      /**
+       * Also known as "property plant and equipment"
+       * da: Materielle aktiver/Materielle anlægsaktiver
+       */
+      tangibleAssets: {
+        total?: number;
+      }
+
+      /**
+       * Also known as "long term investments and receivables"
+       * da: Finansielle anlægsaktiver
+       */
+      financialAssets: {
+        total?: number;
+      }
+    };
+
+    /**
+     * da: Omsætningsaktiver
+     */
+    currentAssets: {
+      total?: number;
+
+      /**
+       * da: Varebeholdninger
+       */
+      inventories?: number;
+
+      /**
+       * da: Likvide beholdninger
+       */
+      cashAndCashEquivalents?: number;
+
+      /**
+       * da: Tilgodehavender
+       */
+      shorttermReceivables?: number;
+    }
+  };
+
+  /**
+   * da: Passiver
+   */
+  liabilitiesAndEquity: {
+    total: number;
+
+    /**
+     * da: Egenkapital
+     */
+    equity: {
+      total?: number;
+
+      /**
+       * da: Anpartskapital/virksomhedskapital
+       */
+      contributedCapital?: number;
+
+      /**
+       * da: Overført kapital
+       */
+      retainedEarnings?: number;
+    };
+
+    /**
+     * da: Hensatte forpligtelser
+     */
+    provisions: {
+      total?: number;
+    };
+
+    /**
+     * Also known as "debt"
+     * da: Gældsforpligtelser
+     */
+    liabilitiesOtherThanProvisions: {
+      total?: number;
+
+      /**
+       * da: Kortfristede gældsforpligtelser
+       */
+      shorttermLiabilities?: number;
+
+      /**
+       * da: Langfristede gældsforpligtelser
+       */
+      longtermLiabilities?: number;
+    };
+  }
+}
+
 /**
  * Represents a single annual report
  */
@@ -105,10 +241,5 @@ export interface AnnualReport {
   period: Period;
 
   incomeStatement: IncomeStatement;
-}
-
-export interface Period {
-  id: string;
-  startDate: string;
-  endDate: string;
+  balance: Balance;
 }
