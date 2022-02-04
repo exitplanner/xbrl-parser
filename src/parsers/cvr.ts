@@ -1,6 +1,6 @@
-import { parseXbrlFile } from '../xbrl/index.js';
-import type { AnnualReport, IncomeStatement, Period } from '../types';
-import type { NumberWithUnitRef, Xbrl, XbrliXbrl } from '../xbrl/types';
+import { findInstants, findPeriods, Instant, parseXbrlFile, Period } from '../xbrl/index.js';
+import type { AnnualReport, Balance, IncomeStatement } from '../types';
+import type { NumberWithUnitRef, XbrliXbrl } from '../xbrl/types';
 import type { Parser } from './parser';
 
 /**
@@ -17,6 +17,7 @@ export default class CvrParser implements Parser {
 
     const doc = xbrl['xbrli:xbrl'];
     const { id, startDate, endDate, VAT } = findPrimaryPeriod(doc);
+    const balanceInstant = findPrimaryBalanceInstant(doc);
 
     return {
       VAT,
@@ -26,24 +27,22 @@ export default class CvrParser implements Parser {
         startDate,
         endDate
       },
-      incomeStatement: createIncomeStatement(doc, id)
+      incomeStatement: createIncomeStatement(doc, id),
+      balance: createBalanceSheet(doc, balanceInstant),
     };
   }
 }
 
 function findPrimaryCurrency(doc: XbrliXbrl): string {
-  return '';
-}
+  const units = Array.isArray(doc['xbrli:unit']) ? doc['xbrli:unit'] : [doc['xbrli:unit']];
+  const unit = units
+    .filter(u => u['xbrli:measure'].toLowerCase().startsWith('iso4217:'))[0];
 
-function findPeriods(doc: XbrliXbrl): ({ VAT: string } & Period)[] {
-  return doc['xbrli:context']
-    .filter(c => !!c['xbrli:period']['xbrli:endDate'])
-    .map(c => ({
-      VAT: String(c['xbrli:entity']['xbrli:identifier']['#text']),
-      id: c['@_id'],
-      startDate: c['xbrli:period']['xbrli:startDate'] || '',
-      endDate: c['xbrli:period']['xbrli:endDate'] || ''
-    }));
+  if (!unit) {
+    throw new Error('Cannot find currency');
+  }
+
+  return unit['xbrli:measure'].split(':')[1];
 }
 
 function findPrimaryPeriod(doc: XbrliXbrl): ({ VAT: string } & Period) {
@@ -68,6 +67,28 @@ function findPrimaryPeriod(doc: XbrliXbrl): ({ VAT: string } & Period) {
   return latestPeriod;
 }
 
+function findPrimaryBalanceInstant(doc: XbrliXbrl): Instant {
+  const periods = findInstants(doc);
+
+  // Assume most companies have assets statement
+  // context ID for each of these to find candidate period IDs. Only those
+  // periods that are left are the actual yearly period.
+  const contextIdCandidates = new Set(doc['fsa:Assets'].map(e => e['@_contextRef']));
+
+  // Sort remaining periods by their date. It is assumed the latest one is the
+  // correct one.
+  const latestInstant = periods
+    .filter(p => contextIdCandidates.has(p.id))
+    .sort((a, b) => b.date.localeCompare(a.date))[0];
+
+  // It's a hard error if we cannot find the annual period.
+  if (!latestInstant) {
+    throw new Error('Cannot find latest balance instant');
+  }
+
+  return latestInstant;
+}
+
 function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatement {
 
   const incomeStatement: IncomeStatement = {
@@ -75,6 +96,7 @@ function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatemen
     employeeExpenses: extractNumber(doc['fsa:EmployeeBenefitsExpense'], periodId) || 0,
     tax: extractTax(doc, periodId),
     grossProfitLoss: extractNumber(doc['fsa:GrossProfitLoss'], periodId),
+    grossResult: extractNumber(doc['fsa:GrossResult'], periodId),
     revenue: extractNumber(doc['fsa:Revenue'], periodId),
     depreciationAmortization: extractNumber(doc['fsa:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss'], periodId),
     otherOperatingExpenses: extractNumber(doc['fsa:OtherOperatingExpenses'], periodId),
@@ -125,6 +147,53 @@ function extractTax(doc: XbrliXbrl, periodId: string): number {
   // Otherwise sum the ordinary and extraordinary taxes.
   const tax = extractNumber(doc['fsa:TaxExpenseOnOrdinaryActivities'], periodId) || 0;
   return tax + (extractNumber(doc['fsa:TaxExpenseOnExtraordinaryEvents'], periodId) || 0);
+}
+
+function createBalanceSheet(doc: XbrliXbrl, instant: Instant): Balance {
+  const { id, date } = instant;
+
+  return {
+    date,
+    assets: {
+      total: extractNumber(doc['fsa:Assets'], id) || 0,
+      noncurrentAssets: {
+        total: extractNumber(doc['fsa:NoncurrentAssets'], id),
+        intangibleAssets: {
+          total: extractNumber(doc['fsa:IntangibleAssets'], id),
+          goodwill: extractNumber(doc['fsa:Goodwill'], id),
+          completedDevelopmentProjects: extractNumber(doc['fsa:CompletedDevelopmentProjects'], id),
+        },
+        tangibleAssets: {
+          total: extractNumber(doc['fsa:PropertyPlantAndEquipment'], id),
+        },
+        financialAssets: {
+          total: extractNumber(doc['fsa:LongtermInvestmentsAndReceivables'], id),
+        }
+      },
+      currentAssets: {
+        total: extractNumber(doc['fsa:CurrentAssets'], id),
+        cashAndCashEquivalents: extractNumber(doc['fsa:CashAndCashEquivalents'], id),
+        shorttermReceivables: extractNumber(doc['fsa:ShorttermReceivables'], id),
+        inventories: extractNumber(doc['fsa:Inventories'], id)
+      }
+    },
+    liabilitiesAndEquity: {
+      total: extractNumber(doc['fsa:LiabilitiesAndEquity'], id) || 0,
+      equity: {
+        total: extractNumber(doc['fsa:Equity'], id),
+        contributedCapital: extractNumber(doc['fsa:ContributedCapital'], id),
+        retainedEarnings: extractNumber(doc['fsa:RetainedEarnings'], id),
+      },
+      provisions: {
+        total: extractNumber(doc['fsa:Provisions'], id)
+      },
+      liabilitiesOtherThanProvisions: {
+        total: extractNumber(doc['fsa:LiabilitiesOtherThanProvisions'], id),
+        shorttermLiabilities: extractNumber(doc['fsa:ShorttermLiabilitiesOtherThanProvisions'], id),
+        longtermLiabilities: extractNumber(doc['fsa:LongtermLiabilitiesOtherThanProvisions'], id)
+      }
+    }
+  };
 }
 
 function extractNumber(node: undefined | NumberWithUnitRef | NumberWithUnitRef[], contextRef: string): number | undefined {
