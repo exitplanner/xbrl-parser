@@ -1,5 +1,8 @@
 # xbrl-parser
 
+![pr](https://github.com/exitplanner/xbrl-parser/actions/workflows/node.js.yml/badge.svg)
+![npm publish](https://github.com/exitplanner/xbrl-parser/actions/workflows/npm-publish.yml/badge.svg)
+
 XBRL parser and utility for parsing XBRL files.
 
 The library was created specifically for parsing XBRL annual reports for Danish companies to extract income statement and balance data from the (slightly different) taxonomies used for annual reports and consolidate them in the same JSON-like format.
