@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { CvrParser, parseAnnualReport } from '../src/index';
-import { AnnualReport, Balance, IncomeStatement } from '../src/types';
+import { CvrParser, parseAnnualReport } from '../src/index.js';
+import type { Balance, IncomeStatement } from '../src/types';
 
 describe('parse', () => {
   let report1: string;
