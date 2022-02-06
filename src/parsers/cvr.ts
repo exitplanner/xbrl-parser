@@ -2,6 +2,7 @@ import { findInstants, findPeriods, Instant, parseXbrlFile, Period } from '../xb
 import type { AnnualReport, Balance, IncomeStatement } from '../types';
 import type { NumberWithUnitRef, XbrliXbrl } from '../xbrl/types';
 import type { Parser } from './parser';
+import { ensureArray } from '../util.js';
 
 /**
  * Parser that understands the XBRL taxonomy for many Danish companies as fetched from CVR.
@@ -51,7 +52,7 @@ function findPrimaryPeriod(doc: XbrliXbrl): ({ VAT: string } & Period) {
   // Assume most companies have expenses for employees so extract the
   // context ID for each of these to find candidate period IDs. Only those
   // periods that are left are the actual yearly period.
-  const contextIdCandidates = new Set(doc['fsa:EmployeeBenefitsExpense'].map(e => e['@_contextRef']));
+  const contextIdCandidates = new Set(ensureArray(doc['fsa:ProfitLoss']).map(e => e['@_contextRef']));
 
   // Sort remaining periods by their date. It is assumed the latest one is the
   // correct one.
@@ -73,7 +74,7 @@ function findPrimaryBalanceInstant(doc: XbrliXbrl): Instant {
   // Assume most companies have assets statement
   // context ID for each of these to find candidate period IDs. Only those
   // periods that are left are the actual yearly period.
-  const contextIdCandidates = new Set(doc['fsa:Assets'].map(e => e['@_contextRef']));
+  const contextIdCandidates = new Set(ensureArray(doc['fsa:Assets']).map(e => e['@_contextRef']));
 
   // Sort remaining periods by their date. It is assumed the latest one is the
   // correct one.
@@ -201,9 +202,7 @@ function extractNumber(node: undefined | NumberWithUnitRef | NumberWithUnitRef[]
     return;
   }
 
-  if (!Array.isArray(node)) {
-    node = [node];
-  }
+  node = ensureArray(node);
 
   return node.filter(n => n['@_contextRef'] === contextRef)[0]['#text'];
 }

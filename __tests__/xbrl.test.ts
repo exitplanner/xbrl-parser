@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { parseXbrlFile } from '../src/index';
+import { parseXbrlFile } from '../src/index.js';
 
 describe('xbrl', () => {
   let xmlString: string;
@@ -24,6 +24,6 @@ describe('xbrl', () => {
         'xbrli:endDate': '2020-12-31'
       },
       '@_id': 'ctx1'
-    }))
+    }));
   });
 });
