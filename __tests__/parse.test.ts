@@ -1,21 +1,10 @@
-import fs from 'fs';
-import path from 'path';
 import { CvrParser, parseAnnualReport } from '../src/index.js';
-import type { Balance, IncomeStatement } from '../src/types';
+import { loadReport } from './util.js';
+import type { Balance, IncomeStatement } from '../src/index';
 
 describe('parse', () => {
-  let report1: string;
-  let report2: string;
-
-  beforeAll(async () => {
-    let file = path.join(__dirname, './__fixtures__', 'report1.xml');
-    report1 = fs.readFileSync(file, 'utf-8');
-    file = path.join(__dirname, './__fixtures__', 'report2.xml');
-    report2 = fs.readFileSync(file, 'utf-8');
-  });
-
   it('should parse an annual report from a Danish company with revenue', () => {
-    const report = parseAnnualReport(report1, new CvrParser());
+    const report = parseAnnualReport(loadReport(1), new CvrParser());
 
     expect(report).toEqual(expect.objectContaining({
       VAT: '65305216',
@@ -92,7 +81,7 @@ describe('parse', () => {
   });
 
   it('should parse an annual report from a Danish company without revenue but with gross profit/loss', () => {
-    const report = parseAnnualReport(report2, new CvrParser());
+    const report = parseAnnualReport(loadReport(2), new CvrParser());
 
     expect(report).toEqual(expect.objectContaining({
       VAT: '33070691',
@@ -122,7 +111,6 @@ describe('parse', () => {
       otherOperatingIncome: undefined,
       grossResult: undefined,
     }));
-
 
     expect(report.balance).toEqual(expect.objectContaining<Balance>({
       date: '2021-07-31',
@@ -163,6 +151,82 @@ describe('parse', () => {
           total: 8_420_604,
           shorttermLiabilities: 8_420_604,
           longtermLiabilities: 0
+        }
+      }
+    }));
+  });
+
+  it('should parse an annual report for a company using non-xbrli format', () => {
+    const report = parseAnnualReport(loadReport(3), new CvrParser());
+
+    expect(report).toEqual(expect.objectContaining({
+      VAT: '38343521',
+      currency: 'DKK',
+      period: {
+        id: 'c11',
+        startDate: '2020-01-01',
+        endDate: '2020-12-31'
+      }
+    }));
+
+    expect(report.incomeStatement).toEqual(expect.objectContaining<IncomeStatement>({
+      grossProfitLoss: 12_246_133,
+      employeeExpenses: 11_203_157,
+      calculatedEBITDA: 1_042_976,
+      depreciationAmortization: 243_858,
+      profitLossFromOperatingActivities: 799_118,
+      otherFinancialExpenses: 55_911,
+      otherFinancialIncome: 115_300,
+      calculatedEBIT: 858_507,
+      profitLossBeforeTax: 858_507,
+      tax: 208_964,
+      profitLoss: 649_543,
+      revenue: undefined,
+      externalExpenses: undefined,
+      otherOperatingExpenses: undefined,
+      otherOperatingIncome: undefined,
+      grossResult: undefined,
+    }));
+
+    expect(report.balance).toEqual(expect.objectContaining<Balance>({
+      date: '2020-12-31',
+      assets: {
+        total: 8_752_513,
+        noncurrentAssets: {
+          total: 1_638_836,
+          intangibleAssets: {
+            total: undefined,
+            goodwill: undefined,
+            completedDevelopmentProjects: undefined,
+          },
+          tangibleAssets: {
+            total: 1_303_961,
+          },
+          financialAssets: {
+            total: 334_875,
+          }
+        },
+        currentAssets: {
+          total: 7_113_677,
+          inventories: 165_000,
+          cashAndCashEquivalents: 92_870,
+          shorttermReceivables: 6_855_807
+        }
+      },
+      liabilitiesAndEquity: {
+        total: 8_752_513,
+        equity: {
+          total: 1_718_822,
+          contributedCapital: 50_000,
+          retainedEarnings: 1_668_822
+        },
+        provisions: {
+          total: 191_332
+        },
+        liabilitiesOtherThanProvisions: {
+          total: 6_842_359,
+          shorttermLiabilities: 6_842_359,
+          longtermLiabilities: undefined
         }
       }
     }));

@@ -1,8 +1,8 @@
 import { findInstants, findPeriods, Instant, parseXbrlFile, Period } from '../xbrl/index.js';
+import { ensureArray } from '../util.js';
 import type { AnnualReport, Balance, IncomeStatement } from '../types';
 import type { NumberWithUnitRef, XbrliXbrl } from '../xbrl/types';
 import type { Parser } from './parser';
-import { ensureArray } from '../util.js';
 
 /**
  * Parser that understands the XBRL taxonomy for many Danish companies as fetched from CVR.

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><!-- Version: 1.1.1030.0 --><!-- Document created: 12-05-2021 09:24:24 --><!-- Created by:  XBRL Wizard, EasyX --><xbrli:xbrl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:entry="http://xbrl.dcca.dk/entryBalanceSheetAccountFormIncomeStatementByNature" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:tax="http://xbrl.dcca.dk/tax" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:gen="http://xbrl.org/2008/generic" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:variable="http://xbrl.org/2008/variable" xmlns:eogs="http://xbrl.dcca.dk/eogs" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:dst="http://xbrl.dcca.dk/dst" xmlns:arr="http://xbrl.dcca.dk/arr" xmlns:valm="http://xbrl.org/2010/message/validation" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:msg="http://xbrl.org/2010/message" xmlns:fsa="http://xbrl.dcca.dk/fsa" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:label="http://xbrl.org/2008/label" xmlns:mrv="http://xbrl.dcca.dk/mrv" xmlns:esg="http://xbrl.dcca.dk/esg" xmlns:sob="http://xbrl.dcca.dk/sob" xsi:schemaLocation="http://xbrl.org/2006/xbrldi http://www.xbrl.org/2006/xbrldi-2006.xsd">
+<?xml version="1.0" encoding="UTF-8"?><!-- Version: 1.1.1030.0 --><!-- Document created: 12-05-2021 09:24:24 --><!-- Created by:  XBRL Wizard, EasyX -->
+<xbrli:xbrl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:entry="http://xbrl.dcca.dk/entryBalanceSheetAccountFormIncomeStatementByNature" xmlns:gsd="http://xbrl.dcca.dk/gsd" xmlns:tax="http://xbrl.dcca.dk/tax" xmlns:tch="http://xbrl.dcca.dk/tch" xmlns:gen="http://xbrl.org/2008/generic" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:variable="http://xbrl.org/2008/variable" xmlns:eogs="http://xbrl.dcca.dk/eogs" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:dst="http://xbrl.dcca.dk/dst" xmlns:arr="http://xbrl.dcca.dk/arr" xmlns:valm="http://xbrl.org/2010/message/validation" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:msg="http://xbrl.org/2010/message" xmlns:fsa="http://xbrl.dcca.dk/fsa" xmlns:cmn="http://xbrl.dcca.dk/cmn" xmlns:label="http://xbrl.org/2008/label" xmlns:mrv="http://xbrl.dcca.dk/mrv" xmlns:esg="http://xbrl.dcca.dk/esg" xmlns:sob="http://xbrl.dcca.dk/sob" xsi:schemaLocation="http://xbrl.org/2006/xbrldi http://www.xbrl.org/2006/xbrldi-2006.xsd">
   <link:schemaRef xlink:type="simple" xlink:href="http://archprod.service.eogs.dk/taxonomy/20201001/entryDanishGAAPBalanceSheetAccountFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20201001.xsd"/>
   <xbrli:context id="ctx1">
     <xbrli:entity>
@@ -868,17 +869,6 @@
   <mrv:ValueOfKeyFigureOrFinancialRatio contextRef="ctx34" unitRef="pure" decimals="2">0.15</mrv:ValueOfKeyFigureOrFinancialRatio>
   <mrv:NameOfKeyFigureOrFinancialRatio contextRef="ctx35" xml:lang="da">Soliditetsgrad efter kapitaltilførelse gennemført i maj 2018</mrv:NameOfKeyFigureOrFinancialRatio>
   <mrv:ValueOfKeyFigureOrFinancialRatio contextRef="ctx35" unitRef="pure" decimals="1">0</mrv:ValueOfKeyFigureOrFinancialRatio>
-  <cmn:NameAndSurnameOfMemberOfExecutiveBoard contextRef="ctx36" xml:lang="da">Henrik Bodskov</cmn:NameAndSurnameOfMemberOfExecutiveBoard>
-  <cmn:TitleOfMemberOfExecutiveBoard contextRef="ctx36" xml:lang="da">Adm. direktør</cmn:TitleOfMemberOfExecutiveBoard>
-  <cmn:NameAndSurnameOfMemberOfExecutiveBoard contextRef="ctx37" xml:lang="da">Frank Bøje Andersen</cmn:NameAndSurnameOfMemberOfExecutiveBoard>
-  <cmn:NameAndSurnameOfMemberOfExecutiveBoard contextRef="ctx38" xml:lang="da">Liselotte Tornøe Bøje</cmn:NameAndSurnameOfMemberOfExecutiveBoard>
-  <cmn:NameAndSurnameOfMemberOfExecutiveBoard contextRef="ctx39" xml:lang="da">Jesper Braum Nielsen</cmn:NameAndSurnameOfMemberOfExecutiveBoard>
-  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ctx40" xml:lang="da">Henrik Tang Hedegaard</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
-  <cmn:TitleOfMemberOfSupervisoryBoard contextRef="ctx40" xml:lang="da">Formand</cmn:TitleOfMemberOfSupervisoryBoard>
-  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ctx41" xml:lang="da">Helle Valentin</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
-  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ctx42" xml:lang="da">Henrik Frøkjær-Jensen</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
-  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ctx43" xml:lang="da">Kim Frederiksen</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
-  <cmn:NameAndSurnameOfMemberOfSupervisoryBoard contextRef="ctx44" xml:lang="da">Flemming Madsen</cmn:NameAndSurnameOfMemberOfSupervisoryBoard>
   <fsa:Revenue contextRef="ctx45" unitRef="vDKK" decimals="-3">5030438000</fsa:Revenue>
   <fsa:OtherOperatingIncome contextRef="ctx45" unitRef="vDKK" decimals="-3">12921000</fsa:OtherOperatingIncome>
   <fsa:ExternalExpenses contextRef="ctx45" unitRef="vDKK" decimals="-3">3088013000</fsa:ExternalExpenses>
@@ -938,11 +928,8 @@
   <gsd:AddressOfAuditorDistrictName contextRef="ctx50" xml:lang="da">Hellerup</gsd:AddressOfAuditorDistrictName>
   <cmn:NameOfAuditFirm contextRef="ctx50" xml:lang="da">PricewaterhouseCoopers Statsautoriseret Revisionspartnerselskab</cmn:NameOfAuditFirm>
   <cmn:IdentificationNumberCvrOfAuditFirm contextRef="ctx50">33771231</cmn:IdentificationNumberCvrOfAuditFirm>
-  <cmn:NameAndSurnameOfAuditor contextRef="ctx50" xml:lang="da">Brian Christiansen</cmn:NameAndSurnameOfAuditor>
   <cmn:DescriptionOfAuditor contextRef="ctx50" xml:lang="da">statsautoriseret revisor</cmn:DescriptionOfAuditor>
   <cmn:IdentificationNumberOfAuditor contextRef="ctx50">mne23371</cmn:IdentificationNumberOfAuditor>
-  <cmn:NameAndSurnameOfAuditor contextRef="ctx51" xml:lang="da">Dan Bjerregaard</cmn:NameAndSurnameOfAuditor>
-  <cmn:DescriptionOfAuditor contextRef="ctx51" xml:lang="da">statsautoriseret revisor</cmn:DescriptionOfAuditor>
   <cmn:IdentificationNumberOfAuditor contextRef="ctx51">mne33701</cmn:IdentificationNumberOfAuditor>
   <cmn:IdentificationNumberCvrOfAuditFirm contextRef="ctx51">33771231</cmn:IdentificationNumberCvrOfAuditFirm>
   <cmn:NameOfAuditFirm contextRef="ctx51" xml:lang="da">PricewaterhouseCoopers Statsautoriseret Revisionspartnerselskab</cmn:NameOfAuditFirm>

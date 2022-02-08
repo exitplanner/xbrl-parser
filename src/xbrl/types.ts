@@ -1,260 +1,16 @@
-// Created by quicktype. The names might not make sense. Some of them are renamed manually.
-// Some extra types have been added based on taxonomies.
+// Initially created by quicktype.
+// - The names might not make sense.
+// - Some of them are renamed manually.
+// - Some extra types have been added based on taxonomies.
 
 export interface XBRLDocument {
   '?xml': XML;
   'xbrli:xbrl'?: XbrliXbrl;
-  xbrl?: Xbrl;
-  '?instance-generator'?: InstanceGenerator;
-}
-
-export interface InstanceGenerator {
-  '@_id': string;
-  '@_version': string;
-  '@_creationdate': string;
 }
 
 export interface XML {
   '@_version': string;
   '@_encoding': string;
-}
-
-export interface Xbrl {
-  'link:schemaRef': LinkSchemaRef;
-  'c:IdentificationOfApprovedAnnualReport': StringNode;
-  'c:ConfirmationThatAnnualReportIsPresentedInAccordanceWithRequirementsProvidedForByLegislationAnyStandardsAndRequirementsProvidedByArticlesOfAssociationOrByAgreement': StringNode;
-  'c:ConfirmationThatFinancialStatementGivesTrueAndFairViewOfAssetsLiabilitiesEquityFinancialPositionAndResults': StringNode;
-  'c:ManagementsStatementAboutManagementsReview': StringNode;
-  'c:RecommendationForApprovalOfAnnualReportByGeneralMeeting': StringNode;
-  'd:NameAndSurnameOfMemberOfExecutiveBoard': StringNode[] | StringNode;
-  'e:AddresseeOfAuditorsReportOnExtendedReviewOfFinancialStatements'?: StringNode;
-  'e:OpinionOnFinancialStatementsExtendedReview'?: StringNode;
-  'e:DescriptionOfQualificationsOfFinancialStatementsExtendedReview'?: StringNode;
-  'e:StatementOfExecutiveAndSupervisoryBoardsResponsibilityForFinancialStatementsExtendedReview'?: StringNode;
-  'e:StatementOfAuditorsResponsibilityExtendedReview'?: StringNode;
-  'e:StatementOnManagementsReviewAuditorsReportOnExtendedReviewFinancialStatementsExtendedReview'?: StringNode;
-  'e:SignatureOfAuditorsPlace'?: StringNode;
-  'e:SignatureOfAuditorsDate'?: StringNode;
-  'd:NameOfAuditFirm'?: StringNode[];
-  'd:NameAndSurnameOfAuditor'?: StringNode[];
-  'd:DescriptionOfAuditor'?: StringNode[];
-  'd:IdentificationNumberOfAuditor'?: StringNode;
-  'f:DescriptionOfPrimaryActivitiesOfEntity'?: StringNode;
-  'f:DescriptionOfBranchesAbroad'?: StringNode;
-  'g:GrossProfitLoss'?: NumberWithUnitRef[];
-  'g:EmployeeBenefitsExpense'?: NumberWithUnitRef[];
-  'g:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss'?: NumberWithUnitRef[];
-  'g:OtherOperatingExpenses'?: NumberWithUnitRef[];
-  'g:ProfitLossFromOrdinaryOperatingActivities'?: NumberWithUnitRef[];
-  'g:IncomeFromInvestmentsInGroupEnterprises'?: NumberWithUnitRef[];
-  'g:OtherFinanceIncome'?: NumberWithUnitRef[];
-  'g:OtherFinanceExpenses'?: NumberWithUnitRef[];
-  'g:ProfitLossFromOrdinaryActivitiesBeforeTax'?: NumberWithUnitRef[];
-  'g:TaxExpense'?: NumberWithUnitRef[];
-  'g:ProfitLoss'?: NumberWithUnitRef[];
-  'g:CompletedDevelopmentProjects'?: NumberWithUnitRef[];
-  'g:Goodwill'?: NumberWithUnitRef[];
-  'g:IntangibleAssets'?: NumberWithUnitRef[];
-  'g:FixturesFittingsToolsAndEquipment'?: NumberWithUnitRef[];
-  'g:LeaseholdImprovements'?: NumberWithUnitRef[];
-  'g:PropertyPlantAndEquipment'?: NumberWithUnitRef[];
-  'g:NoncurrentAssets'?: NumberWithUnitRef[];
-  'g:ManufacturedGoodsAndGoodsForResale'?: NumberWithUnitRef[];
-  'g:Inventories'?: NumberWithUnitRef[];
-  'g:ShorttermTradeReceivables'?: NumberWithUnitRef[];
-  'g:OtherShorttermReceivables'?: NumberWithUnitRef[];
-  'g:ShorttermTaxReceivables'?: NumberWithUnitRef[];
-  'g:DeferredIncomeAssets'?: NumberWithUnitRef[];
-  'g:ShorttermReceivables'?: NumberWithUnitRef[];
-  'g:CashAndCashEquivalents'?: NumberWithUnitRef[];
-  'g:CurrentAssets'?: NumberWithUnitRef[];
-  'g:Assets'?: NumberWithUnitRef[];
-  'g:ContributedCapital'?: NumberWithUnitRef[];
-  'g:ReserveForDevelopmentExpenditure'?: NumberWithUnitRef[];
-  'g:RetainedEarnings'?: NumberWithUnitRef[];
-  'g:Equity'?: NumberWithUnitRef[];
-  'g:ProvisionsForDeferredTax'?: NumberWithUnitRef[];
-  'g:Provisions'?: NumberWithUnitRef[];
-  'g:ShorttermPrepaymentsReceivedFromCustomers'?: NumberWithUnitRef[];
-  'g:ShorttermTradePayables'?: NumberWithUnitRef[];
-  'g:ShorttermPayablesToShareholdersAndManagement'?: NumberWithUnitRef[];
-  'g:ShorttermTaxPayables'?: NumberWithUnitRef[];
-  'g:OtherShorttermPayables'?: NumberWithUnitRef[];
-  'g:ShorttermLiabilitiesOtherThanProvisions'?: NumberWithUnitRef[];
-  'g:LiabilitiesOtherThanProvisions'?: NumberWithUnitRef[];
-  'g:LiabilitiesAndEquity'?: NumberWithUnitRef[];
-  'g:EquityTransfersToReserves'?: NumberWithUnitRef[];
-  'g:InformationOnReportingClassOfEntity'?: StringNode;
-  'g:DescriptionOfGeneralMattersRelatedToRecognitionMeasurementAndChangesInAccountingPolicies'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfGrossProfitLoss'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfRevenue'?: StringNode;
-  'g:DescriptionOfRawMaterialsAndConsumablesUsed'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfOtherOperatingExpenses'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfExternalExpenses'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfEmployeeBenefitExpense'?: StringNode;
-  'g:DescriptionOfMethodsOfImpairmentLossesAndDepreciation'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfFinanceIncomeAndExpenses'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfTaxExpenses'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfIntangibleAssets'?: StringNode;
-  'g:ExplanationOfAmortizationPeriodForGoodwill'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfPropertyPlantAndEquipment'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisForInvestmentsInSubsidiariesAndAssociates'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfInventories'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfReceivables'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfContractWorkInProgress'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfDeferredIncomeAssets'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfCashAndCashEquivalents'?: StringNode;
-  'g:DescriptionOfMethodsOfDividends'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfTaxPayablesAndDeferredTax'?: StringNode;
-  'g:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfLiabilitiesOtherThanProvisions'?: StringNode;
-  'g:DescriptionOfMethodsOfForeignCurrencies'?: StringNode;
-  'g:WagesAndSalaries'?: NumberWithUnitRef[];
-  'g:PostemploymentBenefitExpense'?: NumberWithUnitRef[];
-  'g:SocialSecurityContributions'?: NumberWithUnitRef[];
-  'g:EmployeeExpensesTransferredToAssets'?: NumberWithUnitRef[];
-  'g:AverageNumberOfEmployees'?: NumberWithUnitRef[];
-  'g:AmortisationOfIntangibleAssets'?: NumberWithUnitRef[];
-  'g:DepreciationOfPropertyPlantAndEquipment'?: NumberWithUnitRef[];
-  'g:OtherInterestIncome'?: NumberWithUnitRef[];
-  'g:InterestExpenseToParticipatingInterests'?: NumberWithUnitRef[];
-  'g:OtherInterestExpenses'?: NumberWithUnitRef[];
-  'g:IntangibleAssetsGross'?: NumberWithUnitRef[];
-  'g:AccumulatedImpairmentLossesAndAmortisationOfIntangibleAssets'?: NumberWithUnitRef[];
-  'g:fInformationOnSpecificPrerequisitesRegardingDevelopmentProjects'?: StringNode;
-  'g:PropertyPlantAndEquipmentGross'?: NumberWithUnitRef[];
-  'g:AdditionsToPropertyPlantAndEquipment'?: NumberWithUnitRef[];
-  'g:DisposalsOfPropertyPlantAndEquipment'?: NumberWithUnitRef[];
-  'g:AccumulatedRevaluationOfPropertyPlantAndEquipment'?: NumberWithUnitRef[];
-  'g:AccumulatedImpairmentLossesAndDepreciationOfPropertyPlantAndEquipment'?: NumberWithUnitRef[];
-  'g:InvestmentsGross'?: NumberWithUnitRef[];
-  'g:AccumulatedRevaluationsOfInvestments'?: NumberWithUnitRef[];
-  'g:ProfitLossRelatedToInvestments'?: NumberWithUnitRef[];
-  'g:LongtermInvestmentsAndReceivables'?: NumberWithUnitRef[];
-  'g:RelatedEntityName'?: StringNode;
-  'g:RelatedEntityRegisteredOffice'?: StringNode;
-  'g:ShareHeldByEntityOrConsolidatedEnterprisesInRelatedEntity'?: NumberWithUnitRef;
-  'g:DisclosureOfContingentLiabilities'?: StringNode;
-  'g:DisclosureOfMortgagesAndCollaterals'?: StringNode;
-  'h:InformationOnTypeOfSubmittedReport'?: StringNode;
-  'h:IdentificationNumberCvrOfSubmittingEnterprise'?: DIdentificationNumberCvrOfAuditFirm;
-  'h:NameOfSubmittingEnterprise'?: StringNode;
-  'h:AddressOfSubmittingEnterpriseStreetAndNumber'?: StringNode;
-  'h:AddressOfSubmittingEnterprisePostcodeAndTown'?: StringNode;
-  'h:ReportingPeriodStartDate'?: StringNode;
-  'h:ReportingPeriodEndDate'?: StringNode;
-  'h:PrecedingReportingPeriodStartDate'?: StringNode;
-  'h:PredingReportingPeriodEndDate'?: StringNode;
-  'h:IdentificationNumberCvrOfReportingEntity'?: DIdentificationNumberCvrOfAuditFirm;
-  'h:NameOfReportingEntity'?: StringNode;
-  'h:AddressOfReportingEntityStreetName'?: StringNode;
-  'h:AddressOfReportingEntityStreetBuildingIdentifier'?: DIdentificationNumberCvrOfAuditFirm;
-  'h:AddressOfReportingEntityPostCodeIdentifier'?: DIdentificationNumberCvrOfAuditFirm;
-  'h:AddressOfReportingEntityDistrictName'?: StringNode;
-  'h:AddressOfReportingEntityCountryIdentificationCode'?: StringNode;
-  'h:AddressOfReportingEntityCountry'?: StringNode;
-  'h:DateOfFoundationOfReportingEntity'?: StringNode;
-  'h:RegisteredOfficeOfReportingEntity'?: StringNode;
-  'h:NameOfFinancialInstitution'?: StringNode;
-  'd:IdentificationNumberCvrOfAuditFirm'?: DIdentificationNumberCvrOfAuditFirm;
-  'h:AddressOfAuditorStreetName'?: StringNode;
-  'h:AddressOfAuditorStreetBuildingIdentifier'?: DIdentificationNumberCvrOfAuditFirm;
-  'h:AddressOfAuditorPostCodeIdentifier'?: DIdentificationNumberCvrOfAuditFirm;
-  'h:AddressOfAuditorDistrictName'?: StringNode;
-  'h:AddressOfAuditorCountryIdentificationCode'?: StringNode;
-  'h:AddressOfAuditorCountry'?: StringNode;
-  'h:DateOfGeneralMeeting'?: StringNode;
-  'h:NameAndSurnameOfChairmanOfGeneralMeeting'?: StringNode;
-  'g:ClassOfReportingEntity'?: StringNode;
-  'g:SelectedElementsFromReportingClassC'?: EReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview;
-  'd:TypeOfAuditorAssistance': StringNode;
-  'h:ToolForPreparingTheXBRLInstanceDocument'?: StringNode;
-  'e:ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCriminalCodeAndFiscalTaxAndSubsidyLegislationExtendedReview'?: EReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview;
-  'e:ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyTheCompaniesActOrEquivalentLegislationThatTheCompanyIsSubjectToExtendedReview'?: EReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview;
-  'e:ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview'?: EReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview;
-  'e:ReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyOtherMattersExtendedReview'?: EReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview;
-  context: Context[];
-  unit: Unit[];
-  '@_xmlns': string;
-  '@_xmlns:c': string;
-  '@_xmlns:b': string;
-  '@_xmlns:f': string;
-  '@_xmlns:e': string;
-  '@_xmlns:d': string;
-  '@_xmlns:h'?: string;
-  '@_xmlns:g': string;
-  '@_xmlns:xlink': string;
-  '@_xmlns:xbrli': string;
-  '@_xmlns:iso4217': string;
-  '@_xmlns:xbrldi': string;
-  '@_xmlns:link': string;
-  '@_xmlns:xsi': string;
-  '@_xsi:schemaLocation': string;
-  'c:ConfirmationThatFinancialStatementsAreExemptedFromAuditing'?: StringNode;
-  'd:TitleOfMemberOfExecutiveBoard'?: StringNode;
-  'e:DescriptionOfPrimaryActivitiesOfEntity'?: StringNode;
-  'e:DescriptionOfDevelopmentInActivitiesAndFinancialAffairs'?: StringNode;
-  'f:GrossProfitLoss'?: NumberWithUnitRef[];
-  'f:IncomeFromInvestmentsInGroupEnterprises'?: NumberWithUnitRef[];
-  'f:OtherFinanceIncome'?: NumberWithUnitRef[];
-  'f:OtherFinanceExpenses'?: NumberWithUnitRef[];
-  'f:ProfitLossFromOrdinaryActivitiesBeforeTax'?: NumberWithUnitRef[];
-  'f:TaxExpense'?: NumberWithUnitRef[];
-  'f:ProfitLoss'?: NumberWithUnitRef[];
-  'f:LongtermInvestmentsInGroupEnterprises'?: NumberWithUnitRef[];
-  'f:LongtermInvestmentsAndReceivables'?: NumberWithUnitRef[];
-  'f:NoncurrentAssets'?: NumberWithUnitRef[];
-  'f:ShorttermReceivablesFromAssociates'?: NumberWithUnitRef[];
-  'f:ShorttermReceivablesFromOwnersAndManagement'?: NumberWithUnitRef[];
-  'f:ShorttermReceivables'?: NumberWithUnitRef[];
-  'f:CashAndCashEquivalents'?: NumberWithUnitRef[];
-  'f:CurrentAssets'?: NumberWithUnitRef[];
-  'f:Assets'?: NumberWithUnitRef[];
-  'f:ContributedCapital'?: NumberWithUnitRef[];
-  'f:ReserveForEntrepreneurialCompany'?: NumberWithUnitRef[];
-  'f:RetainedEarnings'?: NumberWithUnitRef[];
-  'f:Equity'?: NumberWithUnitRef[];
-  'f:ShorttermPayablesToGroupEnterprises'?: NumberWithUnitRef[];
-  'f:ShorttermLiabilitiesOtherThanProvisions'?: NumberWithUnitRef[];
-  'f:LiabilitiesOtherThanProvisions'?: NumberWithUnitRef[];
-  'f:LiabilitiesAndEquity'?: NumberWithUnitRef[];
-  'f:InvestmentsGross'?: NumberWithUnitRef[];
-  'f:AccumulatedRevaluationsOfInvestments'?: NumberWithUnitRef[];
-  'f:ProfitLossRelatedToInvestments'?: NumberWithUnitRef[];
-  'f:DisclosureOfInvestments'?: StringNode;
-  'f:RelatedEntityName'?: StringNode;
-  'f:RelatedEntityRegisteredOffice'?: StringNode;
-  'f:ShareHeldByEntityOrConsolidatedEnterprisesInRelatedEntity'?: NumberWithUnitRef;
-  'f:InterestRateRelatedToOutstandingDebtFromManagementCategory'?: NumberWithUnitRef[];
-  'g:InformationOnTypeOfSubmittedReport'?: StringNode;
-  'g:IdentificationNumberCvrOfSubmittingEnterprise'?: DIdentificationNumberCvrOfAuditFirm;
-  'g:NameOfSubmittingEnterprise'?: StringNode;
-  'g:AddressOfSubmittingEnterpriseStreetAndNumber'?: StringNode;
-  'g:AddressOfSubmittingEnterprisePostcodeAndTown'?: StringNode;
-  'g:ReportingPeriodStartDate'?: StringNode;
-  'g:ReportingPeriodEndDate'?: StringNode;
-  'g:PrecedingReportingPeriodStartDate'?: StringNode;
-  'g:PredingReportingPeriodEndDate'?: StringNode;
-  'g:IdentificationNumberCvrOfReportingEntity'?: DIdentificationNumberCvrOfAuditFirm;
-  'g:NameOfReportingEntity'?: StringNode;
-  'g:AddressOfReportingEntityStreetName'?: StringNode;
-  'g:AddressOfReportingEntityStreetBuildingIdentifier'?: DIdentificationNumberCvrOfAuditFirm;
-  'g:AddressOfReportingEntityPostCodeIdentifier'?: DIdentificationNumberCvrOfAuditFirm;
-  'g:AddressOfReportingEntityDistrictName'?: StringNode;
-  'g:AddressOfReportingEntityCountryIdentificationCode'?: StringNode;
-  'g:AddressOfReportingEntityCountry'?: StringNode;
-  'g:RegisteredOfficeOfReportingEntity'?: StringNode;
-  'g:DateOfGeneralMeeting'?: StringNode;
-  'g:NameAndSurnameOfChairmanOfGeneralMeeting'?: StringNode;
-  'f:ClassOfReportingEntity'?: StringNode;
-  'f:SelectedElementsFromReportingClassC'?: EReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview;
-  'f:InformationOnReportingClassOfEntity'?: StringNode;
-  'f:DescriptionOfGeneralMattersRelatedToRecognitionMeasurementAndChangesInAccountingPolicies'?: StringNode;
-  'f:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfFinanceIncomeAndExpenses'?: StringNode;
-  'f:DescriptionOfMethodsOfRecognitionAndMeasurementBasisForInvestmentsInSubsidiariesAndAssociates'?: StringNode;
-  'f:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfReceivables'?: StringNode;
-  'f:DescriptionOfMethodsOfDividends'?: StringNode;
-  'f:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfTaxPayablesAndDeferredTax'?: StringNode;
-  'f:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfLiabilitiesOtherThanProvisions'?: StringNode;
 }
 
 export interface StringNode {
@@ -263,31 +19,9 @@ export interface StringNode {
   '@_xml:lang'?: string;
 }
 
-export interface Context {
-  entity: Entity;
-  period: Period;
-  '@_id': string;
-  scenario?: Scenario;
-}
-
-export interface Entity {
-  identifier: Identifier;
-}
-
 export interface Identifier {
   '#text': number;
   '@_scheme': string;
-}
-
-export interface Period {
-  startDate?: string;
-  endDate?: string;
-  instant?: string;
-}
-
-export interface Scenario {
-  'xbrldi:typedMember'?: ScenarioXbrldiTypedMember;
-  'xbrldi:explicitMember'?: XbrldiExplicitMember;
 }
 
 export interface XbrldiExplicitMember {
@@ -305,11 +39,6 @@ export interface ScenarioXbrldiTypedMember {
 
 export interface DIdentificationNumberCvrOfAuditFirm {
   '#text': number;
-  '@_contextRef': string;
-}
-
-export interface EReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview {
-  '#text': boolean;
   '@_contextRef': string;
 }
 
@@ -351,7 +80,7 @@ export interface XbrliXbrl {
   'cmn:NameOfAuditFirm'?: StringNode[] | StringNode;
   'cmn:TitleOfMemberOfSupervisoryBoard'?: StringNode;
   'cmn:TypeOfAuditorAssistance': StringNode;
-  'fsa:AccountingPoliciesAreUnchangedFromPreviousPeriod': Fsa;
+  'fsa:AccountingPoliciesAreUnchangedFromPreviousPeriod': BooleanWithRef;
   'fsa:Assets': NumberWithUnitRef[];
   'fsa:AverageNumberOfEmployees'?: NumberWithUnitRef[];
   'fsa:CashAndCashEquivalents': NumberWithUnitRef[];
@@ -398,7 +127,7 @@ export interface XbrliXbrl {
   'fsa:PurchaseOfTreasuryShares'?: NumberWithUnitRef[];
   'fsa:ReserveForDevelopmentExpenditure'?: NumberWithUnitRef[];
   'fsa:RetainedEarnings': NumberWithUnitRef[];
-  'fsa:SelectedElementsFromReportingClassC'?: Fsa;
+  'fsa:SelectedElementsFromReportingClassC'?: BooleanWithRef;
   'fsa:ShorttermDebtToBanks'?: NumberWithUnitRef[];
   'fsa:ShorttermDeferredIncome'?: NumberWithUnitRef[];
   'fsa:ShorttermLiabilitiesOtherThanProvisions': NumberWithUnitRef[];
@@ -561,8 +290,8 @@ export interface XbrliXbrl {
   '@_xmlns:msg'?: string;
   '@_xmlns:label'?: string;
   '@_xsi:schemaLocation'?: string;
-  'sob:TheReportingEntityAppliesTheExceptionConcerningOptingOutOfTheStatementByManagementEtc'?: EReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview;
-  'fsa:SelectedElementsFromReportingClassD'?: EReportingResponsibilitiesAccordingToTheDanishExecutiveOrderOnApprovedAuditorsReportsEspeciallyLegislationOnFinancialReportingIncludingAccountingAndStorageOfAccountingRecordsExtendedReview;
+  'sob:TheReportingEntityAppliesTheExceptionConcerningOptingOutOfTheStatementByManagementEtc'?: BooleanWithRef;
+  'fsa:SelectedElementsFromReportingClassD'?: BooleanWithRef;
   'gsd:AddressOfReportingEntityCountryIdentificationCode'?: StringNode;
   'mrv:DescriptionOfSignificantEventsOccurringAfterEndOfReportingPeriod'?: StringNode;
   'fsa:DescriptionOfMethodsOfRecognitionAndMeasurementBasisOfGrossProfitLoss'?: StringNode;
@@ -649,7 +378,7 @@ export interface GsdAddressOfAuditorPostCodeIdentifier {
   '@_xml:lang'?: string;
 }
 
-export interface Fsa {
+export interface BooleanWithRef {
   '#text': boolean;
   '@_contextRef': string;
   '@_xml:lang'?: string;

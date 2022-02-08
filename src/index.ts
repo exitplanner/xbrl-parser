@@ -1,5 +1,6 @@
 import { parseXbrlFile } from './xbrl/index.js';
 import { default as CvrParser } from './parsers/cvr.js';
+export * from './types.js';
 import type { Parser } from './parsers/parser';
 
 /**
