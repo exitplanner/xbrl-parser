@@ -1,17 +1,10 @@
-import fs from 'fs';
-import path from 'path';
 import { parseXbrlFile } from '../src/index.js';
+import { loadReport } from './util.js';
 
 describe('xbrl', () => {
-  let xmlString: string;
-
-  beforeAll(async () => {
-    const file = path.join(__dirname, './__fixtures__', 'report1.xml');
-    xmlString = fs.readFileSync(file, 'utf-8');
-  });
-
   it('should parse a XBRL file and return raw document', () => {
-    const xbrl = parseXbrlFile(xmlString);
+    const xbrl = parseXbrlFile(loadReport(1));
+    expect(xbrl['?xml']).toBeTruthy();
     expect(xbrl['xbrli:xbrl']?.['xbrli:context']).toContainEqual(expect.objectContaining({
       'xbrli:entity': {
         'xbrli:identifier': {
@@ -25,5 +18,25 @@ describe('xbrl', () => {
       },
       '@_id': 'ctx1'
     }));
+    expect(xbrl['xbrli:xbrl']?.['fsa:ProfitLoss']).toBeTruthy();
+  });
+
+  it('should parse a XBRL file with different namespaces', () => {
+    const xbrl = parseXbrlFile(loadReport(3));
+    expect(xbrl['?xml']).toBeTruthy();
+    expect(xbrl['xbrli:xbrl']?.['xbrli:context']).toContainEqual(expect.objectContaining({
+      'xbrli:entity': {
+        'xbrli:identifier': {
+          '#text': 38343521,
+          '@_scheme': 'http://www.dcca.dk/cvr'
+        }
+      },
+      'xbrli:period': {
+        'xbrli:startDate': '2020-01-01',
+        'xbrli:endDate': '2020-12-31'
+      },
+      '@_id': 'c11'
+    }));
+    expect(xbrl['xbrli:xbrl']?.['fsa:ProfitLoss']).toBeTruthy();
   });
 });
