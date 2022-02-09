@@ -202,7 +202,11 @@ function extractNumber(node: undefined | NumberWithUnitRef | NumberWithUnitRef[]
     return;
   }
 
-  node = ensureArray(node);
+  node = ensureArray(node).find(n => n['@_contextRef'] === contextRef);
 
-  return node.filter(n => n['@_contextRef'] === contextRef)[0]['#text'];
+  if (!node) {
+    return;
+  }
+
+  return node['#text'];
 }
