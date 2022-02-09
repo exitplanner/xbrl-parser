@@ -1,6 +1,6 @@
 {
   "name": "xbrl-parser",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Module for parsing XBRL files for specific market taxonomies",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
