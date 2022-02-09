@@ -1,6 +1,3 @@
-import { parseXbrlFile } from './xbrl/index.js';
-import { default as CvrParser } from './parsers/cvr.js';
-export * from './types.js';
 import type { Parser } from './parsers/parser';
 
 /**
@@ -14,4 +11,8 @@ export function parseAnnualReport(xmlString: string, parser: Parser) {
   return parser.parseAnnualReport(xmlString);
 }
 
-export { parseXbrlFile, CvrParser };
+// Other sub-module exports
+export { parseXbrlFile } from './xbrl/index.js';
+export { default as CvrParser } from './parsers/cvr.js';
+export { AnnualReport, Balance, IncomeStatement } from './types.js';
+export { Parser } from './parsers/parser.js';
