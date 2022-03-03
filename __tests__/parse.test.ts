@@ -27,13 +27,15 @@ describe('parse', () => {
       depreciationAmortization: 264_924_000,
       otherFinancialIncome: 22_411_000,
       otherFinancialExpenses: 51_439_000,
-      calculatedEBIT: -22_878_000,
+      calculatedEBIT: 6_150_000,
       profitLossBeforeTax: -22_878_000,
       profitLoss: -2_8633_000,
       tax: 5_755_000,
       grossProfitLoss: undefined,
       grossResult: undefined,
     }));
+
+    expect(report.incomeStatement.calculatedEBIT).toEqual(report.incomeStatement.profitLossFromOperatingActivities);
 
     expect(report.balance).toEqual(expect.objectContaining<Balance>({
       date: '2020-12-31',
@@ -101,7 +103,7 @@ describe('parse', () => {
       profitLossFromOperatingActivities: 2_954_097,
       otherFinancialExpenses: 84_114,
       otherFinancialIncome: 10_338,
-      calculatedEBIT: 2_880_321,
+      calculatedEBIT: 2_954_097,
       profitLossBeforeTax: 2_880_321,
       tax: 645_297,
       profitLoss: 2_235_024,
@@ -111,6 +113,8 @@ describe('parse', () => {
       otherOperatingIncome: undefined,
       grossResult: undefined,
     }));
+
+    expect(report.incomeStatement.calculatedEBIT).toEqual(report.incomeStatement.profitLossFromOperatingActivities);
 
     expect(report.balance).toEqual(expect.objectContaining<Balance>({
       date: '2021-07-31',
@@ -177,7 +181,7 @@ describe('parse', () => {
       profitLossFromOperatingActivities: 799_118,
       otherFinancialExpenses: 55_911,
       otherFinancialIncome: 115_300,
-      calculatedEBIT: 858_507,
+      calculatedEBIT: 799_118,
       profitLossBeforeTax: 858_507,
       tax: 208_964,
       profitLoss: 649_543,
@@ -187,6 +191,8 @@ describe('parse', () => {
       otherOperatingIncome: undefined,
       grossResult: undefined,
     }));
+
+    expect(report.incomeStatement.calculatedEBIT).toEqual(report.incomeStatement.profitLossFromOperatingActivities);
 
     expect(report.balance).toEqual(expect.objectContaining<Balance>({
       date: '2020-12-31',
