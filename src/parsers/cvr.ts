@@ -118,25 +118,18 @@ function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatemen
 }
 
 function calculateEBITDA(i: IncomeStatement): number {
-  // Some companies have revenue, some have grossProfitLoss. They are similar
-  // but not quite the same it seems.
-  // TODO: Need to investigate this more!
-  const startingPoint = i.revenue ? i.revenue : i.grossProfitLoss;
-  if (!startingPoint) {
-    return 0;
-  }
-  return startingPoint
-    + (i.otherOperatingIncome || 0)
-    - i.employeeExpenses
-    - (i.externalExpenses || 0)
-    - (i.otherOperatingExpenses || 0);
+  return i.profitLoss
+    + i.tax
+    + (i.depreciationAmortization || 0)
+    // It is assumed that financial expenses and income correspond to interest,
+    // but it is not fully clear from the taxonomy
+    + (i.otherFinancialExpenses || 0)
+    - (i.otherFinancialIncome || 0);
 }
 
 function calculateEBIT(i: IncomeStatement): number {
   return i.calculatedEBITDA
-    - (i.depreciationAmortization || 0)
-    - (i.otherFinancialExpenses || 0)
-    + (i.otherFinancialIncome || 0);
+    - (i.depreciationAmortization || 0);
 }
 
 function extractTax(doc: XbrliXbrl, periodId: string): number {
