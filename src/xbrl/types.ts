@@ -63,7 +63,7 @@ export interface Unit {
 export interface XbrliXbrl {
   'link:schemaRef': LinkSchemaRef;
   'xbrli:context': XbrliContext[];
-  'xbrli:unit': XbrliUnitElement[] | XbrliUnitElement;
+  'xbrli:unit': XbrliUnitElement[];
   'arr:AddresseeOfAuditorsReportOnExtendedReviewOfFinancialStatements'?: StringNode;
   'arr:DescriptionOfQualificationsOfFinancialStatementsExtendedReview'?: StringNode;
   'arr:InformationOnSignatureOfAuditors'?: StringNode;
@@ -423,4 +423,13 @@ export interface XbrliScenarioXbrldiTypedMember {
 export interface XbrliUnitElement {
   'xbrli:measure': string;
   '@_id': string;
+}
+
+export interface NodeWithNamespace {
+  '#text': string;
+  '@_xmlns': string;
+}
+
+export function isNodeWithNamespace(s: string | NodeWithNamespace): s is NodeWithNamespace {
+  return typeof s !== 'string' && '#text' in s;
 }

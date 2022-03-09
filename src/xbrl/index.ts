@@ -1,4 +1,5 @@
 import { XMLParser } from 'fast-xml-parser';
+import { isNodeWithNamespace } from './types.js';
 import type { XBRLDocument, XbrliXbrl } from './types';
 
 type Json = string | number | boolean | null | Json[] | { [key: string]: Json };
@@ -7,11 +8,13 @@ export interface Period {
   id: string;
   startDate: string;
   endDate: string;
+  scenario?: string;
 }
 
 export interface Instant {
   id: string;
   date: string;
+  scenario?: string;
 }
 
 export function parseXbrlFile(xmlString: string): XBRLDocument {
@@ -25,7 +28,34 @@ export function parseXbrlFile(xmlString: string): XBRLDocument {
   }
 
   obj['xbrli:xbrl'] = transformNamespaces(obj[xbrliRootKey]);
-  return obj as XBRLDocument;
+  return fixTextNodes(obj as XBRLDocument);
+}
+
+function fixTextNodes(obj: XBRLDocument): XBRLDocument {
+  if (obj['xbrli:xbrl'] && obj['xbrli:xbrl']['xbrli:context']) {
+    obj['xbrli:xbrl']['xbrli:context'].forEach(c => {
+      if (c['xbrli:period']['xbrli:startDate'] && isNodeWithNamespace(c['xbrli:period']['xbrli:startDate'])) {
+        c['xbrli:period']['xbrli:startDate'] = c['xbrli:period']['xbrli:startDate']['#text'];
+      }
+      if (c['xbrli:period']['xbrli:endDate'] && isNodeWithNamespace(c['xbrli:period']['xbrli:endDate'])) {
+        c['xbrli:period']['xbrli:endDate'] = c['xbrli:period']['xbrli:endDate']['#text'];
+      }
+      if (c['xbrli:period']['xbrli:instant'] && isNodeWithNamespace(c['xbrli:period']['xbrli:instant'])) {
+        c['xbrli:period']['xbrli:instant'] = c['xbrli:period']['xbrli:instant']['#text'];
+      }
+    });
+  }
+  if (obj['xbrli:xbrl'] && obj['xbrli:xbrl']['xbrli:unit']) {
+    if (!Array.isArray(obj['xbrli:xbrl']['xbrli:unit'])) {
+      obj['xbrli:xbrl']['xbrli:unit'] = [obj['xbrli:xbrl']['xbrli:unit']];
+    }
+    obj['xbrli:xbrl']['xbrli:unit'].map(u => {
+      if (u['xbrli:measure'] && isNodeWithNamespace(u['xbrli:measure'])) {
+        u['xbrli:measure'] = u['xbrli:measure']['#text'];
+      }
+    });
+  }
+  return obj;
 }
 
 function transformNamespaces(obj: { [key: string]: Json }): unknown {
@@ -104,12 +134,13 @@ function recursiveNamespaceTransform(obj: Json, namespaceMapping: Record<string,
 
 export function findPeriods(doc: XbrliXbrl): ({ VAT: string } & Period)[] {
   return doc['xbrli:context']
-    .filter(c => !!c['xbrli:period']['xbrli:endDate'])
+    .filter(c => !!c['xbrli:period']['xbrli:endDate'] && !!c['xbrli:period']['xbrli:startDate'])
     .map(c => ({
       VAT: String(c['xbrli:entity']['xbrli:identifier']['#text']),
       id: c['@_id'],
       startDate: c['xbrli:period']['xbrli:startDate'] || '',
-      endDate: c['xbrli:period']['xbrli:endDate'] || ''
+      endDate: c['xbrli:period']['xbrli:endDate'] || '',
+      scenario: c['xbrli:scenario']?.['xbrldi:explicitMember']?.['#text']
     }));
 }
 
@@ -118,6 +149,7 @@ export function findInstants(doc: XbrliXbrl): Instant[] {
     .filter(c => !!c['xbrli:period']['xbrli:instant'])
     .map(c => ({
       id: c['@_id'],
-      date: c['xbrli:period']['xbrli:instant'] || ''
+      date: c['xbrli:period']['xbrli:instant'] || '',
+      scenario: c['xbrli:scenario']?.['xbrldi:explicitMember']?.['#text']
     }));
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xbrl xmlns="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:EOGS-EV10000="http://xbrl.dcca.dk/arr" xmlns:EOGS-EV20000="http://xbrl.dcca.dk/dst" xmlns:EOGS-EV30000="http://xbrl.dcca.dk/eogs" xmlns:EOGS-EV40000="http://xbrl.dcca.dk/fsa" xmlns:EOGS-EV50000="http://xbrl.dcca.dk/gsd" xmlns:EOGS-EV60000="http://xbrl.dcca.dk/mrv" xmlns:EOGS-EV70000="http://xbrl.dcca.dk/sob" xmlns:EOGS-EV80000="http://xbrl.dcca.dk/tax">
+  <link:schemaRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="http://archprod.service.eogs.dk/taxonomy/20120101/entryDanishGAAPBalanceSheetAccountFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20120101.xsd"/>
+  <context xmlns="http://www.xbrl.org/2003/instance" id="nNC0">
+    <entity xmlns="http://www.xbrl.org/2003/instance">
+      <identifier xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">32295843</identifier>
+    </entity>
+    <period xmlns="http://www.xbrl.org/2003/instance">
+      <startDate xmlns="http://www.xbrl.org/2003/instance">2011-07-01</startDate>
+      <endDate xmlns="http://www.xbrl.org/2003/instance">2013-06-30</endDate>
+    </period>
+  </context>
+  <context xmlns="http://www.xbrl.org/2003/instance" id="NC1">
+    <entity xmlns="http://www.xbrl.org/2003/instance">
+      <identifier xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">32295843</identifier>
+    </entity>
+    <period xmlns="http://www.xbrl.org/2003/instance">
+      <startDate xmlns="http://www.xbrl.org/2003/instance">2011-07-01</startDate>
+      <endDate xmlns="http://www.xbrl.org/2003/instance">2012-06-30</endDate>
+    </period>
+  </context>
+  <context xmlns="http://www.xbrl.org/2003/instance" id="EV1">
+    <entity xmlns="http://www.xbrl.org/2003/instance">
+      <identifier xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">32295843</identifier>
+    </entity>
+    <period xmlns="http://www.xbrl.org/2003/instance">
+      <instant xmlns="http://www.xbrl.org/2003/instance">2012-06-30</instant>
+    </period>
+  </context>
+  <context xmlns="http://www.xbrl.org/2003/instance" id="NC2">
+    <entity xmlns="http://www.xbrl.org/2003/instance">
+      <identifier xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">32295843</identifier>
+    </entity>
+    <period xmlns="http://www.xbrl.org/2003/instance">
+      <startDate xmlns="http://www.xbrl.org/2003/instance">2012-07-01</startDate>
+      <endDate xmlns="http://www.xbrl.org/2003/instance">2013-06-30</endDate>
+    </period>
+  </context>
+  <context xmlns="http://www.xbrl.org/2003/instance" id="EV2">
+    <entity xmlns="http://www.xbrl.org/2003/instance">
+      <identifier xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">32295843</identifier>
+    </entity>
+    <period xmlns="http://www.xbrl.org/2003/instance">
+      <instant xmlns="http://www.xbrl.org/2003/instance">2013-06-30</instant>
+    </period>
+  </context>
+  <unit xmlns="http://www.xbrl.org/2003/instance" id="currency">
+    <measure xmlns="http://www.xbrl.org/2003/instance">iso4217:DKK</measure>
+  </unit>
+  <EOGS-EV40000:ProfitLoss contextRef="NC1" precision="INF" unitRef="currency">86952</EOGS-EV40000:ProfitLoss>
+  <EOGS-EV40000:ProfitLoss contextRef="NC2" precision="INF" unitRef="currency">69411</EOGS-EV40000:ProfitLoss>
+  <EOGS-EV50000:InformationOnTypeOfSubmittedReport contextRef="nNC0">Årsrapport</EOGS-EV50000:InformationOnTypeOfSubmittedReport>
+<EOGS-EV40000:Assets contextRef="EV1" precision="INF" unitRef="currency">1786617</EOGS-EV40000:Assets>
+<EOGS-EV40000:Assets contextRef="EV2" precision="INF" unitRef="currency">1774821</EOGS-EV40000:Assets>
+</xbrl>
