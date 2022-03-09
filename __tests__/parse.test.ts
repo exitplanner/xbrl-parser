@@ -237,4 +237,55 @@ describe('parse', () => {
       }
     }));
   });
+
+  it('should parse an annual report with multiple period references that conflict a bit', () => {
+    // This test case could not produce correct income statement on version 0.3.4 and below
+    const report = parseAnnualReport(loadReport(4), new CvrParser());
+
+    expect(report.VAT).toEqual('31189810');
+    expect(report.currency).toEqual('DKK');
+    expect(report.period).toEqual({
+      // c21 is the first period but c64 is the one that reports the type of
+      // report and takes precedence.
+      id: 'c64',
+      startDate: '2020-01-01',
+      endDate: '2020-12-31'
+    });
+
+    expect(report.incomeStatement).toEqual(expect.objectContaining<Partial<IncomeStatement>>({
+      revenue: undefined,
+      externalExpenses: undefined,
+      employeeExpenses: 63_285_043,
+      otherOperatingExpenses: undefined,
+      otherOperatingIncome: undefined,
+      calculatedEBITDA: 28_190_132,
+      profitLossFromOperatingActivities: 26_148_298,
+      depreciationAmortization: 2_041_834,
+      otherFinancialIncome: 1_168_004,
+      otherFinancialExpenses: 225_309,
+      calculatedEBIT: 26_148_298,
+      profitLossBeforeTax: 27_090_993,
+      profitLoss: 20_227_235,
+      tax: 6_863_758,
+      grossProfitLoss: 91_475_175,
+      grossResult: undefined,
+    }));
+  });
+
+  it('should parse an "old" annual report', () => {
+    // This test case failed on version 0.3.4 and below
+    const report = parseAnnualReport(loadReport(5), new CvrParser());
+
+    expect(report.VAT).toEqual('32295843');
+    expect(report.currency).toEqual('DKK');
+    expect(report.period).toEqual({
+      id: 'NC2',
+      startDate: '2012-07-01',
+      endDate: '2013-06-30'
+    });
+
+    expect(report.incomeStatement).toEqual(expect.objectContaining<Partial<IncomeStatement>>({
+      profitLoss: 69_411
+    }));
+  });
 });

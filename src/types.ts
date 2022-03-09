@@ -204,7 +204,7 @@ export interface Balance {
      * da: Hensatte forpligtelser
      */
     provisions: {
-      total?: number;
+      total: number;
     };
 
     /**

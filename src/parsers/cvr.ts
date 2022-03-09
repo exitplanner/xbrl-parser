@@ -17,7 +17,7 @@ export default class CvrParser implements Parser {
     }
 
     const doc = xbrl['xbrli:xbrl'];
-    const { id, startDate, endDate, VAT } = findPrimaryPeriod(doc);
+    const { id, startDate, endDate, VAT } = findBestPeriod(doc);
     const balanceInstant = findPrimaryBalanceInstant(doc);
 
     return {
@@ -35,8 +35,7 @@ export default class CvrParser implements Parser {
 }
 
 function findPrimaryCurrency(doc: XbrliXbrl): string {
-  const units = Array.isArray(doc['xbrli:unit']) ? doc['xbrli:unit'] : [doc['xbrli:unit']];
-  const unit = units
+  const unit = doc['xbrli:unit']
     .filter(u => u['xbrli:measure'].toLowerCase().startsWith('iso4217:'))[0];
 
   if (!unit) {
@@ -46,48 +45,61 @@ function findPrimaryCurrency(doc: XbrliXbrl): string {
   return unit['xbrli:measure'].split(':')[1];
 }
 
-function findPrimaryPeriod(doc: XbrliXbrl): ({ VAT: string } & Period) {
-  const periods = findPeriods(doc);
+function findBestPeriod(doc: XbrliXbrl): { VAT: string } & Period {
+  let periods = findPeriods(doc);
+  // Sort by end date to find "the latest period" and sort out all periods that don't conform.
+  periods = periods.sort((a, b) => b.endDate.localeCompare(a.endDate));
+  const latestEndDate = periods[0].endDate;
 
-  // Assume most companies have expenses for employees so extract the
-  // context ID for each of these to find candidate period IDs. Only those
-  // periods that are left are the actual yearly period.
+  // Assume companies have a field for ProfitLoss since is the mandatory
+  // final field to report on the income statement. Extract the context ID for
+  // each of these to find candidate period IDs. Only those periods that are
+  // left are the actual yearly period.
   const contextIdCandidates = new Set(ensureArray(doc['fsa:ProfitLoss']).map(e => e['@_contextRef']));
+  const typeOfReportContextId = doc['gsd:InformationOnTypeOfSubmittedReport']['@_contextRef'];
 
-  // Sort remaining periods by their date. It is assumed the latest one is the
-  // correct one.
-  const latestPeriod = periods
-    .filter(p => contextIdCandidates.has(p.id))
-    .sort((a, b) => b.endDate.localeCompare(a.endDate))[0];
+  // Only consider periods that have the profit loss field
+  // Then sort them by whether or not:
+  // 1. They were used to declare the report
+  // 2. They have a "scenario" attached to them.
+  // The latter can sometimes _really_ mess with the period and show numbers from a completely different year.
+  periods = periods
+    .filter(p => p.endDate === latestEndDate && contextIdCandidates.has(p.id))
+    .sort((a, b) => {
+      const aPoints = (typeOfReportContextId === a.id ? 1 : 0)
+        + (a.scenario ? -1 : 0);
+      const bPoints = (typeOfReportContextId === b.id ? 1 : 0)
+        + (b.scenario ? -1 : 0);
+      return bPoints - aPoints;
+    });
 
-  // It's a hard error if we cannot find the annual period.
-  if (!latestPeriod) {
-    throw new Error('Cannot find annual period');
-  }
-
-  return latestPeriod;
+  return periods[0];
 }
 
 function findPrimaryBalanceInstant(doc: XbrliXbrl): Instant {
-  const periods = findInstants(doc);
+  let instants = findInstants(doc);
+
+  // Sort by end date to find "the latest period" and sort out all periods that don't conform.
+  instants = instants.sort((a, b) => b.date.localeCompare(a.date));
+  const latestInstant = instants[0].date;
 
   // Assume most companies have assets statement
   // context ID for each of these to find candidate period IDs. Only those
   // periods that are left are the actual yearly period.
   const contextIdCandidates = new Set(ensureArray(doc['fsa:Assets']).map(e => e['@_contextRef']));
 
-  // Sort remaining periods by their date. It is assumed the latest one is the
-  // correct one.
-  const latestInstant = periods
-    .filter(p => contextIdCandidates.has(p.id))
-    .sort((a, b) => b.date.localeCompare(a.date))[0];
+  // Only consider periods that have the profit loss field
+  // Then sort them by whether or not:
+  // 1. They were used to declare the report
+  // 2. They have a "scenario" attached to them.
+  // The latter can sometimes _really_ mess with the period and show numbers from a completely different year.
+  instants = instants
+    .filter(p => p.date === latestInstant && contextIdCandidates.has(p.id))
+    .sort((a, b) => {
+      return (b.scenario ? -1 : 0) - (a.scenario ? -1 : 0);
+    });
 
-  // It's a hard error if we cannot find the annual period.
-  if (!latestInstant) {
-    throw new Error('Cannot find latest balance instant');
-  }
-
-  return latestInstant;
+  return instants[0];
 }
 
 function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatement {
@@ -179,7 +191,7 @@ function createBalanceSheet(doc: XbrliXbrl, instant: Instant): Balance {
         retainedEarnings: extractNumber(doc['fsa:RetainedEarnings'], id),
       },
       provisions: {
-        total: extractNumber(doc['fsa:Provisions'], id)
+        total: extractNumber(doc['fsa:Provisions'], id) || 0
       },
       liabilitiesOtherThanProvisions: {
         total: extractNumber(doc['fsa:LiabilitiesOtherThanProvisions'], id),

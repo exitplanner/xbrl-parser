@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrl xmlns="http://www.xbrl.org/2003/instance" xmlns:f="http://xbrl.dcca.dk/sob" xmlns:b="http://xbrl.dcca.dk/entryBalanceSheetAccountFormIncomeStatementByNature" xmlns:h="http://xbrl.dcca.dk/mrv" xmlns:g="http://xbrl.dcca.dk/arr" xmlns:d="http://xbrl.dcca.dk/cmn" xmlns:e="http://xbrl.dcca.dk/fsa" xmlns:c="http://xbrl.dcca.dk/gsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xbrl.dcca.dk/entryBalanceSheetAccountFormIncomeStatementByNature http://archprod.service.eogs.dk/taxonomy/20201001/entryDanishGAAPBalanceSheetAccountFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20201001.xsd">
+  <link:schemaRef xlink:type="simple" xlink:href="http://archprod.service.eogs.dk/taxonomy/20201001/entryDanishGAAPBalanceSheetAccountFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20201001.xsd"/>
+  <c:InformationOnTypeOfSubmittedReport contextRef="c64">Årsrapport</c:InformationOnTypeOfSubmittedReport>
+  <e:GrossResult contextRef="c590" unitRef="u6" decimals="-3">83237000</e:GrossResult>
+  <e:GrossResult contextRef="c593" unitRef="u6" decimals="-3">67048000</e:GrossResult>
+  <e:GrossResult contextRef="c596" unitRef="u6" decimals="-3">57986000</e:GrossResult>
+  <e:ProfitLossFromOrdinaryOperatingActivities contextRef="c590" unitRef="u6" decimals="-3">22747000</e:ProfitLossFromOrdinaryOperatingActivities>
+  <e:ProfitLossFromOrdinaryOperatingActivities contextRef="c593" unitRef="u6" decimals="-3">26011000</e:ProfitLossFromOrdinaryOperatingActivities>
+  <e:ProfitLossFromOrdinaryOperatingActivities contextRef="c596" unitRef="u6" decimals="-3">22025000</e:ProfitLossFromOrdinaryOperatingActivities>
+  <e:ResultsFromNetFinancials contextRef="c64" unitRef="u6" decimals="-3">943000</e:ResultsFromNetFinancials>
+  <e:ResultsFromNetFinancials contextRef="c588" unitRef="u6" decimals="-3">475000</e:ResultsFromNetFinancials>
+  <e:ResultsFromNetFinancials contextRef="c590" unitRef="u6" decimals="-3">93000</e:ResultsFromNetFinancials>
+  <e:ResultsFromNetFinancials contextRef="c593" unitRef="u6" decimals="-3">118000</e:ResultsFromNetFinancials>
+  <e:ResultsFromNetFinancials contextRef="c596" unitRef="u6" decimals="-3">-724000</e:ResultsFromNetFinancials>
+  <e:ProfitLoss contextRef="c590" unitRef="u6" decimals="-3">19050000</e:ProfitLoss>
+  <e:ProfitLoss contextRef="c593" unitRef="u6" decimals="-3">20167000</e:ProfitLoss>
+  <e:ProfitLoss contextRef="c596" unitRef="u6" decimals="-3">16416000</e:ProfitLoss>
+  <e:Assets contextRef="c592" unitRef="u6" decimals="-3">69897000</e:Assets>
+  <e:Assets contextRef="c595" unitRef="u6" decimals="-3">45194000</e:Assets>
+  <e:Assets contextRef="c598" unitRef="u6" decimals="-3">38592000</e:Assets>
+  <e:Equity contextRef="c592" unitRef="u6" decimals="-3">37036000</e:Equity>
+  <e:Equity contextRef="c595" unitRef="u6" decimals="-3">29211000</e:Equity>
+  <e:Equity contextRef="c598" unitRef="u6" decimals="-3">25468000</e:Equity>
+  <e:InvestmentInPropertyPlantAndEquipment contextRef="c64" unitRef="u6" decimals="-3">99000</e:InvestmentInPropertyPlantAndEquipment>
+  <e:InvestmentInPropertyPlantAndEquipment contextRef="c588" unitRef="u6" decimals="-3">905000</e:InvestmentInPropertyPlantAndEquipment>
+  <e:InvestmentInPropertyPlantAndEquipment contextRef="c590" unitRef="u6" decimals="-3">75000</e:InvestmentInPropertyPlantAndEquipment>
+  <e:InvestmentInPropertyPlantAndEquipment contextRef="c593" unitRef="u6" decimals="-3">0</e:InvestmentInPropertyPlantAndEquipment>
+  <e:InvestmentInPropertyPlantAndEquipment contextRef="c596" unitRef="u6" decimals="-3">0</e:InvestmentInPropertyPlantAndEquipment>
+  <e:AverageNumberOfEmployees contextRef="c590" unitRef="u2" decimals="INF">123</e:AverageNumberOfEmployees>
+  <e:AverageNumberOfEmployees contextRef="c593" unitRef="u2" decimals="INF">90</e:AverageNumberOfEmployees>
+  <e:AverageNumberOfEmployees contextRef="c596" unitRef="u2" decimals="INF">77</e:AverageNumberOfEmployees>
+  <h:ReturnOnCapitalEmployed contextRef="c64" unitRef="u2" decimals="1">37.6</h:ReturnOnCapitalEmployed>
+  <h:ReturnOnCapitalEmployed contextRef="c588" unitRef="u2" decimals="1">48.9</h:ReturnOnCapitalEmployed>
+  <h:ReturnOnCapitalEmployed contextRef="c590" unitRef="u2" decimals="1">32.5</h:ReturnOnCapitalEmployed>
+  <h:ReturnOnCapitalEmployed contextRef="c593" unitRef="u2" decimals="1">57.6</h:ReturnOnCapitalEmployed>
+  <h:ReturnOnCapitalEmployed contextRef="c596" unitRef="u2" decimals="1">57.1</h:ReturnOnCapitalEmployed>
+  <h:EquityRatio contextRef="c64" unitRef="u2" decimals="1">49.5</h:EquityRatio>
+  <h:EquityRatio contextRef="c588" unitRef="u2" decimals="1">24.9</h:EquityRatio>
+  <h:EquityRatio contextRef="c590" unitRef="u2" decimals="1">53</h:EquityRatio>
+  <h:EquityRatio contextRef="c593" unitRef="u2" decimals="1">64.6</h:EquityRatio>
+  <h:EquityRatio contextRef="c596" unitRef="u2" decimals="1">66</h:EquityRatio>
+  <h:ReturnOnEquity contextRef="c64" unitRef="u2" decimals="1">83.3</h:ReturnOnEquity>
+  <h:ReturnOnEquity contextRef="c588" unitRef="u2" decimals="1">100.7</h:ReturnOnEquity>
+  <h:ReturnOnEquity contextRef="c590" unitRef="u2" decimals="1">57.5</h:ReturnOnEquity>
+  <h:ReturnOnEquity contextRef="c593" unitRef="u2" decimals="1">73.8</h:ReturnOnEquity>
+  <h:ReturnOnEquity contextRef="c596" unitRef="u2" decimals="1">69.1</h:ReturnOnEquity>
+  <e:GrossProfitLoss contextRef="c64" unitRef="u6" decimals="0">91475175</e:GrossProfitLoss>
+  <e:GrossProfitLoss contextRef="c588" unitRef="u6" decimals="0">98366614</e:GrossProfitLoss>
+  <e:EmployeeBenefitsExpense contextRef="c64" unitRef="u6" decimals="0">63285043</e:EmployeeBenefitsExpense>
+  <e:EmployeeBenefitsExpense contextRef="c588" unitRef="u6" decimals="0">68650329</e:EmployeeBenefitsExpense>
+  <e:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss contextRef="c64" unitRef="u6" decimals="0">2041834</e:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss>
+  <e:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss contextRef="c588" unitRef="u6" decimals="0">1927817</e:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss>
+  <e:ProfitLossFromOrdinaryOperatingActivities contextRef="c64" unitRef="u6" decimals="0">26148298</e:ProfitLossFromOrdinaryOperatingActivities>
+  <e:ProfitLossFromOrdinaryOperatingActivities contextRef="c588" unitRef="u6" decimals="0">27788468</e:ProfitLossFromOrdinaryOperatingActivities>
+  <e:OtherFinanceIncome contextRef="c64" unitRef="u6" decimals="0">1168004</e:OtherFinanceIncome>
+  <e:OtherFinanceIncome contextRef="c588" unitRef="u6" decimals="0">647451</e:OtherFinanceIncome>
+  <e:OtherFinanceExpenses contextRef="c64" unitRef="u6" decimals="0">225309</e:OtherFinanceExpenses>
+  <e:OtherFinanceExpenses contextRef="c588" unitRef="u6" decimals="0">172097</e:OtherFinanceExpenses>
+  <e:ProfitLossFromOrdinaryActivitiesBeforeTax contextRef="c64" unitRef="u6" decimals="0">27090993</e:ProfitLossFromOrdinaryActivitiesBeforeTax>
+  <e:ProfitLossFromOrdinaryActivitiesBeforeTax contextRef="c588" unitRef="u6" decimals="0">28263822</e:ProfitLossFromOrdinaryActivitiesBeforeTax>
+  <e:TaxExpense contextRef="c64" unitRef="u6" decimals="0">6863758</e:TaxExpense>
+  <e:TaxExpense contextRef="c588" unitRef="u6" decimals="0">2474945</e:TaxExpense>
+  <e:ProfitLoss contextRef="c64" unitRef="u6" decimals="0">20227235</e:ProfitLoss>
+  <e:ProfitLoss contextRef="c588" unitRef="u6" decimals="0">25788877</e:ProfitLoss>
+  <e:AcquiredOtherSimilarRights contextRef="c109" unitRef="u6" decimals="0">4093978</e:AcquiredOtherSimilarRights>
+  <e:AcquiredOtherSimilarRights contextRef="c108" unitRef="u6" decimals="0">5106997</e:AcquiredOtherSimilarRights>
+  <e:Goodwill contextRef="c109" unitRef="u6" decimals="0">17422061</e:Goodwill>
+  <e:Goodwill contextRef="c108" unitRef="u6" decimals="0">18417592</e:Goodwill>
+  <e:IntangibleAssets contextRef="c109" unitRef="u6" decimals="0">21516039</e:IntangibleAssets>
+  <e:IntangibleAssets contextRef="c108" unitRef="u6" decimals="0">23524589</e:IntangibleAssets>
+  <e:FixturesFittingsToolsAndEquipment contextRef="c109" unitRef="u6" decimals="0">72558</e:FixturesFittingsToolsAndEquipment>
+  <e:FixturesFittingsToolsAndEquipment contextRef="c108" unitRef="u6" decimals="0">0</e:FixturesFittingsToolsAndEquipment>
+  <e:LeaseholdImprovements contextRef="c109" unitRef="u6" decimals="0">0</e:LeaseholdImprovements>
+  <e:LeaseholdImprovements contextRef="c108" unitRef="u6" decimals="0">0</e:LeaseholdImprovements>
+  <e:PropertyPlantAndEquipment contextRef="c109" unitRef="u6" decimals="0">72558</e:PropertyPlantAndEquipment>
+  <e:PropertyPlantAndEquipment contextRef="c108" unitRef="u6" decimals="0">0</e:PropertyPlantAndEquipment>
+  <e:LongtermInvestmentsInGroupEnterprises contextRef="c109" unitRef="u6" decimals="0">0</e:LongtermInvestmentsInGroupEnterprises>
+  <e:LongtermInvestmentsInGroupEnterprises contextRef="c108" unitRef="u6" decimals="0">0</e:LongtermInvestmentsInGroupEnterprises>
+  <e:OtherLongtermReceivables contextRef="c109" unitRef="u6" decimals="0">27396</e:OtherLongtermReceivables>
+  <e:OtherLongtermReceivables contextRef="c108" unitRef="u6" decimals="0">119979</e:OtherLongtermReceivables>
+  <e:LongtermInvestmentsAndReceivables contextRef="c109" unitRef="u6" decimals="0">27396</e:LongtermInvestmentsAndReceivables>
+  <e:LongtermInvestmentsAndReceivables contextRef="c108" unitRef="u6" decimals="0">119979</e:LongtermInvestmentsAndReceivables>
+  <e:NoncurrentAssets contextRef="c109" unitRef="u6" decimals="0">21615993</e:NoncurrentAssets>
+  <e:NoncurrentAssets contextRef="c108" unitRef="u6" decimals="0">23644568</e:NoncurrentAssets>
+  <e:ShorttermTradeReceivables contextRef="c109" unitRef="u6" decimals="0">15104414</e:ShorttermTradeReceivables>
+  <e:ShorttermTradeReceivables contextRef="c108" unitRef="u6" decimals="0">17814387</e:ShorttermTradeReceivables>
+  <e:ContractWorkInProgress contextRef="c109" unitRef="u6" decimals="0">2085362</e:ContractWorkInProgress>
+  <e:ContractWorkInProgress contextRef="c108" unitRef="u6" decimals="0">3025155</e:ContractWorkInProgress>
+  <e:ShorttermReceivablesFromGroupEnterprises contextRef="c109" unitRef="u6" decimals="0">18275782</e:ShorttermReceivablesFromGroupEnterprises>
+  <e:ShorttermReceivablesFromGroupEnterprises contextRef="c108" unitRef="u6" decimals="0">2974897</e:ShorttermReceivablesFromGroupEnterprises>
+  <e:OtherShorttermReceivables contextRef="c109" unitRef="u6" decimals="0">15330</e:OtherShorttermReceivables>
+  <e:OtherShorttermReceivables contextRef="c108" unitRef="u6" decimals="0">31000</e:OtherShorttermReceivables>
+  <e:CurrentDeferredTaxAssets contextRef="c109" unitRef="u6" decimals="0">2961132</e:CurrentDeferredTaxAssets>
+  <e:CurrentDeferredTaxAssets contextRef="c108" unitRef="u6" decimals="0">3955201</e:CurrentDeferredTaxAssets>
+  <e:ShorttermTaxReceivables contextRef="c109" unitRef="u6" decimals="0">0</e:ShorttermTaxReceivables>
+  <e:ShorttermTaxReceivables contextRef="c108" unitRef="u6" decimals="0">597300</e:ShorttermTaxReceivables>
+  <e:ShorttermReceivables contextRef="c109" unitRef="u6" decimals="0">38442020</e:ShorttermReceivables>
+  <e:ShorttermReceivables contextRef="c108" unitRef="u6" decimals="0">28397940</e:ShorttermReceivables>
+  <e:CashAndCashEquivalents contextRef="c109" unitRef="u6" decimals="0">9457434</e:CashAndCashEquivalents>
+  <e:CashAndCashEquivalents contextRef="c108" unitRef="u6" decimals="0">4799139</e:CashAndCashEquivalents>
+  <e:CurrentAssets contextRef="c109" unitRef="u6" decimals="0">47899454</e:CurrentAssets>
+  <e:CurrentAssets contextRef="c108" unitRef="u6" decimals="0">33197079</e:CurrentAssets>
+  <e:Assets contextRef="c109" unitRef="u6" decimals="0">69515447</e:Assets>
+  <e:Assets contextRef="c108" unitRef="u6" decimals="0">56841647</e:Assets>
+  <e:ContributedCapital contextRef="c109" unitRef="u6" decimals="0">600000</e:ContributedCapital>
+  <e:ContributedCapital contextRef="c108" unitRef="u6" decimals="0">600000</e:ContributedCapital>
+  <e:PaidContributedCapital contextRef="c109" unitRef="u6" decimals="0">600000</e:PaidContributedCapital>
+  <e:PaidContributedCapital contextRef="c108" unitRef="u6" decimals="0">600000</e:PaidContributedCapital>
+  <e:RetainedEarnings contextRef="c109" unitRef="u6" decimals="0">33786204</e:RetainedEarnings>
+  <e:RetainedEarnings contextRef="c108" unitRef="u6" decimals="0">13558969</e:RetainedEarnings>
+  <e:Equity contextRef="c109" unitRef="u6" decimals="0">34386204</e:Equity>
+  <e:Equity contextRef="c108" unitRef="u6" decimals="0">14158969</e:Equity>
+  <e:OtherLongtermPayables contextRef="c109" unitRef="u6" decimals="0">570619</e:OtherLongtermPayables>
+  <e:OtherLongtermPayables contextRef="c108" unitRef="u6" decimals="0">433445</e:OtherLongtermPayables>
+  <e:LongtermLiabilitiesOtherThanProvisions contextRef="c109" unitRef="u6" decimals="0">570619</e:LongtermLiabilitiesOtherThanProvisions>
+  <e:LongtermLiabilitiesOtherThanProvisions contextRef="c108" unitRef="u6" decimals="0">433445</e:LongtermLiabilitiesOtherThanProvisions>
+  <e:ShorttermDebtToOtherCreditInstitutions contextRef="c109" unitRef="u6" decimals="0">0</e:ShorttermDebtToOtherCreditInstitutions>
+  <e:ShorttermDebtToOtherCreditInstitutions contextRef="c108" unitRef="u6" decimals="0">6700000</e:ShorttermDebtToOtherCreditInstitutions>
+  <e:ShorttermPrepaymentsReceivedFromCustomers contextRef="c109" unitRef="u6" decimals="0">897672</e:ShorttermPrepaymentsReceivedFromCustomers>
+  <e:ShorttermPrepaymentsReceivedFromCustomers contextRef="c108" unitRef="u6" decimals="0">1202280</e:ShorttermPrepaymentsReceivedFromCustomers>
+  <e:ShorttermTradePayables contextRef="c109" unitRef="u6" decimals="0">1722143</e:ShorttermTradePayables>
+  <e:ShorttermTradePayables contextRef="c108" unitRef="u6" decimals="0">3229383</e:ShorttermTradePayables>
+  <e:ShorttermPayablesToGroupEnterprises contextRef="c109" unitRef="u6" decimals="0">4947985</e:ShorttermPayablesToGroupEnterprises>
+  <e:ShorttermPayablesToGroupEnterprises contextRef="c108" unitRef="u6" decimals="0">8996610</e:ShorttermPayablesToGroupEnterprises>
+  <e:ShorttermTaxPayables contextRef="c109" unitRef="u6" decimals="0">5897086</e:ShorttermTaxPayables>
+  <e:ShorttermTaxPayables contextRef="c108" unitRef="u6" decimals="0">6038780</e:ShorttermTaxPayables>
+  <e:OtherShorttermPayables contextRef="c109" unitRef="u6" decimals="0">10648656</e:OtherShorttermPayables>
+  <e:OtherShorttermPayables contextRef="c108" unitRef="u6" decimals="0">6971461</e:OtherShorttermPayables>
+  <e:ShorttermDeferredIncome contextRef="c109" unitRef="u6" decimals="0">10445082</e:ShorttermDeferredIncome>
+  <e:ShorttermDeferredIncome contextRef="c108" unitRef="u6" decimals="0">9110719</e:ShorttermDeferredIncome>
+  <e:ShorttermLiabilitiesOtherThanProvisions contextRef="c109" unitRef="u6" decimals="0">34558624</e:ShorttermLiabilitiesOtherThanProvisions>
+  <e:ShorttermLiabilitiesOtherThanProvisions contextRef="c108" unitRef="u6" decimals="0">42249233</e:ShorttermLiabilitiesOtherThanProvisions>
+  <e:LiabilitiesOtherThanProvisions contextRef="c109" unitRef="u6" decimals="0">35129243</e:LiabilitiesOtherThanProvisions>
+  <e:LiabilitiesOtherThanProvisions contextRef="c108" unitRef="u6" decimals="0">42682678</e:LiabilitiesOtherThanProvisions>
+  <e:LiabilitiesAndEquity contextRef="c109" unitRef="u6" decimals="0">69515447</e:LiabilitiesAndEquity>
+  <e:LiabilitiesAndEquity contextRef="c108" unitRef="u6" decimals="0">56841647</e:LiabilitiesAndEquity>
+  <e:Equity contextRef="c0" unitRef="u6" decimals="0">600000</e:Equity>
+  <e:Equity contextRef="c20" unitRef="u6" decimals="0">13558969</e:Equity>
+  <e:ProfitLoss contextRef="c21" unitRef="u6" decimals="0">20227235</e:ProfitLoss>
+  <e:Equity contextRef="c2" unitRef="u6" decimals="0">600000</e:Equity>
+  <e:Equity contextRef="c22" unitRef="u6" decimals="0">33786204</e:Equity>
+  <e:DisclosureOfSignificantEventsOccurringAfterEndOfReportingPeriod contextRef="c64" xml:lang="da">Der er ikke efter balancedagen indtruffet forhold, som har væsentlig indflydelse på bedømmelsen af årsrapporten.</e:DisclosureOfSignificantEventsOccurringAfterEndOfReportingPeriod>
+  <e:WagesAndSalaries contextRef="c64" unitRef="u6" decimals="0">56346430</e:WagesAndSalaries>
+  <e:WagesAndSalaries contextRef="c588" unitRef="u6" decimals="0">57440527</e:WagesAndSalaries>
+  <e:PostemploymentBenefitExpense contextRef="c64" unitRef="u6" decimals="0">3036861</e:PostemploymentBenefitExpense>
+  <e:PostemploymentBenefitExpense contextRef="c588" unitRef="u6" decimals="0">2841407</e:PostemploymentBenefitExpense>
+  <e:SocialSecurityContributions contextRef="c64" unitRef="u6" decimals="0">1046609</e:SocialSecurityContributions>
+  <e:SocialSecurityContributions contextRef="c588" unitRef="u6" decimals="0">923844</e:SocialSecurityContributions>
+  <e:OtherEmployeeExpense contextRef="c64" unitRef="u6" decimals="0">2855143</e:OtherEmployeeExpense>
+  <e:OtherEmployeeExpense contextRef="c588" unitRef="u6" decimals="0">7444551</e:OtherEmployeeExpense>
+  <e:EmployeeBenefitsExpense contextRef="c64" unitRef="u6" decimals="0">63285043</e:EmployeeBenefitsExpense>
+  <e:EmployeeBenefitsExpense contextRef="c588" unitRef="u6" decimals="0">68650329</e:EmployeeBenefitsExpense>
+  <e:AverageNumberOfEmployees contextRef="c64" unitRef="u2" decimals="INF">146</e:AverageNumberOfEmployees>
+  <e:AverageNumberOfEmployees contextRef="c588" unitRef="u2" decimals="INF">150</e:AverageNumberOfEmployees>
+  <e:InterestIncomeFromGroupEnterprises contextRef="c64" unitRef="u6" decimals="0">804802</e:InterestIncomeFromGroupEnterprises>
+  <e:InterestIncomeFromGroupEnterprises contextRef="c588" unitRef="u6" decimals="0">323729</e:InterestIncomeFromGroupEnterprises>
+  <e:OtherInterestIncome contextRef="c64" unitRef="u6" decimals="0">363202</e:OtherInterestIncome>
+  <e:OtherInterestIncome contextRef="c588" unitRef="u6" decimals="0">323722</e:OtherInterestIncome>
+  <e:OtherInterestExpenses contextRef="c64" unitRef="u6" decimals="0">223192</e:OtherInterestExpenses>
+  <e:OtherInterestExpenses contextRef="c588" unitRef="u6" decimals="0">169797</e:OtherInterestExpenses>
+  <e:ExchangeRateAdjustmentsOtherFinanceExpenses contextRef="c64" unitRef="u6" decimals="0">2117</e:ExchangeRateAdjustmentsOtherFinanceExpenses>
+  <e:ExchangeRateAdjustmentsOtherFinanceExpenses contextRef="c588" unitRef="u6" decimals="0">2300</e:ExchangeRateAdjustmentsOtherFinanceExpenses>
+  <e:OtherFinanceExpenses contextRef="c64" unitRef="u6" decimals="0">225309</e:OtherFinanceExpenses>
+  <e:OtherFinanceExpenses contextRef="c588" unitRef="u6" decimals="0">172097</e:OtherFinanceExpenses>
+  <e:CurrentTaxExpense contextRef="c64" unitRef="u6" decimals="0">5897089</e:CurrentTaxExpense>
+  <e:CurrentTaxExpense contextRef="c588" unitRef="u6" decimals="0">6038780</e:CurrentTaxExpense>
+  <e:AdjustmentsForDeferredTax contextRef="c64" unitRef="u6" decimals="0">994069</e:AdjustmentsForDeferredTax>
+  <e:AdjustmentsForDeferredTax contextRef="c588" unitRef="u6" decimals="0">-3546658</e:AdjustmentsForDeferredTax>
+  <e:AdjustmentsForCurrentTaxOfPriorPeriod contextRef="c64" unitRef="u6" decimals="0">-27400</e:AdjustmentsForCurrentTaxOfPriorPeriod>
+  <e:AdjustmentsForCurrentTaxOfPriorPeriod contextRef="c588" unitRef="u6" decimals="0">-17177</e:AdjustmentsForCurrentTaxOfPriorPeriod>
+  <e:TaxExpenseOnOrdinaryActivities contextRef="c64" unitRef="u6" decimals="0">6863758</e:TaxExpenseOnOrdinaryActivities>
+  <e:TaxExpenseOnOrdinaryActivities contextRef="c588" unitRef="u6" decimals="0">2474945</e:TaxExpenseOnOrdinaryActivities>
+  <e:IntangibleAssetsGross contextRef="c352" unitRef="u6" decimals="0">6679340</e:IntangibleAssetsGross>
+  <e:IntangibleAssetsGross contextRef="c330" unitRef="u6" decimals="0">19910639</e:IntangibleAssetsGross>
+  <e:IntangibleAssetsGross contextRef="c354" unitRef="u6" decimals="0">6679340</e:IntangibleAssetsGross>
+  <e:IntangibleAssetsGross contextRef="c338" unitRef="u6" decimals="0">19910639</e:IntangibleAssetsGross>
+  <e:AccumulatedImpairmentLossesAndAmortisationOfIntangibleAssets contextRef="c352" unitRef="u6" decimals="0">1572343</e:AccumulatedImpairmentLossesAndAmortisationOfIntangibleAssets>
+  <e:AccumulatedImpairmentLossesAndAmortisationOfIntangibleAssets contextRef="c330" unitRef="u6" decimals="0">1493047</e:AccumulatedImpairmentLossesAndAmortisationOfIntangibleAssets>
+  <e:AmortisationOfIntangibleAssets contextRef="c353" unitRef="u6" decimals="0">1013019</e:AmortisationOfIntangibleAssets>
+  <e:AmortisationOfIntangibleAssets contextRef="c337" unitRef="u6" decimals="0">995531</e:AmortisationOfIntangibleAssets>
+  <e:AccumulatedImpairmentLossesAndAmortisationOfIntangibleAssets contextRef="c354" unitRef="u6" decimals="0">2585362</e:AccumulatedImpairmentLossesAndAmortisationOfIntangibleAssets>
+  <e:AccumulatedImpairmentLossesAndAmortisationOfIntangibleAssets contextRef="c338" unitRef="u6" decimals="0">2488578</e:AccumulatedImpairmentLossesAndAmortisationOfIntangibleAssets>
+  <e:IntangibleAssets contextRef="c354" unitRef="u6" decimals="0">4093978</e:IntangibleAssets>
+  <e:IntangibleAssets contextRef="c338" unitRef="u6" decimals="0">17422061</e:IntangibleAssets>
+  <e:PropertyPlantAndEquipmentGross contextRef="c187" unitRef="u6" decimals="0">249780</e:PropertyPlantAndEquipmentGross>
+  <e:PropertyPlantAndEquipmentGross contextRef="c190" unitRef="u6" decimals="0">33198</e:PropertyPlantAndEquipmentGross>
+  <e:AdditionsToPropertyPlantAndEquipment contextRef="c188" unitRef="u6" decimals="0">105842</e:AdditionsToPropertyPlantAndEquipment>
+  <e:AdditionsToPropertyPlantAndEquipment contextRef="c191" unitRef="u6" decimals="0">0</e:AdditionsToPropertyPlantAndEquipment>
+  <e:PropertyPlantAndEquipmentGross contextRef="c189" unitRef="u6" decimals="0">355622</e:PropertyPlantAndEquipmentGross>
+  <e:PropertyPlantAndEquipmentGross contextRef="c192" unitRef="u6" decimals="0">33198</e:PropertyPlantAndEquipmentGross>
+  <e:AccumulatedImpairmentLossesAndDepreciationOfPropertyPlantAndEquipment contextRef="c187" unitRef="u6" decimals="0">249780</e:AccumulatedImpairmentLossesAndDepreciationOfPropertyPlantAndEquipment>
+  <e:AccumulatedImpairmentLossesAndDepreciationOfPropertyPlantAndEquipment contextRef="c190" unitRef="u6" decimals="0">33198</e:AccumulatedImpairmentLossesAndDepreciationOfPropertyPlantAndEquipment>
+  <e:DepreciationOfPropertyPlantAndEquipment contextRef="c188" unitRef="u6" decimals="0">33284</e:DepreciationOfPropertyPlantAndEquipment>
+  <e:DepreciationOfPropertyPlantAndEquipment contextRef="c191" unitRef="u6" decimals="0">0</e:DepreciationOfPropertyPlantAndEquipment>
+  <e:AccumulatedImpairmentLossesAndDepreciationOfPropertyPlantAndEquipment contextRef="c189" unitRef="u6" decimals="0">283064</e:AccumulatedImpairmentLossesAndDepreciationOfPropertyPlantAndEquipment>
+  <e:AccumulatedImpairmentLossesAndDepreciationOfPropertyPlantAndEquipment contextRef="c192" unitRef="u6" decimals="0">33198</e:AccumulatedImpairmentLossesAndDepreciationOfPropertyPlantAndEquipment>
+  <e:PropertyPlantAndEquipment contextRef="c189" unitRef="u6" decimals="0">72558</e:PropertyPlantAndEquipment>
+  <e:PropertyPlantAndEquipment contextRef="c192" unitRef="u6" decimals="0">0</e:PropertyPlantAndEquipment>
+  <e:InvestmentsGross contextRef="c236" unitRef="u6" decimals="0">0</e:InvestmentsGross>
+  <e:InvestmentsGross contextRef="c237" unitRef="u6" decimals="0">1845262</e:InvestmentsGross>
+  <e:DisposalsOfInvestments contextRef="c238" unitRef="u6" decimals="0">0</e:DisposalsOfInvestments>
+  <e:DisposalsOfInvestments contextRef="c239" unitRef="u6" decimals="0">-1845262</e:DisposalsOfInvestments>
+  <e:InvestmentsGross contextRef="c240" unitRef="u6" decimals="0">0</e:InvestmentsGross>
+  <e:InvestmentsGross contextRef="c241" unitRef="u6" decimals="0">0</e:InvestmentsGross>
+  <e:AccumulatedRevaluationsOfInvestments contextRef="c236" unitRef="u6" decimals="0">0</e:AccumulatedRevaluationsOfInvestments>
+  <e:AccumulatedRevaluationsOfInvestments contextRef="c237" unitRef="u6" decimals="0">-1694416</e:AccumulatedRevaluationsOfInvestments>
+  <e:OtherAdjustmentsRelatedToInvestments contextRef="c238" unitRef="u6" decimals="0">0</e:OtherAdjustmentsRelatedToInvestments>
+  <e:OtherAdjustmentsRelatedToInvestments contextRef="c239" unitRef="u6" decimals="0">1694416</e:OtherAdjustmentsRelatedToInvestments>
+  <e:AccumulatedRevaluationsOfInvestments contextRef="c240" unitRef="u6" decimals="0">0</e:AccumulatedRevaluationsOfInvestments>
+  <e:AccumulatedRevaluationsOfInvestments contextRef="c241" unitRef="u6" decimals="0">0</e:AccumulatedRevaluationsOfInvestments>
+  <e:InvestmentsGross contextRef="c211" unitRef="u6" decimals="0">27396</e:InvestmentsGross>
+  <e:InvestmentsGross contextRef="c213" unitRef="u6" decimals="0">27396</e:InvestmentsGross>
+  <e:ExplanationOfPrepayments contextRef="c64" xml:lang="da">Periodeafgrænsningsposter udgøres af forudbetalte omkostninger vedrørende husleje, forsikringspræmier, abonnementer og renter.
+</e:ExplanationOfPrepayments>
+  <e:ProfitLoss contextRef="c106" unitRef="u6" decimals="0">0</e:ProfitLoss>
+  <e:ProfitLoss contextRef="c107" unitRef="u6" decimals="0">31500000</e:ProfitLoss>
+  <e:ProfitLoss contextRef="c104" unitRef="u6" decimals="0">20227235</e:ProfitLoss>
+  <e:ProfitLoss contextRef="c105" unitRef="u6" decimals="0">-5711123</e:ProfitLoss>
+  <e:LongtermLiabilitiesOtherThanProvisionsDueBetweenOneAndFiveYears contextRef="c57" unitRef="u6" decimals="0">570619</e:LongtermLiabilitiesOtherThanProvisionsDueBetweenOneAndFiveYears>
+  <e:LongtermLiabilitiesOtherThanProvisionsDueBetweenOneAndFiveYears contextRef="c232" unitRef="u6" decimals="0">433445</e:LongtermLiabilitiesOtherThanProvisionsDueBetweenOneAndFiveYears>
+  <e:LongtermLiabilitiesOtherThanProvisions contextRef="c57" unitRef="u6" decimals="0">570619</e:LongtermLiabilitiesOtherThanProvisions>
+  <e:LongtermLiabilitiesOtherThanProvisions contextRef="c232" unitRef="u6" decimals="0">433445</e:LongtermLiabilitiesOtherThanProvisions>
+  <!--Virksomhedskapital aktuel primo-->
+  <context id="c0">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-01-01</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfEquityDimension">e:ContributedCapitalMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Virksomhedskapital aktuel ultimo-->
+  <context id="c2">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfEquityDimension">e:ContributedCapitalMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Overfort res aktuel primo-->
+  <context id="c20">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-01-01</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfEquityDimension">e:RetainedEarningsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Overfort res aktuel i aaret-->
+  <context id="c21">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfEquityDimension">e:RetainedEarningsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Overfort res aktuel ultimo-->
+  <context id="c22">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfEquityDimension">e:RetainedEarningsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Anden gald aktuel ultimo-->
+  <context id="c57">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfLongTermLiabilitiesDimension">e:OtherLongtermPayablesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Aktuelle periode enkelt selskab-->
+  <context id="c64">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+  </context>
+  <!--REVISOR2-->
+  <context id="c65">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:typedMember dimension="d:IdentificationOfAuditorDimension">
+        <d:auditorIdentifier>2</d:auditorIdentifier>
+      </xbrldi:typedMember>
+    </scenario>
+  </context>
+  <!--REVISOR1-->
+  <context id="c66">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:typedMember dimension="d:IdentificationOfAuditorDimension">
+        <d:auditorIdentifier>1</d:auditorIdentifier>
+      </xbrldi:typedMember>
+    </scenario>
+  </context>
+  <!--BOARD1-->
+  <context id="c67">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:typedMember dimension="d:IdentificationOfMemberOfSupervisoryBoardDimension">
+        <d:memberOfBoardIdentifier>1</d:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </scenario>
+  </context>
+  <!--BOARD2-->
+  <context id="c68">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:typedMember dimension="d:IdentificationOfMemberOfSupervisoryBoardDimension">
+        <d:memberOfBoardIdentifier>2</d:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </scenario>
+  </context>
+  <!--BOARD3-->
+  <context id="c69">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:typedMember dimension="d:IdentificationOfMemberOfSupervisoryBoardDimension">
+        <d:memberOfBoardIdentifier>3</d:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </scenario>
+  </context>
+  <!--CEO1-->
+  <context id="c82">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:typedMember dimension="d:IdentificationOfMemberOfExecutiveBoardDimension">
+        <d:memberOfBoardIdentifier>1</d:memberOfBoardIdentifier>
+      </xbrldi:typedMember>
+    </scenario>
+  </context>
+  <!--Overfoert resultat aktuel i aaret-->
+  <context id="c104">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ResultDistributionDimension">e:RetainedEarningsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Overfoert resultat forrige i aaret-->
+  <context id="c105">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2019-01-01</startDate>
+      <endDate>2019-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ResultDistributionDimension">e:RetainedEarningsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Udbytte aconto aktuel i aaret-->
+  <context id="c106">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ResultDistributionDimension">e:ProposedExtraordinaryDividendRecognisedInEquityMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Udbytte aconto forrige i aaret-->
+  <context id="c107">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2019-01-01</startDate>
+      <endDate>2019-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ResultDistributionDimension">e:ProposedExtraordinaryDividendRecognisedInEquityMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Slutdato forrige periode enkelt selskab-->
+  <context id="c108">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2019-12-31</instant>
+    </period>
+  </context>
+  <!--Slutdato aktuelle periode enkelt selskab-->
+  <context id="c109">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+  </context>
+  <!--Andre anlag aktuel primo-->
+  <context id="c187">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-01-01</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfPropertyPlantAndEquipmentDimension">e:FixturesFittingsToolsAndEquipmentMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Andre anlag aktuel i aaret-->
+  <context id="c188">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfPropertyPlantAndEquipmentDimension">e:FixturesFittingsToolsAndEquipmentMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Andre anlag aktuel ultimo-->
+  <context id="c189">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfPropertyPlantAndEquipmentDimension">e:FixturesFittingsToolsAndEquipmentMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Indretning lokaler aktuel primo-->
+  <context id="c190">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-01-01</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfPropertyPlantAndEquipmentDimension">e:LeaseholdImprovementsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Indretning lokaler aktuel i aaret-->
+  <context id="c191">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfPropertyPlantAndEquipmentDimension">e:LeaseholdImprovementsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Indretning lokaler aktuel ultimo-->
+  <context id="c192">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfPropertyPlantAndEquipmentDimension">e:LeaseholdImprovementsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Tilgodehavender aktuel primo-->
+  <context id="c211">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-01-01</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfInvestmentsDimension">e:OtherReceivablesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Tilgodehavender aktuel ultimo-->
+  <context id="c213">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfInvestmentsDimension">e:OtherReceivablesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Anden gald forrige ultimo-->
+  <context id="c232">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2019-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfLongTermLiabilitiesDimension">e:OtherLongtermPayablesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Kapandele tilknyttede aktuel primo-->
+  <context id="c236">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-01-01</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfInvestmentsDimension">e:InvestmentsInGroupEnterprisesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Kapandele tilknyttede forrige primo-->
+  <context id="c237">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2019-01-01</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfInvestmentsDimension">e:InvestmentsInGroupEnterprisesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Kapandele tilknyttede aktuel i aaret-->
+  <context id="c238">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfInvestmentsDimension">e:InvestmentsInGroupEnterprisesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Kapandele tilknyttede forrige i aaret-->
+  <context id="c239">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2019-01-01</startDate>
+      <endDate>2019-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfInvestmentsDimension">e:InvestmentsInGroupEnterprisesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Kapandele tilknyttede aktuel ultimo-->
+  <context id="c240">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfInvestmentsDimension">e:InvestmentsInGroupEnterprisesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Kapandele tilknyttede forrige ultimo-->
+  <context id="c241">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2019-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfInvestmentsDimension">e:InvestmentsInGroupEnterprisesMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Goodwill aktuel primo-->
+  <context id="c330">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-01-01</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfIntangibleAssetsDimension">e:GoodwillMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Goodwill aktuel i aaret-->
+  <context id="c337">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfIntangibleAssetsDimension">e:GoodwillMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Goodwill aktuel ultimo-->
+  <context id="c338">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfIntangibleAssetsDimension">e:GoodwillMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Erhvervede lignende rettigheder aktuel primo-->
+  <context id="c352">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-01-01</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfIntangibleAssetsDimension">e:AcquiredOtherSimilarRightsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Erhvervede lignende rettigheder aktuel i aaret-->
+  <context id="c353">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfIntangibleAssetsDimension">e:AcquiredOtherSimilarRightsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Erhvervede lignende rettigheder aktuel ultimo-->
+  <context id="c354">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="e:ClassesOfIntangibleAssetsDimension">e:AcquiredOtherSimilarRightsMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--HTAL aar2-->
+  <context id="c588">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2019-01-01</startDate>
+      <endDate>2019-12-31</endDate>
+    </period>
+  </context>
+  <!--HTAL aar3-->
+  <context id="c590">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="d:RetrospectiveInformationDimension">d:TwoYearsAgoMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--HTAL ultimo aar3-->
+  <context id="c592">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="d:RetrospectiveInformationDimension">d:TwoYearsAgoMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--HTAL aar4-->
+  <context id="c593">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="d:RetrospectiveInformationDimension">d:ThreeYearsAgoMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--HTAL ultimo aar4-->
+  <context id="c595">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="d:RetrospectiveInformationDimension">d:ThreeYearsAgoMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--HTAL aar5-->
+  <context id="c596">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <startDate>2020-01-01</startDate>
+      <endDate>2020-12-31</endDate>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="d:RetrospectiveInformationDimension">d:FourYearsAgoMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--HTAL ultimo aar5-->
+  <context id="c598">
+    <entity>
+      <identifier scheme="http://www.dcca.dk/cvr">31189810</identifier>
+    </entity>
+    <period>
+      <instant>2020-12-31</instant>
+    </period>
+    <scenario>
+      <xbrldi:explicitMember dimension="d:RetrospectiveInformationDimension">d:FourYearsAgoMember</xbrldi:explicitMember>
+    </scenario>
+  </context>
+  <!--Antal-->
+  <unit id="u2">
+    <measure>xbrli:pure</measure>
+  </unit>
+  <!--DKK 1000-->
+  <unit id="u6">
+    <measure>iso4217:DKK</measure>
+  </unit>
+</xbrl>
