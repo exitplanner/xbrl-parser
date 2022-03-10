@@ -13,13 +13,31 @@ export interface IncomeStatement {
    * Gross profit/loss for the year.
    * da: Bruttofortjeneste/Bruttotab
    */
-  grossProfitLoss?: number;
+  grossProfitLoss: number;
 
   /**
    * Gross revenue.
    * da: Nettoomsætning
    */
   revenue?: number;
+
+  /**
+   * Cost of sales
+   * da: Vareforbrug
+   */
+  costOfSales?: number;
+
+  /**
+   * Change in inventories of finished goods, work in progress and goods for resale
+   * da: Ændring i lagre af færdigvarer og varer under fremstilling
+   */
+  changeInInventory?: number;
+
+  /**
+   * Own work capitalised
+   * da: Arbejde udført for egen regning og opført under aktiver
+   */
+  ownWorkCapitalized?: number;
 
   /**
    * Gross result
@@ -48,22 +66,22 @@ export interface IncomeStatement {
   /**
    * da: af- og nedskrivninger
    */
-  depreciationAmortization?: number;
+  depreciationAmortization: number;
 
   /**
    * da: Andre driftsindtægter
    */
-  otherOperatingIncome?: number;
+  otherOperatingIncome: number;
 
   /**
    * da: Andre diftsomkostninger
    */
-  otherOperatingExpenses?: number;
+  otherOperatingExpenses: number;
 
   /**
    * da: Eksterne driftsomkostninger
    */
-  externalExpenses?: number;
+  externalExpenses: number;
 
   /**
    * da: Andre finansielle omkostninger

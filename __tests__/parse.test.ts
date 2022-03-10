@@ -17,8 +17,12 @@ describe('parse', () => {
     }));
 
     expect(report.incomeStatement).toEqual(expect.objectContaining<IncomeStatement>({
+      changeInInventory: undefined,
+      costOfSales: undefined,
+      ownWorkCapitalized: undefined,
       revenue: 4_714_614_000,
-      externalExpenses: 285_8049_000,
+      grossProfitLoss: 1_863_940_000,
+      externalExpenses: 2_858_049_000,
       employeeExpenses: 1_580_001_000,
       otherOperatingExpenses: 12_865_000,
       otherOperatingIncome: 7_375_000,
@@ -31,7 +35,6 @@ describe('parse', () => {
       profitLossBeforeTax: -22_878_000,
       profitLoss: -2_8633_000,
       tax: 5_755_000,
-      grossProfitLoss: undefined,
       grossResult: undefined,
     }));
 
@@ -96,6 +99,9 @@ describe('parse', () => {
     }));
 
     expect(report.incomeStatement).toEqual(expect.objectContaining<IncomeStatement>({
+      changeInInventory: undefined,
+      costOfSales: undefined,
+      ownWorkCapitalized: undefined,
       grossProfitLoss: 40_535_965,
       employeeExpenses: 36_625_898,
       calculatedEBITDA: 3_910_067,
@@ -108,9 +114,9 @@ describe('parse', () => {
       tax: 645_297,
       profitLoss: 2_235_024,
       revenue: undefined,
-      externalExpenses: undefined,
+      externalExpenses: 0,
       otherOperatingExpenses: 0,
-      otherOperatingIncome: undefined,
+      otherOperatingIncome: 0,
       grossResult: undefined,
     }));
 
@@ -186,9 +192,9 @@ describe('parse', () => {
       tax: 208_964,
       profitLoss: 649_543,
       revenue: undefined,
-      externalExpenses: undefined,
-      otherOperatingExpenses: undefined,
-      otherOperatingIncome: undefined,
+      externalExpenses: 0,
+      otherOperatingExpenses: 0,
+      otherOperatingIncome: 0,
       grossResult: undefined,
     }));
 
@@ -254,10 +260,10 @@ describe('parse', () => {
 
     expect(report.incomeStatement).toEqual(expect.objectContaining<Partial<IncomeStatement>>({
       revenue: undefined,
-      externalExpenses: undefined,
+      externalExpenses: 0,
       employeeExpenses: 63_285_043,
-      otherOperatingExpenses: undefined,
-      otherOperatingIncome: undefined,
+      otherOperatingExpenses: 0,
+      otherOperatingIncome: 0,
       calculatedEBITDA: 28_190_132,
       profitLossFromOperatingActivities: 26_148_298,
       depreciationAmortization: 2_041_834,
