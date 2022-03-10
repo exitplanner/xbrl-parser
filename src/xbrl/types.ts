@@ -207,6 +207,7 @@ export interface XbrliXbrl {
   'arr:StatementOfAuditorsResponsibilityForAuditAndAuditPerformed'?: StringNode;
   'fsa:OtherOperatingIncome'?: NumberWithUnitRef[];
   'fsa:ExternalExpenses'?: NumberWithUnitRef[];
+  'fsa:RawMaterialsAndConsumablesUsed'?: NumberWithUnitRef[];
   'fsa:TaxExpense'?: NumberWithUnitRef[];
   'fsa:ProfitLossFromContinuingOperations'?: NumberWithUnitRef[];
   'fsa:StatementOfChangesInEquity'?: StringNode;
@@ -342,6 +343,8 @@ export interface XbrliXbrl {
   'fsa:GrossResult'?: NumberWithUnitRef[];
   'mrv:GrossMargin'?: NumberWithUnitRef[];
   'fsa:CostOfSales'?: NumberWithUnitRef[];
+  'fsa:ChangeInInventoriesOfFinishedGoodsWorkInProgressAndGoodsForResale'?: NumberWithUnitRef[];
+  'fsa:WorkPerformedByEntityAndCapitalised'?: NumberWithUnitRef[];
   'fsa:OtherExternalExpenses'?: NumberWithUnitRef[];
   'fsa:PropertyPlantAndEquipmentInProgress'?: NumberWithUnitRef[];
   'fsa:OtherProvisions'?: NumberWithUnitRef[];

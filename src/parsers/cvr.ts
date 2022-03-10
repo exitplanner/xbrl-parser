@@ -108,13 +108,16 @@ function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatemen
     profitLoss: extractNumber(doc['fsa:ProfitLoss'], periodId) || 0,
     employeeExpenses: extractNumber(doc['fsa:EmployeeBenefitsExpense'], periodId) || 0,
     tax: extractTax(doc, periodId),
-    grossProfitLoss: extractNumber(doc['fsa:GrossProfitLoss'], periodId),
+    grossProfitLoss: extractNumber(doc['fsa:GrossProfitLoss'], periodId) || 0,
+    costOfSales: extractNumber(doc['fsa:CostOfSales'], periodId),
+    changeInInventory: extractNumber(doc['fsa:ChangeInInventoriesOfFinishedGoodsWorkInProgressAndGoodsForResale'], periodId),
+    ownWorkCapitalized: extractNumber(doc['fsa:WorkPerformedByEntityAndCapitalised'], periodId),
     grossResult: extractNumber(doc['fsa:GrossResult'], periodId),
     revenue: extractNumber(doc['fsa:Revenue'], periodId),
-    depreciationAmortization: extractNumber(doc['fsa:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss'], periodId),
-    otherOperatingExpenses: extractNumber(doc['fsa:OtherOperatingExpenses'], periodId),
-    otherOperatingIncome: extractNumber(doc['fsa:OtherOperatingIncome'], periodId),
-    externalExpenses: extractNumber(doc['fsa:ExternalExpenses'], periodId),
+    depreciationAmortization: extractNumber(doc['fsa:DepreciationAmortisationExpenseAndImpairmentLossesOfPropertyPlantAndEquipmentAndIntangibleAssetsRecognisedInProfitOrLoss'], periodId) || 0,
+    otherOperatingExpenses: extractNumber(doc['fsa:OtherOperatingExpenses'], periodId) || 0,
+    otherOperatingIncome: extractNumber(doc['fsa:OtherOperatingIncome'], periodId) || 0,
+    externalExpenses: extractExternalExpenses(doc, periodId),
     otherFinancialExpenses: extractNumber(doc['fsa:OtherFinanceExpenses'], periodId),
     otherFinancialIncome: extractNumber(doc['fsa:OtherFinanceIncome'], periodId),
     profitLossBeforeTax: extractNumber(doc['fsa:ProfitLossFromOrdinaryActivitiesBeforeTax'], periodId) || 0,
@@ -123,10 +126,26 @@ function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatemen
     calculatedEBIT: 0,
   };
 
+  adjustRevenueAndGrossProfit(incomeStatement, doc);
+
   incomeStatement.calculatedEBITDA = calculateEBITDA(incomeStatement);
   incomeStatement.calculatedEBIT = calculateEBIT(incomeStatement);
 
   return incomeStatement;
+}
+
+function adjustRevenueAndGrossProfit(incomeStatement: IncomeStatement, doc: XbrliXbrl): void {
+  if (incomeStatement.grossProfitLoss || !!doc['fsa:GrossProfitLoss'] || !incomeStatement.revenue) {
+    return;
+  }
+
+  // Some companies have revenue but not gross profit.
+  // In these cases, we need to calculate it based on Danish accounting principles.
+  incomeStatement.grossProfitLoss = (incomeStatement.revenue || 0)
+    + (incomeStatement.changeInInventory || 0)
+    + (incomeStatement.ownWorkCapitalized || 0)
+    + (incomeStatement.otherOperatingIncome || 0)
+    - (incomeStatement.externalExpenses || 0);
 }
 
 function calculateEBITDA(i: IncomeStatement): number {
@@ -153,6 +172,18 @@ function extractTax(doc: XbrliXbrl, periodId: string): number {
   // Otherwise sum the ordinary and extraordinary taxes.
   const tax = extractNumber(doc['fsa:TaxExpenseOnOrdinaryActivities'], periodId) || 0;
   return tax + (extractNumber(doc['fsa:TaxExpenseOnExtraordinaryEvents'], periodId) || 0);
+}
+
+function extractExternalExpenses(doc: XbrliXbrl, periodId: string): number {
+  // This is the total external expenses, return by itself.
+  if (doc['fsa:ExternalExpenses']) {
+    return extractNumber(doc['fsa:ExternalExpenses'], periodId) || 0;
+  }
+
+  // da: Omkostninger til råvarer og hjælpematerialer
+  // da: Andre eksterne omkostninger
+  return (extractNumber(doc['fsa:RawMaterialsAndConsumablesUsed'], periodId) || 0)
+    + (extractNumber(doc['fsa:OtherExternalExpenses'], periodId) || 0);
 }
 
 function createBalanceSheet(doc: XbrliXbrl, instant: Instant): Balance {
