@@ -7,7 +7,11 @@ XBRL parser and utility for parsing XBRL files.
 
 The library was created specifically for parsing XBRL annual reports for Danish companies to extract income statement and balance data from the (slightly different) taxonomies used for annual reports and consolidate them in the same JSON-like format.
 
-The library will parse all XBRL files since they are just XML, but the specific financial information from those taxonomies will not be mapped to a 
+## Install
+
+```
+npm install --save xbrl-parser
+```
 
 ## Usage
 
