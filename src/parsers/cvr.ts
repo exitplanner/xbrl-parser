@@ -126,6 +126,13 @@ function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatemen
     calculatedEBIT: 0,
   };
 
+  // In some cases, the report only has "gross result" and not a "gross
+  // profit/loss". In these cases, the gross result is used as the gross
+  // profit/loss as well.
+  if (incomeStatement.grossProfitLoss === 0 && incomeStatement.grossResult) {
+    incomeStatement.grossProfitLoss = incomeStatement.grossResult;
+  }
+
   adjustRevenueAndGrossProfit(incomeStatement, doc);
 
   incomeStatement.calculatedEBITDA = calculateEBITDA(incomeStatement);
