@@ -112,9 +112,9 @@ export interface IncomeStatement {
   profitLossBeforeTax: number;
 
   /**
-   * This is the result before financial posts, i.e. it (should be) EBITDA -
-   * depreciation/amortization.
-   * da: Driftsresultat/resultat før finansielle poster
+   * This is the result before financial posts, i.e. it (should be):
+   * EBITDA - depreciation/amortization.
+   * da: Driftsresultat/resultat før finansielle poster/primært resultat
    */
   profitLossFromOperatingActivities: number;
 }
