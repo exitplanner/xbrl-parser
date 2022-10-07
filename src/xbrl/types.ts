@@ -436,3 +436,6 @@ export interface NodeWithNamespace {
 export function isNodeWithNamespace(s: string | NodeWithNamespace): s is NodeWithNamespace {
   return typeof s !== 'string' && '#text' in s;
 }
+
+// https://stackoverflow.com/a/54520829/2021517
+export type KeysMatching<T, V> = { [K in keyof T]-?: T[K] extends V ? K : never }[keyof T];
