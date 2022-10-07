@@ -1,7 +1,7 @@
 import { findInstants, findPeriods, Instant, parseXbrlFile, Period } from '../xbrl/index.js';
 import { ensureArray } from '../util.js';
 import type { AnnualReport, Balance, IncomeStatement } from '../types';
-import type { NumberWithUnitRef, XbrliXbrl } from '../xbrl/types';
+import type { KeysMatching, NumberWithUnitRef, XbrliXbrl } from '../xbrl/types';
 import type { Parser } from './parser';
 
 /**
@@ -83,10 +83,20 @@ function findPrimaryBalanceInstant(doc: XbrliXbrl): Instant {
   instants = instants.sort((a, b) => b.date.localeCompare(a.date));
   const latestInstant = instants[0].date;
 
-  // Assume most companies have assets statement
-  // context ID for each of these to find candidate period IDs. Only those
-  // periods that are left are the actual yearly period.
-  const contextIdCandidates = new Set(ensureArray(doc['fsa:Assets']).map(e => e['@_contextRef']));
+  // Assume most companies have assets, liabilities or equity since these are
+  // major groups on the balance sheet.
+  // Then find context ID for each of these to find candidate period IDs. Only
+  // those periods that are left are the actual yearly period.
+  // This is not super pretty, but it does the job in most cases.
+  const fieldsToTry: KeysMatching<XbrliXbrl, NumberWithUnitRef | NumberWithUnitRef[] | undefined>[] = ['fsa:Assets', 'fsa:LiabilitiesAndEquity', 'fsa:Equity', 'fsa:IntangibleAssets', 'fsa:CurrentAssets'];
+  let contextIdCandidates: Set<string>;
+
+  for (const field of fieldsToTry) {
+    contextIdCandidates = new Set(ensureArray(doc[field]).map(e => e['@_contextRef']));
+    if (contextIdCandidates.size > 0) {
+      break;
+    }
+  }
 
   // Only consider periods that have the profit loss field
   // Then sort them by whether or not:

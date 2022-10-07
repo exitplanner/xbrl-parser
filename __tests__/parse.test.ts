@@ -294,4 +294,21 @@ describe('parse', () => {
       profitLoss: 69_411
     }));
   });
+
+  it('should parse another "old" annual report', () => {
+    // This test case failed on version 0.6.0 and below
+    const report = parseAnnualReport(loadReport(6), new CvrParser());
+
+    expect(report.VAT).toEqual('26586178');
+    expect(report.currency).toEqual('DKK');
+    expect(report.period).toEqual({
+      id: 'NC2',
+      startDate: '2011-10-01',
+      endDate: '2012-09-30'
+    });
+
+    expect(report.incomeStatement).toEqual(expect.objectContaining<Partial<IncomeStatement>>({
+      profitLoss: -904_801
+    }));
+  });
 });

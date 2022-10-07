@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xbrl
+	xmlns="http://www.xbrl.org/2003/instance"
+	xmlns:link="http://www.xbrl.org/2003/linkbase"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+	xmlns:EOGS10000="http://xbrl.dcca.dk/gsd"
+	xmlns:EOGS20000="http://xbrl.dcca.dk/dst"
+	xmlns:EOGS30000="http://xbrl.dcca.dk/tax"
+	xmlns:EOGS40000="http://xbrl.dcca.dk/arr"
+	xmlns:EOGS50000="http://xbrl.dcca.dk/eogs"
+	xmlns:EOGS60000="http://xbrl.dcca.dk/mrv"
+	xmlns:EOGS70000="http://xbrl.dcca.dk/sob"
+	xmlns:EOGS80000="http://xbrl.dcca.dk/fsa">
+	<link:schemaRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="http://archprod.service.eogs.dk/taxonomy/20120101/entryDanishGAAPBalanceSheetAccountFormIncomeStatementByNatureIncludingManagementsReviewStatisticsAndTax20120101.xsd"/>
+	<context id="nNC0"
+		xmlns="http://www.xbrl.org/2003/instance">
+		<entity
+			xmlns="http://www.xbrl.org/2003/instance">
+			<identifier
+				xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">26586178
+			</identifier>
+		</entity>
+		<period
+			xmlns="http://www.xbrl.org/2003/instance">
+			<startDate
+				xmlns="http://www.xbrl.org/2003/instance">2010-10-01
+			</startDate>
+			<endDate
+				xmlns="http://www.xbrl.org/2003/instance">2012-09-30
+			</endDate>
+		</period>
+	</context>
+	<context id="NC1"
+		xmlns="http://www.xbrl.org/2003/instance">
+		<entity
+			xmlns="http://www.xbrl.org/2003/instance">
+			<identifier
+				xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">26586178
+			</identifier>
+		</entity>
+		<period
+			xmlns="http://www.xbrl.org/2003/instance">
+			<startDate
+				xmlns="http://www.xbrl.org/2003/instance">2010-10-01
+			</startDate>
+			<endDate
+				xmlns="http://www.xbrl.org/2003/instance">2011-09-30
+			</endDate>
+		</period>
+	</context>
+	<context id="EV1"
+		xmlns="http://www.xbrl.org/2003/instance">
+		<entity
+			xmlns="http://www.xbrl.org/2003/instance">
+			<identifier
+				xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">26586178
+			</identifier>
+		</entity>
+		<period
+			xmlns="http://www.xbrl.org/2003/instance">
+			<instant
+				xmlns="http://www.xbrl.org/2003/instance">2011-09-30
+			</instant>
+		</period>
+	</context>
+	<context id="NC2"
+		xmlns="http://www.xbrl.org/2003/instance">
+		<entity
+			xmlns="http://www.xbrl.org/2003/instance">
+			<identifier
+				xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">26586178
+			</identifier>
+		</entity>
+		<period
+			xmlns="http://www.xbrl.org/2003/instance">
+			<startDate
+				xmlns="http://www.xbrl.org/2003/instance">2011-10-01
+			</startDate>
+			<endDate
+				xmlns="http://www.xbrl.org/2003/instance">2012-09-30
+			</endDate>
+		</period>
+	</context>
+	<context id="EV2"
+		xmlns="http://www.xbrl.org/2003/instance">
+		<entity
+			xmlns="http://www.xbrl.org/2003/instance">
+			<identifier
+				xmlns="http://www.xbrl.org/2003/instance" scheme="http://www.dcca.dk/cvr">26586178
+			</identifier>
+		</entity>
+		<period
+			xmlns="http://www.xbrl.org/2003/instance">
+			<instant
+				xmlns="http://www.xbrl.org/2003/instance">2012-09-30
+			</instant>
+		</period>
+	</context>
+	<unit
+		xmlns="http://www.xbrl.org/2003/instance" id="currency">
+		<measure
+			xmlns="http://www.xbrl.org/2003/instance">iso4217:DKK
+		</measure>
+	</unit>
+	<EOGS10000:InformationOnTypeOfSubmittedReport contextRef="nNC0">Årsrapport</EOGS10000:InformationOnTypeOfSubmittedReport>
+	<EOGS10000:DateOfGeneralMeeting contextRef="nNC0">2013-02-26</EOGS10000:DateOfGeneralMeeting>
+	<EOGS10000:DateOfApprovalOfReport contextRef="nNC0">2013-02-26</EOGS10000:DateOfApprovalOfReport>
+	<EOGS80000:TaxExpense contextRef="NC1" precision="INF" unitRef="currency">85268</EOGS80000:TaxExpense>
+	<EOGS80000:TaxExpense contextRef="NC2" precision="INF" unitRef="currency">-301451</EOGS80000:TaxExpense>
+	<EOGS80000:ProfitLoss contextRef="NC1" precision="INF" unitRef="currency">272245</EOGS80000:ProfitLoss>
+	<EOGS80000:ProfitLoss contextRef="NC2" precision="INF" unitRef="currency">-904801</EOGS80000:ProfitLoss>
+	<EOGS80000:IntangibleAssets contextRef="EV1" precision="INF" unitRef="currency">14896</EOGS80000:IntangibleAssets>
+	<EOGS80000:IntangibleAssets contextRef="EV2" precision="INF" unitRef="currency">0</EOGS80000:IntangibleAssets>
+	<EOGS80000:Goodwill contextRef="EV1" precision="INF" unitRef="currency">14896</EOGS80000:Goodwill>
+	<EOGS80000:Goodwill contextRef="EV2" precision="INF" unitRef="currency">0</EOGS80000:Goodwill>
+	<EOGS80000:FixturesFittingsToolsAndEquipment contextRef="EV1" precision="INF" unitRef="currency">1346579</EOGS80000:FixturesFittingsToolsAndEquipment>
+	<EOGS80000:FixturesFittingsToolsAndEquipment contextRef="EV2" precision="INF" unitRef="currency">1658025</EOGS80000:FixturesFittingsToolsAndEquipment>
+	<EOGS80000:PropertyPlantAndEquipment contextRef="EV1" precision="INF" unitRef="currency">1543242</EOGS80000:PropertyPlantAndEquipment>
+	<EOGS80000:PropertyPlantAndEquipment contextRef="EV2" precision="INF" unitRef="currency">2023252</EOGS80000:PropertyPlantAndEquipment>
+	<EOGS80000:LeaseholdImprovements contextRef="EV1" precision="INF" unitRef="currency">196663</EOGS80000:LeaseholdImprovements>
+	<EOGS80000:LeaseholdImprovements contextRef="EV2" precision="INF" unitRef="currency">365227</EOGS80000:LeaseholdImprovements>
+	<EOGS80000:LongtermInvestmentsAndReceivables contextRef="EV1" precision="INF" unitRef="currency">105253</EOGS80000:LongtermInvestmentsAndReceivables>
+	<EOGS80000:LongtermInvestmentsAndReceivables contextRef="EV2" precision="INF" unitRef="currency">105253</EOGS80000:LongtermInvestmentsAndReceivables>
+	<EOGS80000:OtherLongtermReceivables contextRef="EV1" precision="INF" unitRef="currency">105253</EOGS80000:OtherLongtermReceivables>
+	<EOGS80000:OtherLongtermReceivables contextRef="EV2" precision="INF" unitRef="currency">105253</EOGS80000:OtherLongtermReceivables>
+	<EOGS80000:RawMaterialsAndConsumables contextRef="EV1" precision="INF" unitRef="currency">778482</EOGS80000:RawMaterialsAndConsumables>
+	<EOGS80000:RawMaterialsAndConsumables contextRef="EV2" precision="INF" unitRef="currency">803884</EOGS80000:RawMaterialsAndConsumables>
+	<EOGS80000:ShorttermTradeReceivables contextRef="EV1" precision="INF" unitRef="currency">2223813</EOGS80000:ShorttermTradeReceivables>
+	<EOGS80000:ShorttermTradeReceivables contextRef="EV2" precision="INF" unitRef="currency">856698</EOGS80000:ShorttermTradeReceivables>
+	<EOGS80000:ContractWorkInProgress contextRef="EV1" precision="INF" unitRef="currency">1316004</EOGS80000:ContractWorkInProgress>
+	<EOGS80000:ContractWorkInProgress contextRef="EV2" precision="INF" unitRef="currency">804219</EOGS80000:ContractWorkInProgress>
+	<EOGS80000:OtherShorttermReceivables contextRef="EV1" precision="INF" unitRef="currency">7000</EOGS80000:OtherShorttermReceivables>
+	<EOGS80000:OtherShorttermReceivables contextRef="EV2" precision="INF" unitRef="currency">7000</EOGS80000:OtherShorttermReceivables>
+	<EOGS80000:DeferredIncomeAssets contextRef="EV1" precision="INF" unitRef="currency">4388</EOGS80000:DeferredIncomeAssets>
+	<EOGS80000:DeferredIncomeAssets contextRef="EV2" precision="INF" unitRef="currency">17304</EOGS80000:DeferredIncomeAssets>
+	<EOGS80000:CurrentDeferredTaxAssets contextRef="EV1" precision="INF" unitRef="currency">9202</EOGS80000:CurrentDeferredTaxAssets>
+	<EOGS80000:CurrentDeferredTaxAssets contextRef="EV2" precision="INF" unitRef="currency">310653</EOGS80000:CurrentDeferredTaxAssets>
+	<EOGS80000:ShorttermTradePayables contextRef="EV1" precision="INF" unitRef="currency">1376140</EOGS80000:ShorttermTradePayables>
+	<EOGS80000:ShorttermTradePayables contextRef="EV2" precision="INF" unitRef="currency">1024986</EOGS80000:ShorttermTradePayables>
+	<EOGS10000:IdentificationNumberCvrOfReportingEntity contextRef="nNC0">26586178</EOGS10000:IdentificationNumberCvrOfReportingEntity>
+	<EOGS80000:DepreciationOfPropertyPlantAndEquipment contextRef="NC1" precision="INF" unitRef="currency">243846</EOGS80000:DepreciationOfPropertyPlantAndEquipment>
+	<EOGS80000:DepreciationOfPropertyPlantAndEquipment contextRef="NC2" precision="INF" unitRef="currency">388784</EOGS80000:DepreciationOfPropertyPlantAndEquipment>
+	<EOGS80000:ProfitLossFromOrdinaryActivitiesBeforeTax contextRef="NC1" precision="INF" unitRef="currency">357513</EOGS80000:ProfitLossFromOrdinaryActivitiesBeforeTax>
+	<EOGS80000:ProfitLossFromOrdinaryActivitiesBeforeTax contextRef="NC2" precision="INF" unitRef="currency">-1206252</EOGS80000:ProfitLossFromOrdinaryActivitiesBeforeTax>
+	<EOGS80000:PaidContributedCapital contextRef="EV1" precision="INF" unitRef="currency">125000</EOGS80000:PaidContributedCapital>
+	<EOGS80000:PaidContributedCapital contextRef="EV2" precision="INF" unitRef="currency">125000</EOGS80000:PaidContributedCapital>
+	<EOGS80000:RevaluationReserve contextRef="EV1" precision="INF" unitRef="currency">314661</EOGS80000:RevaluationReserve>
+	<EOGS80000:RevaluationReserve contextRef="EV2" precision="INF" unitRef="currency">314661</EOGS80000:RevaluationReserve>
+	<EOGS80000:RetainedEarnings contextRef="EV1" precision="INF" unitRef="currency">-7606</EOGS80000:RetainedEarnings>
+	<EOGS80000:RetainedEarnings contextRef="EV2" precision="INF" unitRef="currency">-912407</EOGS80000:RetainedEarnings>
+	<EOGS10000:ReportingPeriodStartDate contextRef="nNC0">2011-10-01</EOGS10000:ReportingPeriodStartDate>
+	<EOGS10000:ReportingPeriodEndDate contextRef="nNC0">2012-09-30</EOGS10000:ReportingPeriodEndDate>
+	<EOGS70000:DateOfApprovalOfAnnualReport contextRef="nNC0">2013-02-26</EOGS70000:DateOfApprovalOfAnnualReport>
+	<EOGS80000:OtherFinanceExpenses contextRef="NC1" precision="INF" unitRef="currency">196338</EOGS80000:OtherFinanceExpenses>
+	<EOGS80000:OtherFinanceExpenses contextRef="NC2" precision="INF" unitRef="currency">936296</EOGS80000:OtherFinanceExpenses>
+	<EOGS80000:GrossProfitLoss contextRef="NC1" precision="INF" unitRef="currency">2801560</EOGS80000:GrossProfitLoss>
+	<EOGS80000:GrossProfitLoss contextRef="NC2" precision="INF" unitRef="currency">1902495</EOGS80000:GrossProfitLoss>
+	<EOGS80000:EmployeeBenefitsExpense contextRef="NC1" precision="INF" unitRef="currency">2014904</EOGS80000:EmployeeBenefitsExpense>
+	<EOGS80000:EmployeeBenefitsExpense contextRef="NC2" precision="INF" unitRef="currency">1784828</EOGS80000:EmployeeBenefitsExpense>
+	<EOGS80000:OtherFinanceIncome contextRef="NC1" precision="INF" unitRef="currency">11041</EOGS80000:OtherFinanceIncome>
+	<EOGS80000:OtherFinanceIncome contextRef="NC2" precision="INF" unitRef="currency">1161</EOGS80000:OtherFinanceIncome>
+	<EOGS80000:LongtermDebtToBanks contextRef="EV1" precision="INF" unitRef="currency">993671</EOGS80000:LongtermDebtToBanks>
+	<EOGS80000:LongtermDebtToBanks contextRef="EV2" precision="INF" unitRef="currency">1048281</EOGS80000:LongtermDebtToBanks>
+	<EOGS80000:LongtermDebtToOtherCreditInstitutions contextRef="EV1" precision="INF" unitRef="currency">701990</EOGS80000:LongtermDebtToOtherCreditInstitutions>
+	<EOGS80000:LongtermDebtToOtherCreditInstitutions contextRef="EV2" precision="INF" unitRef="currency">874711</EOGS80000:LongtermDebtToOtherCreditInstitutions>
+	<EOGS80000:OtherShorttermPayables contextRef="EV1" precision="INF" unitRef="currency">444494</EOGS80000:OtherShorttermPayables>
+	<EOGS80000:OtherShorttermPayables contextRef="EV2" precision="INF" unitRef="currency">299096</EOGS80000:OtherShorttermPayables>
+	<EOGS80000:ShorttermDebtToOtherCreditInstitutions contextRef="EV1" precision="INF" unitRef="currency">1482455</EOGS80000:ShorttermDebtToOtherCreditInstitutions>
+	<EOGS80000:ShorttermDebtToOtherCreditInstitutions contextRef="EV2" precision="INF" unitRef="currency">1407725</EOGS80000:ShorttermDebtToOtherCreditInstitutions>
+	<EOGS80000:ShorttermPayablesToGroupEnterprises contextRef="EV1" precision="INF" unitRef="currency">571475</EOGS80000:ShorttermPayablesToGroupEnterprises>
+	<EOGS80000:ShorttermPayablesToGroupEnterprises contextRef="EV2" precision="INF" unitRef="currency">746210</EOGS80000:ShorttermPayablesToGroupEnterprises>
+</xbrl>
