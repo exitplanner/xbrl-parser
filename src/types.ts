@@ -132,7 +132,7 @@ export interface Balance {
     total: number;
 
     /**
-     * da: Anlægsaktiver
+     * da: Anlægsaktiver/langfristede aktiver
      */
     noncurrentAssets: {
       total?: number;
@@ -173,7 +173,7 @@ export interface Balance {
     };
 
     /**
-     * da: Omsætningsaktiver
+     * da: Omsætningsaktiver/kortfristede aktiver
      */
     currentAssets: {
       total?: number;
@@ -181,7 +181,9 @@ export interface Balance {
       /**
        * da: Varebeholdninger
        */
-      inventories?: number;
+      inventories?: {
+        total?: number;
+      },
 
       /**
        * da: Likvide beholdninger
@@ -191,7 +193,31 @@ export interface Balance {
       /**
        * da: Tilgodehavender
        */
-      shorttermReceivables?: number;
+      shorttermReceivables: {
+        total?: number;
+
+        /**
+         * da: Tilgodehavender fra salg og tjenesteydelser
+         */
+        shorttermTradeReceivables?: number;
+
+        /**
+         * da: Kortfristede tilgodehavender hos tilknyttede virksomheder
+         */
+        shorttermReceivablesFromGroupEnterprises?: number;
+
+        /**
+         * Kortfristet tilgodehavende skat
+         */
+        shorttermTaxReceivables?: number;
+      }
+
+      /**
+       * da: Værdipapirer og kapitalandele
+       */
+      shorttermInvestments: {
+        total?: number;
+      }
     }
   };
 
@@ -233,14 +259,113 @@ export interface Balance {
       total?: number;
 
       /**
-       * da: Kortfristede gældsforpligtelser
+       * da: Kortfristede forpligtelser/gældsforpligtelser
        */
-      shorttermLiabilities?: number;
+      shorttermLiabilities: {
+        total?: number;
+
+        /**
+         * da: Kortfristet gæld til kreditinstituter
+         */
+        shorttermDebtToCreditInstitutions?: number;
+
+        /**
+         * da: Kortfristet gæld til banker
+         */
+        shorttermDebtToBanks?: number;
+
+        /**
+         * da: Kortfristet gæld til realkreditinstitutter
+         */
+        shorttermMortgageDebt?: number;
+
+        /**
+         * da: Kortfristet gæld til kreditinstitutter i øvrigt
+         */
+        shorttermDebtToOtherCreditInstitutions?: number;
+
+        /**
+         * da: Gæld til tilknyttede virksomheder
+         */
+        shorttermPayablesToGroupEnterprises?: number;
+
+        /**
+         * da: Gæld til associerede virksomheder
+         */
+        shorttermPayablesToAssociates?: number;
+
+        /**
+         * da: Gæld til kapitalinteresser
+         */
+        shorttermPayablesToParticipatingInterests?: number;
+
+        /**
+         * da: Gæld til joint ventures
+         */
+        shorttermPayablesToJointVentures?: number;
+
+        /**
+         * da: Kortfristet gæld til selskabsdeltagere og ledelse
+         */
+        shorttermPayablesToShareholdersAndManagement?: number;
+
+        /**
+         * Kortfristet skyldig skat
+         */
+        shorttermTaxPayables?: number;
+      }
 
       /**
-       * da: Langfristede gældsforpligtelser
+       * da: Langfristede forpligtelser/gældsforpligtelser
        */
-      longtermLiabilities?: number;
+      longtermLiabilities: {
+        total?: number;
+
+        /**
+         * da: Langfristet gæld til kreditinstituter
+         */
+        longtermDebtToCreditInstitutions?: number;
+
+        /**
+         * da: Langfristet gæld til banker
+         */
+        longtermDebtToBanks?: number;
+
+        /**
+         * da: Langfristet gæld til realkreditinstitutter
+         */
+        longtermMortgageDebt?: number;
+
+        /**
+         * da: Langfristet gæld til kreditinstitutter i øvrigt
+         */
+        longtermDebtToOtherCreditInstitutions?: number;
+
+        /**
+         * da: Gæld til tilknyttede virksomheder (langfristede)
+         */
+        longtermPayablesToGroupEnterprises?: number;
+
+        /**
+         * da: Gæld til associerede virksomheder (langfristede)
+         */
+        longtermPayablesToAssociates?: number;
+
+        /**
+         * da: Gæld til kapitalinteresser (langfristede)
+         */
+        longtermPayablesToParticipatingInterests?: number;
+
+        /**
+         * da: Gæld til joint ventures (langfristet)
+         */
+        longtermPayablesToJointVentures?: number;
+
+        /**
+         * Skyldig skat (langfristet)
+         */
+        longtermTaxPayables?: number;
+      }
     };
   }
 }

@@ -1,5 +1,5 @@
 import { findInstants, findPeriods, Instant, parseXbrlFile, Period } from '../xbrl/index.js';
-import { ensureArray } from '../util.js';
+import { ensureArray, removeUndefinedValues } from '../util.js';
 import type { AnnualReport, Balance, IncomeStatement } from '../types';
 import type { KeysMatching, NumberWithUnitRef, XbrliXbrl } from '../xbrl/types';
 import type { Parser } from './parser';
@@ -114,7 +114,7 @@ function findPrimaryBalanceInstant(doc: XbrliXbrl): Instant {
 
 function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatement {
 
-  const incomeStatement: IncomeStatement = {
+  const incomeStatement: IncomeStatement = removeUndefinedValues({
     profitLoss: extractNumber(doc['fsa:ProfitLoss'], periodId) || 0,
     employeeExpenses: extractNumber(doc['fsa:EmployeeBenefitsExpense'], periodId) || 0,
     tax: extractTax(doc, periodId),
@@ -134,7 +134,7 @@ function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatemen
     profitLossFromOperatingActivities: extractNumber(doc['fsa:ProfitLossFromOrdinaryOperatingActivities'], periodId) || 0,
     calculatedEBITDA: 0,
     calculatedEBIT: 0,
-  };
+  });
 
   // In some cases, the report only has "gross result" and not a "gross
   // profit/loss". In these cases, the gross result is used as the gross
@@ -208,7 +208,7 @@ function createBalanceSheet(doc: XbrliXbrl, instant: Instant): Balance {
 
   return {
     date,
-    assets: {
+    assets: removeUndefinedValues({
       total: extractNumber(doc['fsa:Assets'], id) || 0,
       noncurrentAssets: {
         total: extractNumber(doc['fsa:NoncurrentAssets'], id),
@@ -227,11 +227,21 @@ function createBalanceSheet(doc: XbrliXbrl, instant: Instant): Balance {
       currentAssets: {
         total: extractNumber(doc['fsa:CurrentAssets'], id),
         cashAndCashEquivalents: extractNumber(doc['fsa:CashAndCashEquivalents'], id),
-        shorttermReceivables: extractNumber(doc['fsa:ShorttermReceivables'], id),
-        inventories: extractNumber(doc['fsa:Inventories'], id)
+        shorttermReceivables: {
+          total: extractNumber(doc['fsa:ShorttermReceivables'], id),
+          shorttermTradeReceivables: extractNumber(doc['fsa:ShorttermTradeReceivables'], id),
+          shorttermTaxReceivables: extractNumber(doc['fsa:ShorttermTaxReceivables'], id),
+          shorttermReceivablesFromGroupEnterprises: extractNumber(doc['fsa:ShorttermReceivablesFromGroupEnterprises'], id)
+        },
+        inventories: {
+          total: extractNumber(doc['fsa:Inventories'], id)
+        },
+        shorttermInvestments: {
+          total: extractNumber(doc['fsa:ShorttermInvestments'], id)
+        }
       }
-    },
-    liabilitiesAndEquity: {
+    }),
+    liabilitiesAndEquity: removeUndefinedValues({
       total: extractNumber(doc['fsa:LiabilitiesAndEquity'], id) || 0,
       equity: {
         total: extractNumber(doc['fsa:Equity'], id),
@@ -243,10 +253,33 @@ function createBalanceSheet(doc: XbrliXbrl, instant: Instant): Balance {
       },
       liabilitiesOtherThanProvisions: {
         total: extractNumber(doc['fsa:LiabilitiesOtherThanProvisions'], id),
-        shorttermLiabilities: extractNumber(doc['fsa:ShorttermLiabilitiesOtherThanProvisions'], id),
-        longtermLiabilities: extractNumber(doc['fsa:LongtermLiabilitiesOtherThanProvisions'], id)
+        shorttermLiabilities: {
+          total: extractNumber(doc['fsa:ShorttermLiabilitiesOtherThanProvisions'], id),
+          shorttermDebtToCreditInstitutions: extractNumber(doc['fsa:ShorttermDebtToCreditInstitutions'], id),
+          shorttermDebtToBanks: extractNumber(doc['fsa:ShorttermDebtToBanks'], id),
+          shorttermMortgageDebt: extractNumber(doc['fsa:ShorttermMortgageDebt'], id),
+          shorttermDebtToOtherCreditInstitutions: extractNumber(doc['fsa:ShorttermDebtToOtherCreditInstitutions'], id),
+          shorttermPayablesToGroupEnterprises: extractNumber(doc['fsa:ShorttermPayablesToGroupEnterprises'], id),
+          shorttermPayablesToParticipatingInterests: extractNumber(doc['fsa:ShorttermPayablesToParticipatingInterest'], id),
+          shorttermPayablesToAssociates: extractNumber(doc['fsa:ShorttermPayablesToAssociates'], id),
+          shorttermPayablesToJointVentures: extractNumber(doc['fsa:ShorttermPayablesToJointVentures'], id),
+          shorttermPayablesToShareholdersAndManagement: extractNumber(doc['fsa:ShorttermPayablesToShareholdersAndManagement'], id),
+          shorttermTaxPayables: extractNumber(doc['fsa:ShorttermTaxPayables'], id),
+        },
+        longtermLiabilities: {
+          total: extractNumber(doc['fsa:LongtermLiabilitiesOtherThanProvisions'], id),
+          longtermDebtToCreditInstitutions: extractNumber(doc['fsa:LongtermDebtToCreditInstitutions'], id),
+          longtermDebtToBanks: extractNumber(doc['fsa:LongtermDebtToBanks'], id),
+          longtermMortgageDebt: extractNumber(doc['fsa:LongtermMortgageDebt'], id),
+          longtermDebtToOtherCreditInstitutions: extractNumber(doc['fsa:LongtermDebtToOtherCreditInstitutions'], id),
+          longtermPayablesToGroupEnterprises: extractNumber(doc['fsa:LongtermPayablesToGroupEnterprises'], id),
+          longtermPayablesToAssociates: extractNumber(doc['fsa:LongtermPayablesToAssociates'], id),
+          longtermPayablesToParticipatingInterests: extractNumber(doc['fsa:LongtermPayablesToParticipatingInterests'], id),
+          longtermPayablesToJointVentures: extractNumber(doc['fsa:LongtermPayablesToJointVentures'], id),
+          longtermTaxPayables: extractNumber(doc['fsa:LongtermTaxPayables'], id),
+        }
       }
-    }
+    })
   };
 }
 

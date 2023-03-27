@@ -128,7 +128,10 @@ export interface XbrliXbrl {
   'fsa:ReserveForDevelopmentExpenditure'?: NumberWithUnitRef[];
   'fsa:RetainedEarnings': NumberWithUnitRef[];
   'fsa:SelectedElementsFromReportingClassC'?: BooleanWithRef;
+  'fsa:ShorttermDebtToCreditInstitutions'?: NumberWithUnitRef[];
   'fsa:ShorttermDebtToBanks'?: NumberWithUnitRef[];
+  'fsa:ShorttermMortgageDebt'?: NumberWithUnitRef[];
+  'fsa:ShorttermDebtToOtherCreditInstitutions'?: NumberWithUnitRef[];
   'fsa:ShorttermDeferredIncome'?: NumberWithUnitRef[];
   'fsa:ShorttermLiabilitiesOtherThanProvisions': NumberWithUnitRef[];
   'fsa:ShorttermPrepaymentsReceivedFromCustomers'?: NumberWithUnitRef[];
@@ -136,6 +139,7 @@ export interface XbrliXbrl {
   'fsa:ShorttermTaxPayables'?: NumberWithUnitRef[];
   'fsa:ShorttermTaxReceivables'?: NumberWithUnitRef[];
   'fsa:ShorttermTradePayables': NumberWithUnitRef[];
+  'fsa:ShorttermInvestments'?: NumberWithUnitRef[];
   'fsa:TaxExpenseOnOrdinaryActivities'?: NumberWithUnitRef[];
   'fsa:TaxExpenseOnExtraordinaryEvents'?: NumberWithUnitRef[];
   'gsd:AddressOfSubmittingEnterprisePostcodeAndTown': StringNode;
@@ -266,9 +270,15 @@ export interface XbrliXbrl {
   'fsa:OtherShorttermReceivables'?: NumberWithUnitRef[];
   'fsa:DeferredIncomeAssets'?: NumberWithUnitRef[];
   'fsa:LongtermPayablesToGroupEnterprises'?: NumberWithUnitRef[];
+  'fsa:LongtermPayablesToAssociates'?: NumberWithUnitRef[];
+  'fsa:LongtermPayablesToParticipatingInterests'?: NumberWithUnitRef[];
+  'fsa:LongtermPayablesToJointVentures'?: NumberWithUnitRef[];
   'fsa:LongtermDeferredIncome'?: NumberWithUnitRef[];
   'fsa:OtherLongtermPayables'?: NumberWithUnitRef[];
   'fsa:ShorttermPayablesToGroupEnterprises'?: NumberWithUnitRef[];
+  'fsa:ShorttermPayablesToAssociates'?: NumberWithUnitRef[];
+  'fsa:ShorttermPayablesToParticipatingInterest'?: NumberWithUnitRef[];
+  'fsa:ShorttermPayablesToJointVentures'?: NumberWithUnitRef[];
   'fsa:ShorttermContractWorkInProgressLiabilities'?: NumberWithUnitRef[];
   'mrv:ValueOfKeyFigureOrFinancialRatio'?: NumberWithUnitRef[];
   'cmn:TitleOfMemberOfExecutiveBoard'?: StringNode;
@@ -314,6 +324,9 @@ export interface XbrliXbrl {
   'fsa:NoncurrentDeferredTaxAssets'?: NumberWithUnitRef[];
   'fsa:ManufacturedGoodsAndGoodsForResale'?: NumberWithUnitRef[];
   'fsa:PrepaymentsForGoods'?: NumberWithUnitRef[];
+  'fsa:LongtermDebtToCreditInstitutions'?: NumberWithUnitRef[];
+  'fsa:LongtermDebtToBanks'?: NumberWithUnitRef[];
+  'fsa:LongtermMortgageDebt'?: NumberWithUnitRef[];
   'fsa:LongtermDebtToOtherCreditInstitutions'?: NumberWithUnitRef[];
   'fsa:OtherPayablesIncludingTaxPayablesLiabilitiesOtherThanProvisionsLongterm'?: NumberWithUnitRef[];
   'fsa:ShorttermPartOfLongtermLiabilitiesOtherThanProvisions'?: NumberWithUnitRef[];
