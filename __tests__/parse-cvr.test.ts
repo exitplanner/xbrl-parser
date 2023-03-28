@@ -2,9 +2,9 @@ import { CvrParser, parseAnnualReport } from '../src/index.js';
 import { loadReport } from './util.js';
 import type { Balance, IncomeStatement } from '../src/index';
 
-describe('parse', () => {
+describe('parse - cvr parser', () => {
   it('should parse an annual report from a Danish company with revenue', () => {
-    const report = parseAnnualReport(loadReport(1), new CvrParser());
+    const report = parseAnnualReport(loadReport('report1'), new CvrParser());
 
     expect(report).toEqual(expect.objectContaining({
       VAT: '65305216',
@@ -17,9 +17,6 @@ describe('parse', () => {
     }));
 
     expect(report.incomeStatement).toEqual(expect.objectContaining<IncomeStatement>({
-      changeInInventory: undefined,
-      costOfSales: undefined,
-      ownWorkCapitalized: undefined,
       revenue: 4_714_614_000,
       grossProfitLoss: 1_863_940_000,
       externalExpenses: 2_858_049_000,
@@ -35,7 +32,6 @@ describe('parse', () => {
       profitLossBeforeTax: -22_878_000,
       profitLoss: -2_8633_000,
       tax: 5_755_000,
-      grossResult: undefined,
     }));
 
     expect(report.incomeStatement.calculatedEBIT).toEqual(report.incomeStatement.profitLossFromOperatingActivities);
@@ -49,7 +45,6 @@ describe('parse', () => {
           total: 3_568_312_000,
           intangibleAssets: {
             total: 140_419_000,
-            completedDevelopmentProjects: undefined,
             goodwill: 140_419_000,
           },
           tangibleAssets: {
@@ -61,9 +56,16 @@ describe('parse', () => {
         },
         currentAssets: {
           total: 977_491_000,
-          inventories: 1_264_000,
+          inventories: {
+            total: 1_264_000
+          },
           cashAndCashEquivalents: 97_462_000,
-          shorttermReceivables: 878_765_000,
+          shorttermReceivables: {
+            shorttermReceivablesFromGroupEnterprises: 209_615_000,
+            shorttermTradeReceivables: 469_176_000,
+            total: 878_765_000
+          },
+          shorttermInvestments: {}
         }
       },
       liabilitiesAndEquity: {
@@ -78,15 +80,21 @@ describe('parse', () => {
         },
         liabilitiesOtherThanProvisions: {
           total: 3_091_968_000,
-          shorttermLiabilities: 2_802_859_000,
-          longtermLiabilities: 289_109_000
+          shorttermLiabilities: {
+            total: 2_802_859_000,
+            shorttermPayablesToGroupEnterprises: 1_686_758_000
+          },
+          longtermLiabilities: {
+            total: 289_109_000,
+            longtermPayablesToGroupEnterprises: 6_287_000
+          }
         }
       }
     }));
   });
 
   it('should parse an annual report from a Danish company without revenue but with gross profit/loss', () => {
-    const report = parseAnnualReport(loadReport(2), new CvrParser());
+    const report = parseAnnualReport(loadReport('report2'), new CvrParser());
 
     expect(report).toEqual(expect.objectContaining({
       VAT: '33070691',
@@ -99,9 +107,6 @@ describe('parse', () => {
     }));
 
     expect(report.incomeStatement).toEqual(expect.objectContaining<IncomeStatement>({
-      changeInInventory: undefined,
-      costOfSales: undefined,
-      ownWorkCapitalized: undefined,
       grossProfitLoss: 40_535_965,
       employeeExpenses: 36_625_898,
       calculatedEBITDA: 3_910_067,
@@ -113,11 +118,9 @@ describe('parse', () => {
       profitLossBeforeTax: 2_880_321,
       tax: 645_297,
       profitLoss: 2_235_024,
-      revenue: undefined,
       externalExpenses: 0,
       otherOperatingExpenses: 0,
       otherOperatingIncome: 0,
-      grossResult: undefined,
     }));
 
     expect(report.incomeStatement.calculatedEBIT).toEqual(report.incomeStatement.profitLossFromOperatingActivities);
@@ -130,7 +133,6 @@ describe('parse', () => {
           total: 5_429_203,
           intangibleAssets: {
             total: 4_951_654,
-            goodwill: undefined,
             completedDevelopmentProjects: 4_951_654,
           },
           tangibleAssets: {
@@ -142,9 +144,13 @@ describe('parse', () => {
         },
         currentAssets: {
           total: 12_101_444,
-          inventories: undefined,
+          inventories: {},
           cashAndCashEquivalents: 3_659_926,
-          shorttermReceivables: 8_441_518
+          shorttermReceivables: {
+            total: 8_441_518,
+            shorttermTaxReceivables: 33_412
+          },
+          shorttermInvestments: { }
         }
       },
       liabilitiesAndEquity: {
@@ -159,15 +165,22 @@ describe('parse', () => {
         },
         liabilitiesOtherThanProvisions: {
           total: 8_420_604,
-          shorttermLiabilities: 8_420_604,
-          longtermLiabilities: 0
+          shorttermLiabilities: {
+            total: 8_420_604,
+            shorttermDebtToBanks: 0,
+            shorttermTaxPayables: 0
+          },
+          longtermLiabilities: {
+            total: 0,
+            longtermTaxPayables: 0
+          }
         }
       }
     }));
   });
 
   it('should parse an annual report for a company using non-xbrli format', () => {
-    const report = parseAnnualReport(loadReport(3), new CvrParser());
+    const report = parseAnnualReport(loadReport('report3'), new CvrParser());
 
     expect(report).toEqual(expect.objectContaining({
       VAT: '38343521',
@@ -191,11 +204,9 @@ describe('parse', () => {
       profitLossBeforeTax: 858_507,
       tax: 208_964,
       profitLoss: 649_543,
-      revenue: undefined,
       externalExpenses: 0,
       otherOperatingExpenses: 0,
       otherOperatingIncome: 0,
-      grossResult: undefined,
     }));
 
     expect(report.incomeStatement.calculatedEBIT).toEqual(report.incomeStatement.profitLossFromOperatingActivities);
@@ -206,11 +217,7 @@ describe('parse', () => {
         total: 8_752_513,
         noncurrentAssets: {
           total: 1_638_836,
-          intangibleAssets: {
-            total: undefined,
-            goodwill: undefined,
-            completedDevelopmentProjects: undefined,
-          },
+          intangibleAssets: {},
           tangibleAssets: {
             total: 1_303_961,
           },
@@ -220,9 +227,15 @@ describe('parse', () => {
         },
         currentAssets: {
           total: 7_113_677,
-          inventories: 165_000,
+          inventories: {
+            total: 165_000,
+          },
           cashAndCashEquivalents: 92_870,
-          shorttermReceivables: 6_855_807
+          shorttermReceivables: {
+            total: 6_855_807,
+            shorttermTradeReceivables: 5_497_803
+          },
+          shorttermInvestments: {}
         }
       },
       liabilitiesAndEquity: {
@@ -237,8 +250,14 @@ describe('parse', () => {
         },
         liabilitiesOtherThanProvisions: {
           total: 6_842_359,
-          shorttermLiabilities: 6_842_359,
-          longtermLiabilities: undefined
+          shorttermLiabilities: {
+            total: 6_842_359,
+            shorttermPayablesToGroupEnterprises: 502_229,
+            shorttermPayablesToShareholdersAndManagement: 2904,
+            shorttermTaxPayables: 14_278,
+            shorttermDebtToOtherCreditInstitutions: 209_130
+          },
+          longtermLiabilities: {}
         }
       }
     }));
@@ -246,7 +265,7 @@ describe('parse', () => {
 
   it('should parse an annual report with multiple period references that conflict a bit', () => {
     // This test case could not produce correct income statement on version 0.3.4 and below
-    const report = parseAnnualReport(loadReport(4), new CvrParser());
+    const report = parseAnnualReport(loadReport('report4'), new CvrParser());
 
     expect(report.VAT).toEqual('31189810');
     expect(report.currency).toEqual('DKK');
@@ -259,7 +278,6 @@ describe('parse', () => {
     });
 
     expect(report.incomeStatement).toEqual(expect.objectContaining<Partial<IncomeStatement>>({
-      revenue: undefined,
       externalExpenses: 0,
       employeeExpenses: 63_285_043,
       otherOperatingExpenses: 0,
@@ -274,13 +292,12 @@ describe('parse', () => {
       profitLoss: 20_227_235,
       tax: 6_863_758,
       grossProfitLoss: 91_475_175,
-      grossResult: undefined,
     }));
   });
 
   it('should parse an "old" annual report', () => {
     // This test case failed on version 0.3.4 and below
-    const report = parseAnnualReport(loadReport(5), new CvrParser());
+    const report = parseAnnualReport(loadReport('report5'), new CvrParser());
 
     expect(report.VAT).toEqual('32295843');
     expect(report.currency).toEqual('DKK');
@@ -297,7 +314,7 @@ describe('parse', () => {
 
   it('should parse another "old" annual report', () => {
     // This test case failed on version 0.6.0 and below
-    const report = parseAnnualReport(loadReport(6), new CvrParser());
+    const report = parseAnnualReport(loadReport('report6'), new CvrParser());
 
     expect(report.VAT).toEqual('26586178');
     expect(report.currency).toEqual('DKK');
