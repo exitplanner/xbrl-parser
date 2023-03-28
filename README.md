@@ -7,6 +7,8 @@ XBRL parser and utility for parsing XBRL files.
 
 The library was created specifically for parsing XBRL annual reports for Danish companies to extract income statement and balance data from the (slightly different) taxonomies used for annual reports and consolidate them in the same JSON-like format.
 
+It has very limited support for US-GAAP taxonomy as well.
+
 ## Install
 
 ```
@@ -29,14 +31,14 @@ const report = parseAnnualReport(xmlString, new CvrParser());
 console.log(report);
 ```
 
-The `CvrParser` is named like that since it parses information fetched from the Danish national registry [cvr.dk](cvr.dk).
+The `CvrParser` is named like that since it parses information fetched from the Danish national registry [cvr.dk](cvr.dk). There is also a `USGAAPParser` for for parsing XBRL for the US-GAAP taxonomy.
 
 ### Things to watch out for in the annual reports
 
 The code contains some comments for specific cases that have been discovered along the way. Some of the more interesting ones:
 
 - Some companies report revenue while others report "gross profit". It is unclear what the difference is.
-- Some companies report EBITDA in their PDF reports, but there is no EBITDA field in the taxonomy. As such, EBITDA is a calculated field in the mapped reports.
+- Some companies report EBITDA in their PDF reports, but there is no EBITDA field in the taxonomy. As such, EBITDA is a *calculated field* in the mapped reports.
 
 ## XBRL spec notes
 
@@ -57,12 +59,16 @@ The taxonomies for Danish annual reports is documented [here](https://erhvervsst
 
 For this taxonomy, namespace renaming also happens for some annual reports, and this library tries to correct it.
 
-Some other notes:
+### US-GAAP annual report specifics
 
-**Note**: IFRS is not supported
+Taxonomies for US-GAAP are available [here](https://xbrl.us/home/filers/sec-reporting/taxonomies/).
 
-**Note**: The field mapping is incomplete.
+The taxonomy is currenty mapped from only publicly traded companies which might have different reporting structure than SMEs.
 
-The mapping is done on a best-effort basis and will most definitely not be correct in all cases.
+### Notes to keep in mind
+
+- IFRS is not supported
+- The field mapping is incomplete.
+- The mapping is done on a best-effort basis and will most definitely not be correct in all cases.
 
 In other words: Use with caution :D

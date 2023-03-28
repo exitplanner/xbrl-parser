@@ -2,9 +2,9 @@ import { CvrParser, parseAnnualReport } from '../src/index.js';
 import { loadReport } from './util.js';
 import type { Balance, IncomeStatement } from '../src/index';
 
-describe('parse', () => {
+describe('parse - cvr parser', () => {
   it('should parse an annual report from a Danish company with revenue', () => {
-    const report = parseAnnualReport(loadReport(1), new CvrParser());
+    const report = parseAnnualReport(loadReport('report1'), new CvrParser());
 
     expect(report).toEqual(expect.objectContaining({
       VAT: '65305216',
@@ -94,7 +94,7 @@ describe('parse', () => {
   });
 
   it('should parse an annual report from a Danish company without revenue but with gross profit/loss', () => {
-    const report = parseAnnualReport(loadReport(2), new CvrParser());
+    const report = parseAnnualReport(loadReport('report2'), new CvrParser());
 
     expect(report).toEqual(expect.objectContaining({
       VAT: '33070691',
@@ -180,7 +180,7 @@ describe('parse', () => {
   });
 
   it('should parse an annual report for a company using non-xbrli format', () => {
-    const report = parseAnnualReport(loadReport(3), new CvrParser());
+    const report = parseAnnualReport(loadReport('report3'), new CvrParser());
 
     expect(report).toEqual(expect.objectContaining({
       VAT: '38343521',
@@ -265,7 +265,7 @@ describe('parse', () => {
 
   it('should parse an annual report with multiple period references that conflict a bit', () => {
     // This test case could not produce correct income statement on version 0.3.4 and below
-    const report = parseAnnualReport(loadReport(4), new CvrParser());
+    const report = parseAnnualReport(loadReport('report4'), new CvrParser());
 
     expect(report.VAT).toEqual('31189810');
     expect(report.currency).toEqual('DKK');
@@ -297,7 +297,7 @@ describe('parse', () => {
 
   it('should parse an "old" annual report', () => {
     // This test case failed on version 0.3.4 and below
-    const report = parseAnnualReport(loadReport(5), new CvrParser());
+    const report = parseAnnualReport(loadReport('report5'), new CvrParser());
 
     expect(report.VAT).toEqual('32295843');
     expect(report.currency).toEqual('DKK');
@@ -314,7 +314,7 @@ describe('parse', () => {
 
   it('should parse another "old" annual report', () => {
     // This test case failed on version 0.6.0 and below
-    const report = parseAnnualReport(loadReport(6), new CvrParser());
+    const report = parseAnnualReport(loadReport('report6'), new CvrParser());
 
     expect(report.VAT).toEqual('26586178');
     expect(report.currency).toEqual('DKK');

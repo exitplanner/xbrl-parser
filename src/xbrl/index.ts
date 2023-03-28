@@ -17,7 +17,7 @@ export interface Instant {
   scenario?: string;
 }
 
-export function parseXbrlFile(xmlString: string): XBRLDocument {
+export function parseXbrlFile<T extends XbrliXbrl>(xmlString: string): XBRLDocument<T> {
   const obj = new XMLParser({
     ignoreAttributes: false,
   }).parse(xmlString);
@@ -28,10 +28,10 @@ export function parseXbrlFile(xmlString: string): XBRLDocument {
   }
 
   obj['xbrli:xbrl'] = transformNamespaces(obj[xbrliRootKey]);
-  return fixTextNodes(obj as XBRLDocument);
+  return fixTextNodes(obj as XBRLDocument<T>);
 }
 
-function fixTextNodes(obj: XBRLDocument): XBRLDocument {
+function fixTextNodes <T extends XbrliXbrl>(obj: XBRLDocument<T>): XBRLDocument<T> {
   if (obj['xbrli:xbrl'] && obj['xbrli:xbrl']['xbrli:context']) {
     obj['xbrli:xbrl']['xbrli:context'].forEach(c => {
       if (c['xbrli:period']['xbrli:startDate'] && isNodeWithNamespace(c['xbrli:period']['xbrli:startDate'])) {
@@ -152,4 +152,15 @@ export function findInstants(doc: XbrliXbrl): Instant[] {
       date: c['xbrli:period']['xbrli:instant'] || '',
       scenario: c['xbrli:scenario']?.['xbrldi:explicitMember']?.['#text']
     }));
+}
+
+export function findPrimaryCurrency(doc: XbrliXbrl): string {
+  const unit = doc['xbrli:unit']
+    .filter(u => u['xbrli:measure']?.toLowerCase().startsWith('iso4217:'))[0];
+
+  if (!unit) {
+    throw new Error('Cannot find currency');
+  }
+
+  return unit['xbrli:measure'].split(':')[1];
 }

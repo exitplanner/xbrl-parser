@@ -1,16 +1,16 @@
-import { findInstants, findPeriods, Instant, parseXbrlFile, Period } from '../xbrl/index.js';
-import { ensureArray, removeUndefinedValues } from '../util.js';
-import type { AnnualReport, Balance, IncomeStatement } from '../types';
-import type { KeysMatching, NumberWithUnitRef, XbrliXbrl } from '../xbrl/types';
+import { findInstants, findPeriods, findPrimaryCurrency, Instant, parseXbrlFile, Period } from '../xbrl/index.js';
+import { ensureArray, extractNumber, removeUndefinedValues } from '../util.js';
+import type { AnnualReportDK, Balance, IncomeStatement } from '../types';
+import type { XbrliXbrlDK, KeysMatching, NumberWithUnitRef } from '../xbrl/types';
 import type { Parser } from './parser';
 
 /**
  * Parser that understands the XBRL taxonomy for many Danish companies as fetched from CVR.
  * @see https://erhvervsstyrelsen.dk/vejledning-teknisk-vejledning-og-dokumentation-regnskab-20-taksonomier-aktuelle
  */
-export default class CvrParser implements Parser {
-  parseAnnualReport(xmlString: string): AnnualReport {
-    const xbrl = parseXbrlFile(xmlString);
+export default class CvrParser implements Parser<AnnualReportDK> {
+  parseAnnualReport(xmlString: string): AnnualReportDK {
+    const xbrl = parseXbrlFile<XbrliXbrlDK>(xmlString);
 
     if (!xbrl['xbrli:xbrl']) {
       throw new Error('Only xbrli is supported right now.');
@@ -34,18 +34,7 @@ export default class CvrParser implements Parser {
   }
 }
 
-function findPrimaryCurrency(doc: XbrliXbrl): string {
-  const unit = doc['xbrli:unit']
-    .filter(u => u['xbrli:measure'].toLowerCase().startsWith('iso4217:'))[0];
-
-  if (!unit) {
-    throw new Error('Cannot find currency');
-  }
-
-  return unit['xbrli:measure'].split(':')[1];
-}
-
-function findBestPeriod(doc: XbrliXbrl): { VAT: string } & Period {
+function findBestPeriod(doc: XbrliXbrlDK): { VAT: string } & Period {
   let periods = findPeriods(doc);
   // Sort by end date to find "the latest period" and sort out all periods that don't conform.
   periods = periods.sort((a, b) => b.endDate.localeCompare(a.endDate));
@@ -76,7 +65,7 @@ function findBestPeriod(doc: XbrliXbrl): { VAT: string } & Period {
   return periods[0];
 }
 
-function findPrimaryBalanceInstant(doc: XbrliXbrl): Instant {
+function findPrimaryBalanceInstant(doc: XbrliXbrlDK): Instant {
   let instants = findInstants(doc);
 
   // Sort by end date to find "the latest period" and sort out all periods that don't conform.
@@ -88,7 +77,7 @@ function findPrimaryBalanceInstant(doc: XbrliXbrl): Instant {
   // Then find context ID for each of these to find candidate period IDs. Only
   // those periods that are left are the actual yearly period.
   // This is not super pretty, but it does the job in most cases.
-  const fieldsToTry: KeysMatching<XbrliXbrl, NumberWithUnitRef | NumberWithUnitRef[] | undefined>[] = ['fsa:Assets', 'fsa:LiabilitiesAndEquity', 'fsa:Equity', 'fsa:IntangibleAssets', 'fsa:CurrentAssets'];
+  const fieldsToTry: KeysMatching<XbrliXbrlDK, NumberWithUnitRef | NumberWithUnitRef[] | undefined>[] = ['fsa:Assets', 'fsa:LiabilitiesAndEquity', 'fsa:Equity', 'fsa:IntangibleAssets', 'fsa:CurrentAssets'];
   let contextIdCandidates: Set<string>;
 
   for (const field of fieldsToTry) {
@@ -98,11 +87,7 @@ function findPrimaryBalanceInstant(doc: XbrliXbrl): Instant {
     }
   }
 
-  // Only consider periods that have the profit loss field
-  // Then sort them by whether or not:
-  // 1. They were used to declare the report
-  // 2. They have a "scenario" attached to them.
-  // The latter can sometimes _really_ mess with the period and show numbers from a completely different year.
+  // See also findBestPeriod(...) function
   instants = instants
     .filter(p => p.date === latestInstant && contextIdCandidates.has(p.id))
     .sort((a, b) => {
@@ -112,8 +97,7 @@ function findPrimaryBalanceInstant(doc: XbrliXbrl): Instant {
   return instants[0];
 }
 
-function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatement {
-
+function createIncomeStatement(doc: XbrliXbrlDK, periodId: string): IncomeStatement {
   const incomeStatement: IncomeStatement = removeUndefinedValues({
     profitLoss: extractNumber(doc['fsa:ProfitLoss'], periodId) || 0,
     employeeExpenses: extractNumber(doc['fsa:EmployeeBenefitsExpense'], periodId) || 0,
@@ -151,7 +135,7 @@ function createIncomeStatement(doc: XbrliXbrl, periodId: string): IncomeStatemen
   return incomeStatement;
 }
 
-function adjustRevenueAndGrossProfit(incomeStatement: IncomeStatement, doc: XbrliXbrl): void {
+function adjustRevenueAndGrossProfit(incomeStatement: IncomeStatement, doc: XbrliXbrlDK): void {
   if (incomeStatement.grossProfitLoss || !!doc['fsa:GrossProfitLoss'] || !incomeStatement.revenue) {
     return;
   }
@@ -180,7 +164,7 @@ function calculateEBIT(i: IncomeStatement): number {
     - (i.depreciationAmortization || 0);
 }
 
-function extractTax(doc: XbrliXbrl, periodId: string): number {
+function extractTax(doc: XbrliXbrlDK, periodId: string): number {
   // This is the total tax, return by itself.
   if (doc['fsa:TaxExpense']) {
     return extractNumber(doc['fsa:TaxExpense'], periodId) || 0;
@@ -191,7 +175,7 @@ function extractTax(doc: XbrliXbrl, periodId: string): number {
   return tax + (extractNumber(doc['fsa:TaxExpenseOnExtraordinaryEvents'], periodId) || 0);
 }
 
-function extractExternalExpenses(doc: XbrliXbrl, periodId: string): number {
+function extractExternalExpenses(doc: XbrliXbrlDK, periodId: string): number {
   // This is the total external expenses, return by itself.
   if (doc['fsa:ExternalExpenses']) {
     return extractNumber(doc['fsa:ExternalExpenses'], periodId) || 0;
@@ -203,7 +187,7 @@ function extractExternalExpenses(doc: XbrliXbrl, periodId: string): number {
     + (extractNumber(doc['fsa:OtherExternalExpenses'], periodId) || 0);
 }
 
-function createBalanceSheet(doc: XbrliXbrl, instant: Instant): Balance {
+function createBalanceSheet(doc: XbrliXbrlDK, instant: Instant): Balance {
   const { id, date } = instant;
 
   return {
@@ -281,18 +265,4 @@ function createBalanceSheet(doc: XbrliXbrl, instant: Instant): Balance {
       }
     })
   };
-}
-
-function extractNumber(node: undefined | NumberWithUnitRef | NumberWithUnitRef[], contextRef: string): number | undefined {
-  if (!node) {
-    return;
-  }
-
-  node = ensureArray(node).find(n => n['@_contextRef'] === contextRef);
-
-  if (!node) {
-    return;
-  }
-
-  return node['#text'];
 }

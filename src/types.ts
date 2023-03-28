@@ -48,6 +48,7 @@ export interface IncomeStatement {
   /**
    * Profit or loss for the year, aka. result after taxes.
    * da: Årets resultat
+   * us-gaap: Net income
    */
   profitLoss: number;
 
@@ -61,7 +62,7 @@ export interface IncomeStatement {
    * Total employee expenses.
    * da: Personaleomkostninger
    */
-  employeeExpenses: number;
+  employeeExpenses?: number;
 
   /**
    * da: af- og nedskrivninger
@@ -71,24 +72,26 @@ export interface IncomeStatement {
   /**
    * da: Andre driftsindtægter
    */
-  otherOperatingIncome: number;
+  otherOperatingIncome?: number;
 
   /**
    * da: Andre diftsomkostninger
    */
-  otherOperatingExpenses: number;
+  otherOperatingExpenses?: number;
 
   /**
    * da: Eksterne driftsomkostninger
    */
-  externalExpenses: number;
+  externalExpenses?: number;
 
   /**
+   * In Danish taxonomy, this probably includes interest
    * da: Andre finansielle omkostninger
    */
   otherFinancialExpenses?: number;
 
   /**
+   * In Danish taxonomy, this probably includes interest
    * da: Andre finansielle indkomster
    */
   otherFinancialIncome?: number;
@@ -117,6 +120,18 @@ export interface IncomeStatement {
    * da: Driftsresultat/resultat før finansielle poster/primært resultat
    */
   profitLossFromOperatingActivities: number;
+
+  /**
+   * Interest expenses
+   * da: se otherFinancialExpenses
+   */
+  interestExpense?: number;
+
+  /**
+   * Interest and dividend income
+   * da: se otherFinancialIncome
+   */
+  interestAndDividendIncome?: number;
 }
 
 export interface Balance {
@@ -370,12 +385,7 @@ export interface Balance {
   }
 }
 
-/**
- * Represents a single annual report
- */
 export interface AnnualReport {
-  VAT: string;
-
   /** Currency used for reporting */
   currency: string;
 
@@ -384,4 +394,11 @@ export interface AnnualReport {
 
   incomeStatement: IncomeStatement;
   balance: Balance;
+}
+
+/**
+ * Represents a single annual report
+ */
+export interface AnnualReportDK extends AnnualReport {
+  VAT: string;
 }

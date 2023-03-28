@@ -1,9 +1,10 @@
 import { parseXbrlFile } from '../src/index.js';
+import { XbrliXbrlDK } from '../src/xbrl/types.js';
 import { loadReport } from './util.js';
 
 describe('xbrl', () => {
   it('should parse a XBRL file and return raw document', () => {
-    const xbrl = parseXbrlFile(loadReport(1));
+    const xbrl = parseXbrlFile<XbrliXbrlDK>(loadReport('report1'));
     expect(xbrl['?xml']).toBeTruthy();
     expect(xbrl['xbrli:xbrl']?.['xbrli:context']).toContainEqual(expect.objectContaining({
       'xbrli:entity': {
@@ -22,7 +23,7 @@ describe('xbrl', () => {
   });
 
   it('should parse a XBRL file with different namespaces', () => {
-    const xbrl = parseXbrlFile(loadReport(3));
+    const xbrl = parseXbrlFile<XbrliXbrlDK>(loadReport('report3'));
     expect(xbrl['?xml']).toBeTruthy();
     expect(xbrl['xbrli:xbrl']?.['xbrli:context']).toContainEqual(expect.objectContaining({
       'xbrli:entity': {

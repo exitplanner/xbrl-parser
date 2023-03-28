@@ -1,3 +1,5 @@
+import type { NumberWithUnitRef } from './xbrl/types';
+
 export function ensureArray<T>(val: T | T[] | undefined): T[] {
   return Array.isArray(val) ? val : val ? [val] : [];
 }
@@ -19,4 +21,19 @@ export function removeUndefinedValues<T>(obj: RecursiveObject<T>): T {
   }
 
   return newObj as T;
+}
+
+
+export function extractNumber(node: undefined | NumberWithUnitRef | NumberWithUnitRef[], contextRef: string): number | undefined {
+  if (!node) {
+    return;
+  }
+
+  node = ensureArray(node).find(n => n['@_contextRef'] === contextRef);
+
+  if (!node) {
+    return;
+  }
+
+  return node['#text'];
 }
