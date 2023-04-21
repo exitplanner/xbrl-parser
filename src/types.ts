@@ -109,14 +109,14 @@ export interface IncomeStatement {
   calculatedEBIT: number;
 
   /**
-   * Same as EBIT, but extracted from its own field.
+   * This is the result before tax but after financial posts, i.e. it's EBIT - interests.
    * da: Resultat før skat
    */
   profitLossBeforeTax: number;
 
   /**
    * This is the result before financial posts, i.e. it (should be):
-   * EBITDA - depreciation/amortization.
+   * EBITDA - depreciation/amortization, i.e. it's EBIT
    * da: Driftsresultat/resultat før finansielle poster/primært resultat
    */
   profitLossFromOperatingActivities: number;
@@ -132,6 +132,32 @@ export interface IncomeStatement {
    * da: se otherFinancialIncome
    */
   interestAndDividendIncome?: number;
+}
+
+export interface KeyFigures {
+  /**
+   * Current ratio. Whether a firm has enough resources to meet its short-term
+   * obligations.
+   * Current assets / short-term liabilities
+   * da: Likviditetsgrad II
+   */
+  currentRatio: number;
+
+  /**
+   * Equity ratio. How effectively a company funds asset requirements without
+   * using debt.
+   * Equity / Assets
+   * da: Soliditetsgrad
+   */
+  equityRatio: number;
+
+  /**
+   * Return on assets. How many dollars of earnings does the company derive from
+   * each dollar of assets they control
+   * Operating income / Total assets
+   * da: Afkastningsgrad
+   */
+  operatingReturnOnAssets: number;
 }
 
 export interface Balance {
@@ -274,6 +300,7 @@ export interface Balance {
       total?: number;
 
       /**
+       * Also known as "current liabilities"
        * da: Kortfristede forpligtelser/gældsforpligtelser
        */
       shorttermLiabilities: {
@@ -325,12 +352,13 @@ export interface Balance {
         shorttermPayablesToShareholdersAndManagement?: number;
 
         /**
-         * Kortfristet skyldig skat
+         * da: Kortfristet skyldig skat
          */
         shorttermTaxPayables?: number;
       }
 
       /**
+       * Also known as non-current liabilities
        * da: Langfristede forpligtelser/gældsforpligtelser
        */
       longtermLiabilities: {
@@ -394,6 +422,7 @@ export interface AnnualReport {
 
   incomeStatement: IncomeStatement;
   balance: Balance;
+  keyFigures?: KeyFigures;
 }
 
 /**
