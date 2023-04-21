@@ -1,4 +1,4 @@
-import { CvrParser, parseAnnualReport } from '../src/index.js';
+import { CvrParser, KeyFigures, parseAnnualReport } from '../src/index.js';
 import { loadReport } from './util.js';
 import type { Balance, IncomeStatement } from '../src/index';
 
@@ -30,7 +30,7 @@ describe('parse - cvr parser', () => {
       otherFinancialExpenses: 51_439_000,
       calculatedEBIT: 6_150_000,
       profitLossBeforeTax: -22_878_000,
-      profitLoss: -2_8633_000,
+      profitLoss: -28_633_000,
       tax: 5_755_000,
     }));
 
@@ -82,7 +82,7 @@ describe('parse - cvr parser', () => {
           total: 3_091_968_000,
           shorttermLiabilities: {
             total: 2_802_859_000,
-            shorttermPayablesToGroupEnterprises: 1_686_758_000
+            shorttermPayablesToGroupEnterprises: 1_686_758_000,
           },
           longtermLiabilities: {
             total: 289_109_000,
@@ -91,6 +91,12 @@ describe('parse - cvr parser', () => {
         }
       }
     }));
+
+    expect(report.keyFigures).toEqual<KeyFigures>({
+      currentRatio: expect.closeTo(0.3487, 4),
+      equityRatio: expect.closeTo(0.215, 3),
+      operatingReturnOnAssets: expect.closeTo(0.0014, 4)
+    });
   });
 
   it('should parse an annual report from a Danish company without revenue but with gross profit/loss', () => {
@@ -177,6 +183,12 @@ describe('parse - cvr parser', () => {
         }
       }
     }));
+
+    expect(report.keyFigures).toEqual<KeyFigures>({
+      currentRatio: expect.closeTo(1.4371, 4),
+      equityRatio: expect.closeTo(0.458, 3),
+      operatingReturnOnAssets: expect.closeTo(0.169, 3)
+    });
   });
 
   it('should parse an annual report for a company using non-xbrli format', () => {

@@ -20,7 +20,7 @@ export default class CvrParser implements Parser<AnnualReportDK> {
     const { id, startDate, endDate, VAT } = findBestPeriod(doc);
     const balanceInstant = findPrimaryBalanceInstant(doc);
 
-    return {
+    const report: AnnualReportDK = {
       VAT,
       currency: findPrimaryCurrency(doc),
       period: {
@@ -31,6 +31,8 @@ export default class CvrParser implements Parser<AnnualReportDK> {
       incomeStatement: createIncomeStatement(doc, id),
       balance: createBalanceSheet(doc, balanceInstant),
     };
+
+    return report;
   }
 }
 
@@ -225,7 +227,7 @@ function createBalanceSheet(doc: XbrliXbrlDK, instant: Instant): Balance {
         }
       }
     }),
-    liabilitiesAndEquity: removeUndefinedValues({
+    liabilitiesAndEquity: removeUndefinedValues<Balance['liabilitiesAndEquity']>({
       total: extractNumber(doc['fsa:LiabilitiesAndEquity'], id) || 0,
       equity: {
         total: extractNumber(doc['fsa:Equity'], id),
@@ -248,7 +250,7 @@ function createBalanceSheet(doc: XbrliXbrlDK, instant: Instant): Balance {
           shorttermPayablesToAssociates: extractNumber(doc['fsa:ShorttermPayablesToAssociates'], id),
           shorttermPayablesToJointVentures: extractNumber(doc['fsa:ShorttermPayablesToJointVentures'], id),
           shorttermPayablesToShareholdersAndManagement: extractNumber(doc['fsa:ShorttermPayablesToShareholdersAndManagement'], id),
-          shorttermTaxPayables: extractNumber(doc['fsa:ShorttermTaxPayables'], id),
+          shorttermTaxPayables: extractNumber(doc['fsa:ShorttermTaxPayables'], id)
         },
         longtermLiabilities: {
           total: extractNumber(doc['fsa:LongtermLiabilitiesOtherThanProvisions'], id),
