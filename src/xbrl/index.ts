@@ -144,6 +144,10 @@ export function findPeriods(doc: XbrliXbrl): ({ VAT: string } & Period)[] {
     }));
 }
 
+export function findPeriodsWithDates(doc: XbrliXbrl, startDate: string, endDate: string): Period[] {
+  return findPeriods(doc).filter(period => period.startDate === startDate && period.endDate === endDate);
+}
+
 export function findInstants(doc: XbrliXbrl): Instant[] {
   return doc['xbrli:context']
     .filter(c => !!c['xbrli:period']['xbrli:instant'])

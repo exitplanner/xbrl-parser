@@ -24,12 +24,12 @@ export function removeUndefinedValues<T>(obj: RecursiveObject<T>): T {
 }
 
 
-export function extractNumber(node: undefined | NumberWithUnitRef | NumberWithUnitRef[], contextRef: string): number | undefined {
+export function extractNumber(node: undefined | NumberWithUnitRef | NumberWithUnitRef[], contextRef: string | string[]): number | undefined {
   if (!node) {
     return;
   }
 
-  node = ensureArray(node).find(n => n['@_contextRef'] === contextRef);
+  node = ensureArray(node).find(n => Array.isArray(contextRef) ? contextRef.includes(n['@_contextRef']) : n['@_contextRef'] === contextRef);
 
   if (!node) {
     return;

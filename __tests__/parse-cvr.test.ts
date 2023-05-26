@@ -1,6 +1,7 @@
 import { CvrParser, KeyFigures, parseAnnualReport } from '../src/index.js';
 import { loadReport } from './util.js';
 import type { Balance, IncomeStatement } from '../src/index';
+import { OtherReportingData } from '../src/types.js';
 
 describe('parse - cvr parser', () => {
   it('should parse an annual report from a Danish company with revenue', () => {
@@ -97,6 +98,12 @@ describe('parse - cvr parser', () => {
       equityRatio: expect.closeTo(0.215, 3),
       operatingReturnOnAssets: expect.closeTo(0.0014, 4)
     });
+
+    expect(report.otherReportingData).toEqual<OtherReportingData>({
+      // This actually seems to be a reporting error for this specific report.
+      // It's supposed to be 1556! It was corrected in later years
+      averageNumberOfEmployees: 1.556
+    });
   });
 
   it('should parse an annual report from a Danish company without revenue but with gross profit/loss', () => {
@@ -189,6 +196,10 @@ describe('parse - cvr parser', () => {
       equityRatio: expect.closeTo(0.458, 3),
       operatingReturnOnAssets: expect.closeTo(0.169, 3)
     });
+
+    expect(report.otherReportingData).toEqual<OtherReportingData>({
+      averageNumberOfEmployees: 112
+    });
   });
 
   it('should parse an annual report for a company using non-xbrli format', () => {
@@ -273,6 +284,10 @@ describe('parse - cvr parser', () => {
         }
       }
     }));
+
+    expect(report.otherReportingData).toEqual<OtherReportingData>({
+      averageNumberOfEmployees: 22
+    });
   });
 
   it('should parse an annual report with multiple period references that conflict a bit', () => {
