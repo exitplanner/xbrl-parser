@@ -1,6 +1,6 @@
-import { findInstants, findPeriods, findPrimaryCurrency, Instant, parseXbrlFile, Period } from '../xbrl/index.js';
+import { findInstants, findPeriods, findPeriodsWithDates, findPrimaryCurrency, Instant, parseXbrlFile, Period } from '../xbrl/index.js';
 import { ensureArray, extractNumber, removeUndefinedValues } from '../util.js';
-import type { AnnualReportDK, Balance, IncomeStatement } from '../types';
+import type { AnnualReportDK, Balance, IncomeStatement, OtherReportingData } from '../types';
 import type { XbrliXbrlDK, KeysMatching, NumberWithUnitRef } from '../xbrl/types';
 import type { Parser } from './parser';
 
@@ -30,6 +30,7 @@ export default class CvrParser implements Parser<AnnualReportDK> {
       },
       incomeStatement: createIncomeStatement(doc, id),
       balance: createBalanceSheet(doc, balanceInstant),
+      otherReportingData: createOtherReportingData(doc, startDate, endDate)
     };
 
     return report;
@@ -266,5 +267,20 @@ function createBalanceSheet(doc: XbrliXbrlDK, instant: Instant): Balance {
         }
       }
     })
+  };
+}
+
+function createOtherReportingData(doc: XbrliXbrlDK, startDate: string, endDate: string): OtherReportingData {
+  // The average number of employees (for example) is reported for the same
+  // yearly period (e.g. Jan 1 to Dec 31) but might use a different context ID
+  // than the income statement. When finding extra reporting data, instead of
+  // using a single context ID for all numbers, we use any context ID that
+  // matches the given period.
+  const allPeriodIdsForPeriod = findPeriodsWithDates(doc, startDate, endDate).map(p => p.id);
+  return {
+    // In some of our test cases, the employee number is reported with a decimal
+    // point. This seems to be a reporting error so we simply remove the decimal
+    // point in these cases.
+    averageNumberOfEmployees: extractNumber(doc['fsa:AverageNumberOfEmployees'], allPeriodIdsForPeriod)
   };
 }

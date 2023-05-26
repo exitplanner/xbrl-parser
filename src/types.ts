@@ -413,6 +413,11 @@ export interface Balance {
   }
 }
 
+export interface OtherReportingData {
+  /** The average number of employees throughout the period that the report is for */
+  averageNumberOfEmployees?: number;
+}
+
 export interface AnnualReport {
   /** Currency used for reporting */
   currency: string;
@@ -420,9 +425,17 @@ export interface AnnualReport {
   /** The period that the report is for */
   period: Period;
 
+  /** The income statement for the report */
   incomeStatement: IncomeStatement;
+
+  /** The balance statement for the report  */
   balance: Balance;
+
+  /** Optional, calculated key figures based on the report */
   keyFigures?: KeyFigures;
+
+  /** other reporting data, such as number of employees */
+  otherReportingData?: OtherReportingData;
 }
 
 /**
