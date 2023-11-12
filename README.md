@@ -17,13 +17,19 @@ npm install --save xbrl-parser
 
 ## Usage
 
-Given a string containing an XBRL XML file, it will be parsed into a "raw" XBRL format which can be passed on to other parsers. The only parser supported right now is the Danish annual report parser.
+Given a string containing an XBRL XML file (the full contents, not the filename), it will be parsed into a "raw" XBRL format which can be passed on to other parsers. The only parser supported right now is the Danish annual report parser.
 
 ```js
 import { parseXbrlFile } from 'xbrl-parser';
-const xbrl = parseXbrlFile(myFileString);
+
+// Maybe this was loaded with the fs module or from an http request
+const xmlString = '<?xml version="1.0" encoding="UTF-8"?><xbrli:xbrl>...</xbrli:xbrl>';
+
+const xbrl = parseXbrlFile(xmlString);
 console.log(xbrl);
 ```
+
+Using the Danish annual report parser:
 
 ```js
 import { CvrParser, parseAnnualReport } from 'xbrl-parser';
